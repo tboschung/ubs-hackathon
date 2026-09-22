@@ -31,6 +31,8 @@ class Handler(SimpleHTTPRequestHandler):
                 subject=str(body.get("subject", "")),
                 body=str(body.get("body", "")),
                 sender=str(body.get("sender", "")),
+                email_id=str(body["email_id"]) if body.get("email_id") else None,
+                received_at=str(body["received_at"]) if body.get("received_at") else None,
             )
             ticket = PARSER.parse_email(email)
             self._json(200, {"ticket": ticket.to_dict()})

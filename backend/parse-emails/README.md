@@ -1,6 +1,6 @@
 # Email-to-ticket parser
 
-Self-contained entry module that turns an email into a validated six-field ticket. Its core package does not depend on the demo server and exposes a small downstream handoff contract.
+Self-contained entry module that turns an email into the validated, ontology-backed ticket contract defined in `../../ontology.md`. Its core package does not depend on the demo server and exposes a small downstream handoff contract.
 
 ## Run
 
@@ -20,9 +20,11 @@ The parser automatically reads the key at `../../assets/gemini_key.txt`, matchin
 from email_parser import EmailMessage, EmailTicketParser
 
 email = EmailMessage(
-    subject="CRM login blocked",
-    body="The Zurich team receives error 403.",
+    subject="E-Banking login blocked",
+    body="Customers on iOS receive error A17.",
     sender="alex@example.com",
+    email_id="EMAIL-1042",                    # optional
+    received_at="2026-09-22T09:14:00+02:00", # optional
 )
 ticket = EmailTicketParser().parse_email(email)
 next_system.send(ticket)
@@ -34,14 +36,31 @@ Implement `TicketSink` from `email_parser.handoff` for a database, queue, or tic
 
 ```json
 {
-  "title": "Short problem title",
-  "description": "Clear summary",
-  "category": "access | hardware | network | security | software | other",
-  "urgency": "low | medium | high | critical",
-  "affected_system": "System or device",
-  "suggested_action": "First support action"
+  "id": "TCK-1042",
+  "email_id": "EMAIL-1042",
+  "received_at": "2026-09-22T09:14:00+02:00",
+  "raw_email": "Subject: E-Banking login blocked\nFrom: alex@example.com\nBody:\nCustomers on iOS receive error A17.",
+  "summary": "Mobile users cannot log into E-Banking.",
+  "ontology_values": {
+    "actor_ids": ["actor:user"],
+    "platform_ids": ["platform:e_banking"],
+    "server_ids": [],
+    "supplier_ids": [],
+    "edge_ids": ["edge:user_login_ebanking"],
+    "relationship_types": ["LOGS_INTO"],
+    "primary_affected_node_id": "platform:e_banking",
+    "symptom": "login_failure",
+    "region": "CH",
+    "channel": "mobile_ios",
+    "environment": "production",
+    "error_code": "A17",
+    "release_id": null
+  },
+  "extraction": {"confidence": 0.96, "evidence": ["Customers", "iOS", "A17"]}
 }
 ```
+
+The model response is validated against the ontology. A malformed response is retried once; a second validation failure produces an `unknown`/empty unclassified ticket while retaining the source email.
 
 ## Test
 

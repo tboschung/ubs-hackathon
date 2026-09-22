@@ -47,13 +47,13 @@ body.addEventListener('input', () => {
 function renderTicket(ticket) {
   empty.hidden = true;
   ticketView.hidden = false;
-  document.querySelector('#result-title').textContent = ticket.title;
-  document.querySelector('#description').textContent = ticket.description;
-  document.querySelector('#category').textContent = ticket.category;
-  document.querySelector('#affected_system').textContent = ticket.affected_system;
-  document.querySelector('#suggested_action').textContent = ticket.suggested_action;
+  document.querySelector('#result-title').textContent = ticket.summary;
+  document.querySelector('#description').textContent = ticket.raw_email;
+  document.querySelector('#category').textContent = ticket.ontology_values.symptom;
+  document.querySelector('#affected_system').textContent = ticket.ontology_values.primary_affected_node_id || 'unknown';
+  document.querySelector('#suggested_action').textContent = ticket.extraction.evidence.join(', ') || 'No evidence extracted';
   const urgency = document.querySelector('#urgency');
-  urgency.textContent = `${ticket.urgency} urgency`;
-  urgency.dataset.level = ticket.urgency;
+  urgency.textContent = `${Math.round(ticket.extraction.confidence * 100)}% confidence`;
+  urgency.dataset.level = ticket.extraction.confidence >= 0.8 ? 'low' : 'medium';
   document.querySelector('#json').textContent = JSON.stringify(ticket, null, 2);
 }
