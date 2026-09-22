@@ -28,7 +28,7 @@ form.addEventListener('submit', async (event) => {
     });
     const data = await response.json();
     if (!response.ok) throw new Error(data.error || 'Ticket generation failed.');
-    renderTicket(data.ticket);
+    renderTicket(data.ticket, data.source);
   } catch (cause) {
     error.textContent = cause.message || 'Could not generate the ticket. Try again.';
   } finally {
@@ -44,9 +44,12 @@ body.addEventListener('input', () => {
   }
 });
 
-function renderTicket(ticket) {
+function renderTicket(ticket, source) {
   empty.hidden = true;
   ticketView.hidden = false;
+  const sourceBadge = document.querySelector('#source');
+  sourceBadge.textContent = source === 'fallback' ? 'Rule-based fallback' : 'Gemini';
+  sourceBadge.dataset.source = source;
   document.querySelector('#result-title').textContent = ticket.summary;
   document.querySelector('#description').textContent = ticket.raw_email;
   document.querySelector('#category').textContent = ticket.ontology_values.symptom;

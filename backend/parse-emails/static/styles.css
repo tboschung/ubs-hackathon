@@ -42,6 +42,7 @@ button:disabled { opacity:.65; cursor:wait; }
 .empty p { max-width:310px; margin:10px 0 0; color:var(--muted); line-height:1.55; }
 .badge { flex:0 0 auto; padding:7px 10px; border-radius:999px; background:#e3edff; color:#164da8; font:700 11px/1 ui-monospace,SFMono-Regular,monospace; text-transform:uppercase; }
 .badge[data-level="critical"],.badge[data-level="high"] { background:#fee4e2; color:#b42318; }
+.badge[data-source="fallback"] { background:#fef3c7; color:#92400e; }
 #result-title { margin:28px 0 12px; font-size:clamp(25px,3vw,32px); }
 .description { color:#4b5b6e; line-height:1.65; }
 dl { display:grid; grid-template-columns:1fr 1fr; gap:22px; margin:32px 0; }

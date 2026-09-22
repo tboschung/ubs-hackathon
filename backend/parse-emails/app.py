@@ -34,8 +34,8 @@ class Handler(SimpleHTTPRequestHandler):
                 email_id=str(body["email_id"]) if body.get("email_id") else None,
                 received_at=str(body["received_at"]) if body.get("received_at") else None,
             )
-            ticket = PARSER.parse_email(email)
-            self._json(200, {"ticket": ticket.to_dict()})
+            ticket, source = PARSER.parse_email_with_source(email)
+            self._json(200, {"ticket": ticket.to_dict(), "source": source})
         except (ValueError, json.JSONDecodeError) as exc:
             self._json(400, {"error": str(exc)})
         except RuntimeError as exc:
