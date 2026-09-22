@@ -1,0 +1,610 @@
+{
+  "schema_version": "1.0",
+  "source_contract": "ontology.md#6-model-pass-1-email-to-ticket-contract",
+  "pair_count": 100,
+  "valid_pair_count": 100,
+  "invalid_pair_count": 0,
+  "global_errors": [],
+  "pairs": [
+    {
+      "email_id": "EMAIL-0044",
+      "ticket_id": "TCK-0044",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "email_id": "EMAIL-0054",
+      "ticket_id": "TCK-0054",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "email_id": "EMAIL-0045",
+      "ticket_id": "TCK-0045",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "email_id": "EMAIL-0055",
+      "ticket_id": "TCK-0055",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "email_id": "EMAIL-0056",
+      "ticket_id": "TCK-0056",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "email_id": "EMAIL-0001",
+      "ticket_id": "TCK-0001",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "email_id": "EMAIL-0002",
+      "ticket_id": "TCK-0002",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "email_id": "EMAIL-0003",
+      "ticket_id": "TCK-0003",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "email_id": "EMAIL-0004",
+      "ticket_id": "TCK-0004",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "email_id": "EMAIL-0005",
+      "ticket_id": "TCK-0005",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "email_id": "EMAIL-0006",
+      "ticket_id": "TCK-0006",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "email_id": "EMAIL-0007",
+      "ticket_id": "TCK-0007",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "email_id": "EMAIL-0046",
+      "ticket_id": "TCK-0046",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "email_id": "EMAIL-0057",
+      "ticket_id": "TCK-0057",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "email_id": "EMAIL-0008",
+      "ticket_id": "TCK-0008",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "email_id": "EMAIL-0009",
+      "ticket_id": "TCK-0009",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "email_id": "EMAIL-0010",
+      "ticket_id": "TCK-0010",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "email_id": "EMAIL-0011",
+      "ticket_id": "TCK-0011",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "email_id": "EMAIL-0012",
+      "ticket_id": "TCK-0012",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "email_id": "EMAIL-0013",
+      "ticket_id": "TCK-0013",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "email_id": "EMAIL-0014",
+      "ticket_id": "TCK-0014",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "email_id": "EMAIL-0079",
+      "ticket_id": "TCK-0079",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "email_id": "EMAIL-0015",
+      "ticket_id": "TCK-0015",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "email_id": "EMAIL-0016",
+      "ticket_id": "TCK-0016",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "email_id": "EMAIL-0080",
+      "ticket_id": "TCK-0080",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "email_id": "EMAIL-0017",
+      "ticket_id": "TCK-0017",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "email_id": "EMAIL-0018",
+      "ticket_id": "TCK-0018",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "email_id": "EMAIL-0058",
+      "ticket_id": "TCK-0058",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "email_id": "EMAIL-0081",
+      "ticket_id": "TCK-0081",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "email_id": "EMAIL-0019",
+      "ticket_id": "TCK-0019",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "email_id": "EMAIL-0020",
+      "ticket_id": "TCK-0020",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "email_id": "EMAIL-0082",
+      "ticket_id": "TCK-0082",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "email_id": "EMAIL-0021",
+      "ticket_id": "TCK-0021",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "email_id": "EMAIL-0091",
+      "ticket_id": "TCK-0091",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "email_id": "EMAIL-0022",
+      "ticket_id": "TCK-0022",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "email_id": "EMAIL-0083",
+      "ticket_id": "TCK-0083",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "email_id": "EMAIL-0023",
+      "ticket_id": "TCK-0023",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "email_id": "EMAIL-0024",
+      "ticket_id": "TCK-0024",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "email_id": "EMAIL-0084",
+      "ticket_id": "TCK-0084",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "email_id": "EMAIL-0025",
+      "ticket_id": "TCK-0025",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "email_id": "EMAIL-0085",
+      "ticket_id": "TCK-0085",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "email_id": "EMAIL-0086",
+      "ticket_id": "TCK-0086",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "email_id": "EMAIL-0092",
+      "ticket_id": "TCK-0092",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "email_id": "EMAIL-0059",
+      "ticket_id": "TCK-0059",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "email_id": "EMAIL-0087",
+      "ticket_id": "TCK-0087",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "email_id": "EMAIL-0047",
+      "ticket_id": "TCK-0047",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "email_id": "EMAIL-0088",
+      "ticket_id": "TCK-0088",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "email_id": "EMAIL-0026",
+      "ticket_id": "TCK-0026",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "email_id": "EMAIL-0089",
+      "ticket_id": "TCK-0089",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "email_id": "EMAIL-0093",
+      "ticket_id": "TCK-0093",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "email_id": "EMAIL-0027",
+      "ticket_id": "TCK-0027",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "email_id": "EMAIL-0090",
+      "ticket_id": "TCK-0090",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "email_id": "EMAIL-0028",
+      "ticket_id": "TCK-0028",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "email_id": "EMAIL-0029",
+      "ticket_id": "TCK-0029",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "email_id": "EMAIL-0060",
+      "ticket_id": "TCK-0060",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "email_id": "EMAIL-0030",
+      "ticket_id": "TCK-0030",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "email_id": "EMAIL-0094",
+      "ticket_id": "TCK-0094",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "email_id": "EMAIL-0031",
+      "ticket_id": "TCK-0031",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "email_id": "EMAIL-0032",
+      "ticket_id": "TCK-0032",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "email_id": "EMAIL-0033",
+      "ticket_id": "TCK-0033",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "email_id": "EMAIL-0095",
+      "ticket_id": "TCK-0095",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "email_id": "EMAIL-0034",
+      "ticket_id": "TCK-0034",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "email_id": "EMAIL-0061",
+      "ticket_id": "TCK-0061",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "email_id": "EMAIL-0035",
+      "ticket_id": "TCK-0035",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "email_id": "EMAIL-0048",
+      "ticket_id": "TCK-0048",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "email_id": "EMAIL-0036",
+      "ticket_id": "TCK-0036",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "email_id": "EMAIL-0062",
+      "ticket_id": "TCK-0062",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "email_id": "EMAIL-0037",
+      "ticket_id": "TCK-0037",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "email_id": "EMAIL-0038",
+      "ticket_id": "TCK-0038",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "email_id": "EMAIL-0039",
+      "ticket_id": "TCK-0039",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "email_id": "EMAIL-0063",
+      "ticket_id": "TCK-0063",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "email_id": "EMAIL-0040",
+      "ticket_id": "TCK-0040",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "email_id": "EMAIL-0041",
+      "ticket_id": "TCK-0041",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "email_id": "EMAIL-0049",
+      "ticket_id": "TCK-0049",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "email_id": "EMAIL-0042",
+      "ticket_id": "TCK-0042",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "email_id": "EMAIL-0043",
+      "ticket_id": "TCK-0043",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "email_id": "EMAIL-0064",
+      "ticket_id": "TCK-0064",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "email_id": "EMAIL-0065",
+      "ticket_id": "TCK-0065",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "email_id": "EMAIL-0066",
+      "ticket_id": "TCK-0066",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "email_id": "EMAIL-0067",
+      "ticket_id": "TCK-0067",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "email_id": "EMAIL-0068",
+      "ticket_id": "TCK-0068",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "email_id": "EMAIL-0050",
+      "ticket_id": "TCK-0050",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "email_id": "EMAIL-0069",
+      "ticket_id": "TCK-0069",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "email_id": "EMAIL-0070",
+      "ticket_id": "TCK-0070",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "email_id": "EMAIL-0071",
+      "ticket_id": "TCK-0071",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "email_id": "EMAIL-0072",
+      "ticket_id": "TCK-0072",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "email_id": "EMAIL-0073",
+      "ticket_id": "TCK-0073",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "email_id": "EMAIL-0074",
+      "ticket_id": "TCK-0074",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "email_id": "EMAIL-0075",
+      "ticket_id": "TCK-0075",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "email_id": "EMAIL-0076",
+      "ticket_id": "TCK-0076",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "email_id": "EMAIL-0051",
+      "ticket_id": "TCK-0051",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "email_id": "EMAIL-0077",
+      "ticket_id": "TCK-0077",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "email_id": "EMAIL-0078",
+      "ticket_id": "TCK-0078",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "email_id": "EMAIL-0052",
+      "ticket_id": "TCK-0052",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "email_id": "EMAIL-0096",
+      "ticket_id": "TCK-0096",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "email_id": "EMAIL-0097",
+      "ticket_id": "TCK-0097",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "email_id": "EMAIL-0053",
+      "ticket_id": "TCK-0053",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "email_id": "EMAIL-0098",
+      "ticket_id": "TCK-0098",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "email_id": "EMAIL-0099",
+      "ticket_id": "TCK-0099",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "email_id": "EMAIL-0100",
+      "ticket_id": "TCK-0100",
+      "valid": true,
+      "errors": []
+    }
+  ]
+}
