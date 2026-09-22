@@ -10,9 +10,14 @@ Self-contained entry module that turns an email into the validated, ontology-bac
 python3 app.py
 ```
 
-3. Open <http://127.0.0.1:8000>.
+2. Open one of the demo pages:
+
+   - Email intake: <http://127.0.0.1:8000>
+   - Ontology explorer: <http://127.0.0.1:8000/ontology/>
 
 The parser automatically reads the key at `../../assets/gemini_key.txt`, matching the project-level `../assets/gemini_key.txt` path. `GEMINI_API_KEY` can override it. No third-party Python packages are required.
+
+The ontology explorer vendors Cytoscape.js 3.34.3 locally, so graph exploration also works without internet access. Its stable topology is stored in `static/ontology/ontology.json`; runtime incident state is intentionally kept separate.
 
 ## Integration
 

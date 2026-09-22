@@ -10,4 +10,5 @@ assets
 
 backend/__pycache__/
 backend/*.py[cod]
-
+__pycache__/
+*.py[cod]

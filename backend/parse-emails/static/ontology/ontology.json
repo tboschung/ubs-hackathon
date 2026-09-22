@@ -1,0 +1,97 @@
+{
+  "version": "1.0",
+  "nodes": [
+    {
+      "id": "actor:user",
+      "label": "User",
+      "type": "actor",
+      "aliases": ["customer", "client", "end user", "mobile user"]
+    },
+    {
+      "id": "actor:employee",
+      "label": "Employee",
+      "type": "actor",
+      "aliases": ["staff", "colleague", "agent", "adviser"]
+    },
+    {
+      "id": "actor:supplier",
+      "label": "Supplier",
+      "type": "actor",
+      "aliases": ["vendor", "beneficiary", "third party"]
+    },
+    {
+      "id": "platform:e_banking",
+      "label": "E-Banking",
+      "type": "platform",
+      "aliases": ["ebanking", "e-bank", "online banking", "mobile banking"]
+    },
+    {
+      "id": "platform:hr",
+      "label": "HR Platform",
+      "type": "platform",
+      "aliases": ["HR portal", "people portal", "employee portal"]
+    },
+    {
+      "id": "platform:crm",
+      "label": "CRM Platform",
+      "type": "platform",
+      "aliases": ["CRM", "client relationship platform"]
+    },
+    {
+      "id": "server:ebanking_primary",
+      "label": "E-Banking Server",
+      "type": "server",
+      "aliases": ["E-Banking host", "backend server", "application server", "srv-eb-01"]
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge:user_login_ebanking",
+      "source": "actor:user",
+      "target": "platform:e_banking",
+      "relationship": "LOGS_INTO",
+      "metadata": {}
+    },
+    {
+      "id": "edge:employee_login_hr",
+      "source": "actor:employee",
+      "target": "platform:hr",
+      "relationship": "LOGS_INTO",
+      "metadata": {}
+    },
+    {
+      "id": "edge:employee_login_crm",
+      "source": "actor:employee",
+      "target": "platform:crm",
+      "relationship": "LOGS_INTO",
+      "metadata": {}
+    },
+    {
+      "id": "edge:user_pays_supplier",
+      "source": "actor:user",
+      "target": "actor:supplier",
+      "relationship": "PAYS",
+      "metadata": {
+        "via_platform_id": "platform:e_banking"
+      }
+    },
+    {
+      "id": "edge:ebanking_depends_on_server",
+      "source": "platform:e_banking",
+      "target": "server:ebanking_primary",
+      "relationship": "DEPENDS_ON",
+      "metadata": {
+        "criticality": "high"
+      }
+    },
+    {
+      "id": "edge:server_provided_by_supplier",
+      "source": "server:ebanking_primary",
+      "target": "actor:supplier",
+      "relationship": "PROVIDED_BY",
+      "metadata": {
+        "contract_type": "infrastructure"
+      }
+    }
+  ]
+}

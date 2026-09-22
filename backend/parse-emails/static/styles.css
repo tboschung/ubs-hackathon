@@ -5,6 +5,10 @@ html { scrollbar-color:#9baabc #e7edf2; scrollbar-width:thin; }
 body { margin:0; min-height:100vh; color:var(--ink); background:var(--canvas); font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
 main { width:min(1180px,calc(100% - 40px)); margin:auto; padding:44px 0 56px; }
 header { display:flex; align-items:center; gap:16px; margin-bottom:28px; }
+header>div { min-width:0; }
+.header-link { display:inline-flex; align-items:center; gap:8px; min-height:42px; margin-left:auto; padding:0 14px; border:1px solid #b9c5d1; border-radius:6px; color:var(--ink); background:rgba(255,255,255,.7); font-size:13px; font-weight:700; text-decoration:none; }
+.header-link:hover { border-color:#95a5b6; background:white; }
+.header-link:focus-visible { outline:3px solid rgba(23,104,229,.28); outline-offset:3px; }
 .mark { display:grid; place-items:center; flex:0 0 46px; height:46px; color:white; background:var(--ink); font-size:22px; }
 .eyebrow { margin:0 0 7px; color:var(--blue); font:700 11px/1.2 ui-monospace,SFMono-Regular,monospace; letter-spacing:.13em; text-transform:uppercase; }
 h1,h2,p { overflow-wrap:anywhere; }
@@ -49,5 +53,5 @@ details { padding-top:15px; border-top:1px solid var(--line); }
 summary { color:var(--muted); font-size:13px; cursor:pointer; }
 pre { max-height:200px; overflow:auto; padding:14px; border-radius:5px; background:var(--ink); color:#dfebfa; font:12px/1.55 ui-monospace,SFMono-Regular,monospace; white-space:pre-wrap; }
 @media (max-width:780px) { main { width:min(100% - 24px,620px); padding:26px 0; } .workspace { grid-template-columns:1fr; overflow:visible; } form,.result { padding:26px; } form { border-right:0; border-bottom:1px solid var(--line); } .result { min-height:400px; } .body-field { min-height:230px; } }
-@media (max-width:520px) { .field-row,dl { grid-template-columns:1fr; } dl .wide { grid-column:auto; } .form-footer { align-items:stretch; flex-direction:column; padding-top:14px; } .error { max-width:none; min-height:18px; } button { width:100%; } }
+@media (max-width:520px) { header { align-items:flex-start; flex-wrap:wrap; } .header-link { width:100%; justify-content:space-between; margin-left:0; } .field-row,dl { grid-template-columns:1fr; } dl .wide { grid-column:auto; } .form-footer { align-items:stretch; flex-direction:column; padding-top:14px; } .error { max-width:none; min-height:18px; } button { width:100%; } }
 @media (prefers-reduced-motion:reduce) { * { scroll-behavior:auto!important; transition:none!important; } }
