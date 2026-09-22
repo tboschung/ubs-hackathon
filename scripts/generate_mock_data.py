@@ -21,13 +21,15 @@ NODE_IDS = {
     "platform:e_banking",
     "platform:hr",
     "platform:crm",
+    "platform:accounts_payable",
     "server:ebanking_primary",
 }
 EDGE_MAP = {
     "edge:user_login_ebanking": ("actor:user", "LOGS_INTO", "platform:e_banking"),
     "edge:employee_login_hr": ("actor:employee", "LOGS_INTO", "platform:hr"),
     "edge:employee_login_crm": ("actor:employee", "LOGS_INTO", "platform:crm"),
-    "edge:user_pays_supplier": ("actor:user", "PAYS", "actor:supplier"),
+    "edge:employee_login_accounts_payable": ("actor:employee", "LOGS_INTO", "platform:accounts_payable"),
+    "edge:accounts_payable_pays_supplier": ("platform:accounts_payable", "PAYS", "actor:supplier"),
     "edge:ebanking_depends_on_server": ("platform:e_banking", "DEPENDS_ON", "server:ebanking_primary"),
     "edge:server_provided_by_supplier": ("server:ebanking_primary", "PROVIDED_BY", "actor:supplier"),
 }
@@ -183,15 +185,15 @@ def build_pairs() -> list[dict]:
 
     payment_specs = [("duplicate_payment", "PAY-208", "was submitted twice"), ("payment_failure", "PAY-503", "failed")]
     add("payments", 15, 130, 3, lambda i, n: dict(
-        sender=f"payments.desk{(i % 5) + 1}@example.test",
+        sender=f"accounts.payable{(i % 5) + 1}@example.test",
         subject=f"Supplier payment report {n}",
-        body=f"A CH customer reports that a supplier payment through E-Banking web {payment_specs[i % 2][2]}; code {payment_specs[i % 2][1]} in production.",
-        summary=f"User reports a {payment_specs[i % 2][0].replace('_', ' ')} to a supplier through E-Banking.",
-        actor_ids=["actor:user", "actor:supplier"], platform_ids=["platform:e_banking"], server_ids=[],
-        supplier_ids=["actor:supplier"], edge_ids=["edge:user_pays_supplier"], relationship_types=["PAYS"],
-        primary="platform:e_banking", symptom=payment_specs[i % 2][0], region="CH", channel="web",
+        body=f"The CH Accounts Payable Platform {payment_specs[i % 2][2]} a supplier payment; code {payment_specs[i % 2][1]} in production.",
+        summary=f"Accounts Payable reports a {payment_specs[i % 2][0].replace('_', ' ')} to a supplier.",
+        actor_ids=[], platform_ids=["platform:accounts_payable"], server_ids=[],
+        supplier_ids=["actor:supplier"], edge_ids=["edge:accounts_payable_pays_supplier"], relationship_types=["PAYS"],
+        primary="platform:accounts_payable", symptom=payment_specs[i % 2][0], region="CH", channel="web",
         environment="production", error_code=payment_specs[i % 2][1], release_id=None, confidence=0.95,
-        evidence=["customer", "supplier payment", "E-Banking", payment_specs[i % 2][1]],
+        evidence=["Accounts Payable Platform", "supplier payment", payment_specs[i % 2][1]],
     ))
 
     add("server", 12, 55, 2, lambda i, n: dict(

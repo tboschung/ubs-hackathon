@@ -25,8 +25,8 @@ class OntologyTests(unittest.TestCase):
 
     def test_contains_expected_graph_size(self):
         self.assertEqual(self.value["version"], "1.0")
-        self.assertEqual(len(self.value["nodes"]), 7)
-        self.assertEqual(len(self.value["edges"]), 6)
+        self.assertEqual(len(self.value["nodes"]), 8)
+        self.assertEqual(len(self.value["edges"]), 7)
 
     def test_ids_are_unique_and_edges_reference_existing_nodes(self):
         node_ids = [node["id"] for node in self.value["nodes"]]
@@ -63,6 +63,19 @@ class OntologyTests(unittest.TestCase):
         self.assertEqual(provenance["source"], "server:ebanking_primary")
         self.assertEqual(provenance["target"], "actor:supplier")
         self.assertEqual(provenance["relationship"], "PROVIDED_BY")
+
+    def test_accounts_payable_not_user_pays_supplier(self):
+        edges = {edge["id"]: edge for edge in self.value["edges"]}
+        login = edges["edge:employee_login_accounts_payable"]
+        self.assertEqual(login["source"], "actor:employee")
+        self.assertEqual(login["target"], "platform:accounts_payable")
+        self.assertEqual(login["relationship"], "LOGS_INTO")
+
+        payment = edges["edge:accounts_payable_pays_supplier"]
+        self.assertEqual(payment["source"], "platform:accounts_payable")
+        self.assertEqual(payment["target"], "actor:supplier")
+        self.assertEqual(payment["relationship"], "PAYS")
+        self.assertNotIn("edge:user_pays_supplier", edges)
 
     def test_page_uses_only_the_local_cytoscape_asset(self):
         page = ONTOLOGY_PAGE.read_text(encoding="utf-8")

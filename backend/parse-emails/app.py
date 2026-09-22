@@ -12,11 +12,19 @@ from email_parser import EmailMessage, EmailTicketParser
 ROOT = Path(__file__).resolve().parent
 STATIC = ROOT / "static"
 PARSER = EmailTicketParser()
+DATA_PATH = ROOT.parents[1] / "data" / "email_ticket_pairs.json"
+SIMULATION_TICKETS = [pair["ticket"] for pair in json.loads(DATA_PATH.read_text(encoding="utf-8"))]
 
 
 class Handler(SimpleHTTPRequestHandler):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, directory=str(STATIC), **kwargs)
+
+    def do_GET(self) -> None:
+        if self.path == "/api/simulation/tickets":
+            self._json(200, {"tickets": SIMULATION_TICKETS, "count": len(SIMULATION_TICKETS)})
+            return
+        super().do_GET()
 
     def do_POST(self) -> None:
         if self.path != "/api/tickets":
@@ -41,10 +49,11 @@ class Handler(SimpleHTTPRequestHandler):
         except RuntimeError as exc:
             self._json(502, {"error": str(exc)})
 
-    def _json(self, status: int, value: dict) -> None:
+    def _json(self, status: int, value: object) -> None:
         data = json.dumps(value).encode("utf-8")
         self.send_response(status)
         self.send_header("Content-Type", "application/json; charset=utf-8")
+        self.send_header("Cache-Control", "no-store")
         self.send_header("Content-Length", str(len(data)))
         self.end_headers()
         self.wfile.write(data)

@@ -38,6 +38,12 @@
       "aliases": ["CRM", "client relationship platform"]
     },
     {
+      "id": "platform:accounts_payable",
+      "label": "Accounts Payable Platform",
+      "type": "platform",
+      "aliases": ["accounts payable", "AP platform", "supplier payments", "invoice payment system"]
+    },
+    {
       "id": "server:ebanking_primary",
       "label": "E-Banking Server",
       "type": "server",
@@ -67,12 +73,19 @@
       "metadata": {}
     },
     {
-      "id": "edge:user_pays_supplier",
-      "source": "actor:user",
+      "id": "edge:employee_login_accounts_payable",
+      "source": "actor:employee",
+      "target": "platform:accounts_payable",
+      "relationship": "LOGS_INTO",
+      "metadata": {}
+    },
+    {
+      "id": "edge:accounts_payable_pays_supplier",
+      "source": "platform:accounts_payable",
       "target": "actor:supplier",
       "relationship": "PAYS",
       "metadata": {
-        "via_platform_id": "platform:e_banking"
+        "process": "supplier_payments"
       }
     },
     {

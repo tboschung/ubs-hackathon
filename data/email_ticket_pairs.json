@@ -3662,35 +3662,32 @@
     "email": {
       "id": "EMAIL-0064",
       "received_at": "2026-09-22T10:40:00+02:00",
-      "from": "payments.desk1@example.test",
+      "from": "accounts.payable1@example.test",
       "subject": "Supplier payment report 64",
-      "body": "A CH customer reports that a supplier payment through E-Banking web was submitted twice; code PAY-208 in production. Reference CASE-0064."
+      "body": "The CH Accounts Payable Platform was submitted twice a supplier payment; code PAY-208 in production. Reference CASE-0064."
     },
     "ticket": {
       "id": "TCK-0064",
       "email_id": "EMAIL-0064",
       "received_at": "2026-09-22T10:40:00+02:00",
-      "raw_email": "A CH customer reports that a supplier payment through E-Banking web was submitted twice; code PAY-208 in production. Reference CASE-0064.",
-      "summary": "User reports a duplicate payment to a supplier through E-Banking.",
+      "raw_email": "The CH Accounts Payable Platform was submitted twice a supplier payment; code PAY-208 in production. Reference CASE-0064.",
+      "summary": "Accounts Payable reports a duplicate payment to a supplier.",
       "ontology_values": {
-        "actor_ids": [
-          "actor:user",
-          "actor:supplier"
-        ],
+        "actor_ids": [],
         "platform_ids": [
-          "platform:e_banking"
+          "platform:accounts_payable"
         ],
         "server_ids": [],
         "supplier_ids": [
           "actor:supplier"
         ],
         "edge_ids": [
-          "edge:user_pays_supplier"
+          "edge:accounts_payable_pays_supplier"
         ],
         "relationship_types": [
           "PAYS"
         ],
-        "primary_affected_node_id": "platform:e_banking",
+        "primary_affected_node_id": "platform:accounts_payable",
         "symptom": "duplicate_payment",
         "region": "CH",
         "channel": "web",
@@ -3701,9 +3698,8 @@
       "extraction": {
         "confidence": 0.95,
         "evidence": [
-          "customer",
+          "Accounts Payable Platform",
           "supplier payment",
-          "E-Banking",
           "PAY-208"
         ]
       }
@@ -3713,35 +3709,32 @@
     "email": {
       "id": "EMAIL-0065",
       "received_at": "2026-09-22T10:43:00+02:00",
-      "from": "payments.desk2@example.test",
+      "from": "accounts.payable2@example.test",
       "subject": "Supplier payment report 65",
-      "body": "A CH customer reports that a supplier payment through E-Banking web failed; code PAY-503 in production. Reference CASE-0065."
+      "body": "The CH Accounts Payable Platform failed a supplier payment; code PAY-503 in production. Reference CASE-0065."
     },
     "ticket": {
       "id": "TCK-0065",
       "email_id": "EMAIL-0065",
       "received_at": "2026-09-22T10:43:00+02:00",
-      "raw_email": "A CH customer reports that a supplier payment through E-Banking web failed; code PAY-503 in production. Reference CASE-0065.",
-      "summary": "User reports a payment failure to a supplier through E-Banking.",
+      "raw_email": "The CH Accounts Payable Platform failed a supplier payment; code PAY-503 in production. Reference CASE-0065.",
+      "summary": "Accounts Payable reports a payment failure to a supplier.",
       "ontology_values": {
-        "actor_ids": [
-          "actor:user",
-          "actor:supplier"
-        ],
+        "actor_ids": [],
         "platform_ids": [
-          "platform:e_banking"
+          "platform:accounts_payable"
         ],
         "server_ids": [],
         "supplier_ids": [
           "actor:supplier"
         ],
         "edge_ids": [
-          "edge:user_pays_supplier"
+          "edge:accounts_payable_pays_supplier"
         ],
         "relationship_types": [
           "PAYS"
         ],
-        "primary_affected_node_id": "platform:e_banking",
+        "primary_affected_node_id": "platform:accounts_payable",
         "symptom": "payment_failure",
         "region": "CH",
         "channel": "web",
@@ -3752,9 +3745,8 @@
       "extraction": {
         "confidence": 0.95,
         "evidence": [
-          "customer",
+          "Accounts Payable Platform",
           "supplier payment",
-          "E-Banking",
           "PAY-503"
         ]
       }
@@ -3764,35 +3756,32 @@
     "email": {
       "id": "EMAIL-0066",
       "received_at": "2026-09-22T10:46:00+02:00",
-      "from": "payments.desk3@example.test",
+      "from": "accounts.payable3@example.test",
       "subject": "Supplier payment report 66",
-      "body": "A CH customer reports that a supplier payment through E-Banking web was submitted twice; code PAY-208 in production. Reference CASE-0066."
+      "body": "The CH Accounts Payable Platform was submitted twice a supplier payment; code PAY-208 in production. Reference CASE-0066."
     },
     "ticket": {
       "id": "TCK-0066",
       "email_id": "EMAIL-0066",
       "received_at": "2026-09-22T10:46:00+02:00",
-      "raw_email": "A CH customer reports that a supplier payment through E-Banking web was submitted twice; code PAY-208 in production. Reference CASE-0066.",
-      "summary": "User reports a duplicate payment to a supplier through E-Banking.",
+      "raw_email": "The CH Accounts Payable Platform was submitted twice a supplier payment; code PAY-208 in production. Reference CASE-0066.",
+      "summary": "Accounts Payable reports a duplicate payment to a supplier.",
       "ontology_values": {
-        "actor_ids": [
-          "actor:user",
-          "actor:supplier"
-        ],
+        "actor_ids": [],
         "platform_ids": [
-          "platform:e_banking"
+          "platform:accounts_payable"
         ],
         "server_ids": [],
         "supplier_ids": [
           "actor:supplier"
         ],
         "edge_ids": [
-          "edge:user_pays_supplier"
+          "edge:accounts_payable_pays_supplier"
         ],
         "relationship_types": [
           "PAYS"
         ],
-        "primary_affected_node_id": "platform:e_banking",
+        "primary_affected_node_id": "platform:accounts_payable",
         "symptom": "duplicate_payment",
         "region": "CH",
         "channel": "web",
@@ -3803,9 +3792,8 @@
       "extraction": {
         "confidence": 0.95,
         "evidence": [
-          "customer",
+          "Accounts Payable Platform",
           "supplier payment",
-          "E-Banking",
           "PAY-208"
         ]
       }
@@ -3815,35 +3803,32 @@
     "email": {
       "id": "EMAIL-0067",
       "received_at": "2026-09-22T10:49:00+02:00",
-      "from": "payments.desk4@example.test",
+      "from": "accounts.payable4@example.test",
       "subject": "Supplier payment report 67",
-      "body": "A CH customer reports that a supplier payment through E-Banking web failed; code PAY-503 in production. Reference CASE-0067."
+      "body": "The CH Accounts Payable Platform failed a supplier payment; code PAY-503 in production. Reference CASE-0067."
     },
     "ticket": {
       "id": "TCK-0067",
       "email_id": "EMAIL-0067",
       "received_at": "2026-09-22T10:49:00+02:00",
-      "raw_email": "A CH customer reports that a supplier payment through E-Banking web failed; code PAY-503 in production. Reference CASE-0067.",
-      "summary": "User reports a payment failure to a supplier through E-Banking.",
+      "raw_email": "The CH Accounts Payable Platform failed a supplier payment; code PAY-503 in production. Reference CASE-0067.",
+      "summary": "Accounts Payable reports a payment failure to a supplier.",
       "ontology_values": {
-        "actor_ids": [
-          "actor:user",
-          "actor:supplier"
-        ],
+        "actor_ids": [],
         "platform_ids": [
-          "platform:e_banking"
+          "platform:accounts_payable"
         ],
         "server_ids": [],
         "supplier_ids": [
           "actor:supplier"
         ],
         "edge_ids": [
-          "edge:user_pays_supplier"
+          "edge:accounts_payable_pays_supplier"
         ],
         "relationship_types": [
           "PAYS"
         ],
-        "primary_affected_node_id": "platform:e_banking",
+        "primary_affected_node_id": "platform:accounts_payable",
         "symptom": "payment_failure",
         "region": "CH",
         "channel": "web",
@@ -3854,9 +3839,8 @@
       "extraction": {
         "confidence": 0.95,
         "evidence": [
-          "customer",
+          "Accounts Payable Platform",
           "supplier payment",
-          "E-Banking",
           "PAY-503"
         ]
       }
@@ -3866,35 +3850,32 @@
     "email": {
       "id": "EMAIL-0068",
       "received_at": "2026-09-22T10:52:00+02:00",
-      "from": "payments.desk5@example.test",
+      "from": "accounts.payable5@example.test",
       "subject": "Supplier payment report 68",
-      "body": "A CH customer reports that a supplier payment through E-Banking web was submitted twice; code PAY-208 in production. Reference CASE-0068."
+      "body": "The CH Accounts Payable Platform was submitted twice a supplier payment; code PAY-208 in production. Reference CASE-0068."
     },
     "ticket": {
       "id": "TCK-0068",
       "email_id": "EMAIL-0068",
       "received_at": "2026-09-22T10:52:00+02:00",
-      "raw_email": "A CH customer reports that a supplier payment through E-Banking web was submitted twice; code PAY-208 in production. Reference CASE-0068.",
-      "summary": "User reports a duplicate payment to a supplier through E-Banking.",
+      "raw_email": "The CH Accounts Payable Platform was submitted twice a supplier payment; code PAY-208 in production. Reference CASE-0068.",
+      "summary": "Accounts Payable reports a duplicate payment to a supplier.",
       "ontology_values": {
-        "actor_ids": [
-          "actor:user",
-          "actor:supplier"
-        ],
+        "actor_ids": [],
         "platform_ids": [
-          "platform:e_banking"
+          "platform:accounts_payable"
         ],
         "server_ids": [],
         "supplier_ids": [
           "actor:supplier"
         ],
         "edge_ids": [
-          "edge:user_pays_supplier"
+          "edge:accounts_payable_pays_supplier"
         ],
         "relationship_types": [
           "PAYS"
         ],
-        "primary_affected_node_id": "platform:e_banking",
+        "primary_affected_node_id": "platform:accounts_payable",
         "symptom": "duplicate_payment",
         "region": "CH",
         "channel": "web",
@@ -3905,9 +3886,8 @@
       "extraction": {
         "confidence": 0.95,
         "evidence": [
-          "customer",
+          "Accounts Payable Platform",
           "supplier payment",
-          "E-Banking",
           "PAY-208"
         ]
       }
@@ -3966,35 +3946,32 @@
     "email": {
       "id": "EMAIL-0069",
       "received_at": "2026-09-22T10:55:00+02:00",
-      "from": "payments.desk1@example.test",
+      "from": "accounts.payable1@example.test",
       "subject": "Supplier payment report 69",
-      "body": "A CH customer reports that a supplier payment through E-Banking web failed; code PAY-503 in production. Reference CASE-0069."
+      "body": "The CH Accounts Payable Platform failed a supplier payment; code PAY-503 in production. Reference CASE-0069."
     },
     "ticket": {
       "id": "TCK-0069",
       "email_id": "EMAIL-0069",
       "received_at": "2026-09-22T10:55:00+02:00",
-      "raw_email": "A CH customer reports that a supplier payment through E-Banking web failed; code PAY-503 in production. Reference CASE-0069.",
-      "summary": "User reports a payment failure to a supplier through E-Banking.",
+      "raw_email": "The CH Accounts Payable Platform failed a supplier payment; code PAY-503 in production. Reference CASE-0069.",
+      "summary": "Accounts Payable reports a payment failure to a supplier.",
       "ontology_values": {
-        "actor_ids": [
-          "actor:user",
-          "actor:supplier"
-        ],
+        "actor_ids": [],
         "platform_ids": [
-          "platform:e_banking"
+          "platform:accounts_payable"
         ],
         "server_ids": [],
         "supplier_ids": [
           "actor:supplier"
         ],
         "edge_ids": [
-          "edge:user_pays_supplier"
+          "edge:accounts_payable_pays_supplier"
         ],
         "relationship_types": [
           "PAYS"
         ],
-        "primary_affected_node_id": "platform:e_banking",
+        "primary_affected_node_id": "platform:accounts_payable",
         "symptom": "payment_failure",
         "region": "CH",
         "channel": "web",
@@ -4005,9 +3982,8 @@
       "extraction": {
         "confidence": 0.95,
         "evidence": [
-          "customer",
+          "Accounts Payable Platform",
           "supplier payment",
-          "E-Banking",
           "PAY-503"
         ]
       }
@@ -4017,35 +3993,32 @@
     "email": {
       "id": "EMAIL-0070",
       "received_at": "2026-09-22T10:58:00+02:00",
-      "from": "payments.desk2@example.test",
+      "from": "accounts.payable2@example.test",
       "subject": "Supplier payment report 70",
-      "body": "A CH customer reports that a supplier payment through E-Banking web was submitted twice; code PAY-208 in production. Reference CASE-0070."
+      "body": "The CH Accounts Payable Platform was submitted twice a supplier payment; code PAY-208 in production. Reference CASE-0070."
     },
     "ticket": {
       "id": "TCK-0070",
       "email_id": "EMAIL-0070",
       "received_at": "2026-09-22T10:58:00+02:00",
-      "raw_email": "A CH customer reports that a supplier payment through E-Banking web was submitted twice; code PAY-208 in production. Reference CASE-0070.",
-      "summary": "User reports a duplicate payment to a supplier through E-Banking.",
+      "raw_email": "The CH Accounts Payable Platform was submitted twice a supplier payment; code PAY-208 in production. Reference CASE-0070.",
+      "summary": "Accounts Payable reports a duplicate payment to a supplier.",
       "ontology_values": {
-        "actor_ids": [
-          "actor:user",
-          "actor:supplier"
-        ],
+        "actor_ids": [],
         "platform_ids": [
-          "platform:e_banking"
+          "platform:accounts_payable"
         ],
         "server_ids": [],
         "supplier_ids": [
           "actor:supplier"
         ],
         "edge_ids": [
-          "edge:user_pays_supplier"
+          "edge:accounts_payable_pays_supplier"
         ],
         "relationship_types": [
           "PAYS"
         ],
-        "primary_affected_node_id": "platform:e_banking",
+        "primary_affected_node_id": "platform:accounts_payable",
         "symptom": "duplicate_payment",
         "region": "CH",
         "channel": "web",
@@ -4056,9 +4029,8 @@
       "extraction": {
         "confidence": 0.95,
         "evidence": [
-          "customer",
+          "Accounts Payable Platform",
           "supplier payment",
-          "E-Banking",
           "PAY-208"
         ]
       }
@@ -4068,35 +4040,32 @@
     "email": {
       "id": "EMAIL-0071",
       "received_at": "2026-09-22T11:01:00+02:00",
-      "from": "payments.desk3@example.test",
+      "from": "accounts.payable3@example.test",
       "subject": "Supplier payment report 71",
-      "body": "A CH customer reports that a supplier payment through E-Banking web failed; code PAY-503 in production. Reference CASE-0071."
+      "body": "The CH Accounts Payable Platform failed a supplier payment; code PAY-503 in production. Reference CASE-0071."
     },
     "ticket": {
       "id": "TCK-0071",
       "email_id": "EMAIL-0071",
       "received_at": "2026-09-22T11:01:00+02:00",
-      "raw_email": "A CH customer reports that a supplier payment through E-Banking web failed; code PAY-503 in production. Reference CASE-0071.",
-      "summary": "User reports a payment failure to a supplier through E-Banking.",
+      "raw_email": "The CH Accounts Payable Platform failed a supplier payment; code PAY-503 in production. Reference CASE-0071.",
+      "summary": "Accounts Payable reports a payment failure to a supplier.",
       "ontology_values": {
-        "actor_ids": [
-          "actor:user",
-          "actor:supplier"
-        ],
+        "actor_ids": [],
         "platform_ids": [
-          "platform:e_banking"
+          "platform:accounts_payable"
         ],
         "server_ids": [],
         "supplier_ids": [
           "actor:supplier"
         ],
         "edge_ids": [
-          "edge:user_pays_supplier"
+          "edge:accounts_payable_pays_supplier"
         ],
         "relationship_types": [
           "PAYS"
         ],
-        "primary_affected_node_id": "platform:e_banking",
+        "primary_affected_node_id": "platform:accounts_payable",
         "symptom": "payment_failure",
         "region": "CH",
         "channel": "web",
@@ -4107,9 +4076,8 @@
       "extraction": {
         "confidence": 0.95,
         "evidence": [
-          "customer",
+          "Accounts Payable Platform",
           "supplier payment",
-          "E-Banking",
           "PAY-503"
         ]
       }
@@ -4119,35 +4087,32 @@
     "email": {
       "id": "EMAIL-0072",
       "received_at": "2026-09-22T11:04:00+02:00",
-      "from": "payments.desk4@example.test",
+      "from": "accounts.payable4@example.test",
       "subject": "Supplier payment report 72",
-      "body": "A CH customer reports that a supplier payment through E-Banking web was submitted twice; code PAY-208 in production. Reference CASE-0072."
+      "body": "The CH Accounts Payable Platform was submitted twice a supplier payment; code PAY-208 in production. Reference CASE-0072."
     },
     "ticket": {
       "id": "TCK-0072",
       "email_id": "EMAIL-0072",
       "received_at": "2026-09-22T11:04:00+02:00",
-      "raw_email": "A CH customer reports that a supplier payment through E-Banking web was submitted twice; code PAY-208 in production. Reference CASE-0072.",
-      "summary": "User reports a duplicate payment to a supplier through E-Banking.",
+      "raw_email": "The CH Accounts Payable Platform was submitted twice a supplier payment; code PAY-208 in production. Reference CASE-0072.",
+      "summary": "Accounts Payable reports a duplicate payment to a supplier.",
       "ontology_values": {
-        "actor_ids": [
-          "actor:user",
-          "actor:supplier"
-        ],
+        "actor_ids": [],
         "platform_ids": [
-          "platform:e_banking"
+          "platform:accounts_payable"
         ],
         "server_ids": [],
         "supplier_ids": [
           "actor:supplier"
         ],
         "edge_ids": [
-          "edge:user_pays_supplier"
+          "edge:accounts_payable_pays_supplier"
         ],
         "relationship_types": [
           "PAYS"
         ],
-        "primary_affected_node_id": "platform:e_banking",
+        "primary_affected_node_id": "platform:accounts_payable",
         "symptom": "duplicate_payment",
         "region": "CH",
         "channel": "web",
@@ -4158,9 +4123,8 @@
       "extraction": {
         "confidence": 0.95,
         "evidence": [
-          "customer",
+          "Accounts Payable Platform",
           "supplier payment",
-          "E-Banking",
           "PAY-208"
         ]
       }
@@ -4170,35 +4134,32 @@
     "email": {
       "id": "EMAIL-0073",
       "received_at": "2026-09-22T11:07:00+02:00",
-      "from": "payments.desk5@example.test",
+      "from": "accounts.payable5@example.test",
       "subject": "Supplier payment report 73",
-      "body": "A CH customer reports that a supplier payment through E-Banking web failed; code PAY-503 in production. Reference CASE-0073."
+      "body": "The CH Accounts Payable Platform failed a supplier payment; code PAY-503 in production. Reference CASE-0073."
     },
     "ticket": {
       "id": "TCK-0073",
       "email_id": "EMAIL-0073",
       "received_at": "2026-09-22T11:07:00+02:00",
-      "raw_email": "A CH customer reports that a supplier payment through E-Banking web failed; code PAY-503 in production. Reference CASE-0073.",
-      "summary": "User reports a payment failure to a supplier through E-Banking.",
+      "raw_email": "The CH Accounts Payable Platform failed a supplier payment; code PAY-503 in production. Reference CASE-0073.",
+      "summary": "Accounts Payable reports a payment failure to a supplier.",
       "ontology_values": {
-        "actor_ids": [
-          "actor:user",
-          "actor:supplier"
-        ],
+        "actor_ids": [],
         "platform_ids": [
-          "platform:e_banking"
+          "platform:accounts_payable"
         ],
         "server_ids": [],
         "supplier_ids": [
           "actor:supplier"
         ],
         "edge_ids": [
-          "edge:user_pays_supplier"
+          "edge:accounts_payable_pays_supplier"
         ],
         "relationship_types": [
           "PAYS"
         ],
-        "primary_affected_node_id": "platform:e_banking",
+        "primary_affected_node_id": "platform:accounts_payable",
         "symptom": "payment_failure",
         "region": "CH",
         "channel": "web",
@@ -4209,9 +4170,8 @@
       "extraction": {
         "confidence": 0.95,
         "evidence": [
-          "customer",
+          "Accounts Payable Platform",
           "supplier payment",
-          "E-Banking",
           "PAY-503"
         ]
       }
@@ -4221,35 +4181,32 @@
     "email": {
       "id": "EMAIL-0074",
       "received_at": "2026-09-22T11:10:00+02:00",
-      "from": "payments.desk1@example.test",
+      "from": "accounts.payable1@example.test",
       "subject": "Supplier payment report 74",
-      "body": "A CH customer reports that a supplier payment through E-Banking web was submitted twice; code PAY-208 in production. Reference CASE-0074."
+      "body": "The CH Accounts Payable Platform was submitted twice a supplier payment; code PAY-208 in production. Reference CASE-0074."
     },
     "ticket": {
       "id": "TCK-0074",
       "email_id": "EMAIL-0074",
       "received_at": "2026-09-22T11:10:00+02:00",
-      "raw_email": "A CH customer reports that a supplier payment through E-Banking web was submitted twice; code PAY-208 in production. Reference CASE-0074.",
-      "summary": "User reports a duplicate payment to a supplier through E-Banking.",
+      "raw_email": "The CH Accounts Payable Platform was submitted twice a supplier payment; code PAY-208 in production. Reference CASE-0074.",
+      "summary": "Accounts Payable reports a duplicate payment to a supplier.",
       "ontology_values": {
-        "actor_ids": [
-          "actor:user",
-          "actor:supplier"
-        ],
+        "actor_ids": [],
         "platform_ids": [
-          "platform:e_banking"
+          "platform:accounts_payable"
         ],
         "server_ids": [],
         "supplier_ids": [
           "actor:supplier"
         ],
         "edge_ids": [
-          "edge:user_pays_supplier"
+          "edge:accounts_payable_pays_supplier"
         ],
         "relationship_types": [
           "PAYS"
         ],
-        "primary_affected_node_id": "platform:e_banking",
+        "primary_affected_node_id": "platform:accounts_payable",
         "symptom": "duplicate_payment",
         "region": "CH",
         "channel": "web",
@@ -4260,9 +4217,8 @@
       "extraction": {
         "confidence": 0.95,
         "evidence": [
-          "customer",
+          "Accounts Payable Platform",
           "supplier payment",
-          "E-Banking",
           "PAY-208"
         ]
       }
@@ -4272,35 +4228,32 @@
     "email": {
       "id": "EMAIL-0075",
       "received_at": "2026-09-22T11:13:00+02:00",
-      "from": "payments.desk2@example.test",
+      "from": "accounts.payable2@example.test",
       "subject": "Supplier payment report 75",
-      "body": "A CH customer reports that a supplier payment through E-Banking web failed; code PAY-503 in production. Reference CASE-0075."
+      "body": "The CH Accounts Payable Platform failed a supplier payment; code PAY-503 in production. Reference CASE-0075."
     },
     "ticket": {
       "id": "TCK-0075",
       "email_id": "EMAIL-0075",
       "received_at": "2026-09-22T11:13:00+02:00",
-      "raw_email": "A CH customer reports that a supplier payment through E-Banking web failed; code PAY-503 in production. Reference CASE-0075.",
-      "summary": "User reports a payment failure to a supplier through E-Banking.",
+      "raw_email": "The CH Accounts Payable Platform failed a supplier payment; code PAY-503 in production. Reference CASE-0075.",
+      "summary": "Accounts Payable reports a payment failure to a supplier.",
       "ontology_values": {
-        "actor_ids": [
-          "actor:user",
-          "actor:supplier"
-        ],
+        "actor_ids": [],
         "platform_ids": [
-          "platform:e_banking"
+          "platform:accounts_payable"
         ],
         "server_ids": [],
         "supplier_ids": [
           "actor:supplier"
         ],
         "edge_ids": [
-          "edge:user_pays_supplier"
+          "edge:accounts_payable_pays_supplier"
         ],
         "relationship_types": [
           "PAYS"
         ],
-        "primary_affected_node_id": "platform:e_banking",
+        "primary_affected_node_id": "platform:accounts_payable",
         "symptom": "payment_failure",
         "region": "CH",
         "channel": "web",
@@ -4311,9 +4264,8 @@
       "extraction": {
         "confidence": 0.95,
         "evidence": [
-          "customer",
+          "Accounts Payable Platform",
           "supplier payment",
-          "E-Banking",
           "PAY-503"
         ]
       }
@@ -4323,35 +4275,32 @@
     "email": {
       "id": "EMAIL-0076",
       "received_at": "2026-09-22T11:16:00+02:00",
-      "from": "payments.desk3@example.test",
+      "from": "accounts.payable3@example.test",
       "subject": "Supplier payment report 76",
-      "body": "A CH customer reports that a supplier payment through E-Banking web was submitted twice; code PAY-208 in production. Reference CASE-0076."
+      "body": "The CH Accounts Payable Platform was submitted twice a supplier payment; code PAY-208 in production. Reference CASE-0076."
     },
     "ticket": {
       "id": "TCK-0076",
       "email_id": "EMAIL-0076",
       "received_at": "2026-09-22T11:16:00+02:00",
-      "raw_email": "A CH customer reports that a supplier payment through E-Banking web was submitted twice; code PAY-208 in production. Reference CASE-0076.",
-      "summary": "User reports a duplicate payment to a supplier through E-Banking.",
+      "raw_email": "The CH Accounts Payable Platform was submitted twice a supplier payment; code PAY-208 in production. Reference CASE-0076.",
+      "summary": "Accounts Payable reports a duplicate payment to a supplier.",
       "ontology_values": {
-        "actor_ids": [
-          "actor:user",
-          "actor:supplier"
-        ],
+        "actor_ids": [],
         "platform_ids": [
-          "platform:e_banking"
+          "platform:accounts_payable"
         ],
         "server_ids": [],
         "supplier_ids": [
           "actor:supplier"
         ],
         "edge_ids": [
-          "edge:user_pays_supplier"
+          "edge:accounts_payable_pays_supplier"
         ],
         "relationship_types": [
           "PAYS"
         ],
-        "primary_affected_node_id": "platform:e_banking",
+        "primary_affected_node_id": "platform:accounts_payable",
         "symptom": "duplicate_payment",
         "region": "CH",
         "channel": "web",
@@ -4362,9 +4311,8 @@
       "extraction": {
         "confidence": 0.95,
         "evidence": [
-          "customer",
+          "Accounts Payable Platform",
           "supplier payment",
-          "E-Banking",
           "PAY-208"
         ]
       }
@@ -4423,35 +4371,32 @@
     "email": {
       "id": "EMAIL-0077",
       "received_at": "2026-09-22T11:19:00+02:00",
-      "from": "payments.desk4@example.test",
+      "from": "accounts.payable4@example.test",
       "subject": "Supplier payment report 77",
-      "body": "A CH customer reports that a supplier payment through E-Banking web failed; code PAY-503 in production. Reference CASE-0077."
+      "body": "The CH Accounts Payable Platform failed a supplier payment; code PAY-503 in production. Reference CASE-0077."
     },
     "ticket": {
       "id": "TCK-0077",
       "email_id": "EMAIL-0077",
       "received_at": "2026-09-22T11:19:00+02:00",
-      "raw_email": "A CH customer reports that a supplier payment through E-Banking web failed; code PAY-503 in production. Reference CASE-0077.",
-      "summary": "User reports a payment failure to a supplier through E-Banking.",
+      "raw_email": "The CH Accounts Payable Platform failed a supplier payment; code PAY-503 in production. Reference CASE-0077.",
+      "summary": "Accounts Payable reports a payment failure to a supplier.",
       "ontology_values": {
-        "actor_ids": [
-          "actor:user",
-          "actor:supplier"
-        ],
+        "actor_ids": [],
         "platform_ids": [
-          "platform:e_banking"
+          "platform:accounts_payable"
         ],
         "server_ids": [],
         "supplier_ids": [
           "actor:supplier"
         ],
         "edge_ids": [
-          "edge:user_pays_supplier"
+          "edge:accounts_payable_pays_supplier"
         ],
         "relationship_types": [
           "PAYS"
         ],
-        "primary_affected_node_id": "platform:e_banking",
+        "primary_affected_node_id": "platform:accounts_payable",
         "symptom": "payment_failure",
         "region": "CH",
         "channel": "web",
@@ -4462,9 +4407,8 @@
       "extraction": {
         "confidence": 0.95,
         "evidence": [
-          "customer",
+          "Accounts Payable Platform",
           "supplier payment",
-          "E-Banking",
           "PAY-503"
         ]
       }
@@ -4474,35 +4418,32 @@
     "email": {
       "id": "EMAIL-0078",
       "received_at": "2026-09-22T11:22:00+02:00",
-      "from": "payments.desk5@example.test",
+      "from": "accounts.payable5@example.test",
       "subject": "Supplier payment report 78",
-      "body": "A CH customer reports that a supplier payment through E-Banking web was submitted twice; code PAY-208 in production. Reference CASE-0078."
+      "body": "The CH Accounts Payable Platform was submitted twice a supplier payment; code PAY-208 in production. Reference CASE-0078."
     },
     "ticket": {
       "id": "TCK-0078",
       "email_id": "EMAIL-0078",
       "received_at": "2026-09-22T11:22:00+02:00",
-      "raw_email": "A CH customer reports that a supplier payment through E-Banking web was submitted twice; code PAY-208 in production. Reference CASE-0078.",
-      "summary": "User reports a duplicate payment to a supplier through E-Banking.",
+      "raw_email": "The CH Accounts Payable Platform was submitted twice a supplier payment; code PAY-208 in production. Reference CASE-0078.",
+      "summary": "Accounts Payable reports a duplicate payment to a supplier.",
       "ontology_values": {
-        "actor_ids": [
-          "actor:user",
-          "actor:supplier"
-        ],
+        "actor_ids": [],
         "platform_ids": [
-          "platform:e_banking"
+          "platform:accounts_payable"
         ],
         "server_ids": [],
         "supplier_ids": [
           "actor:supplier"
         ],
         "edge_ids": [
-          "edge:user_pays_supplier"
+          "edge:accounts_payable_pays_supplier"
         ],
         "relationship_types": [
           "PAYS"
         ],
-        "primary_affected_node_id": "platform:e_banking",
+        "primary_affected_node_id": "platform:accounts_payable",
         "symptom": "duplicate_payment",
         "region": "CH",
         "channel": "web",
@@ -4513,9 +4454,8 @@
       "extraction": {
         "confidence": 0.95,
         "evidence": [
-          "customer",
+          "Accounts Payable Platform",
           "supplier payment",
-          "E-Banking",
           "PAY-208"
         ]
       }

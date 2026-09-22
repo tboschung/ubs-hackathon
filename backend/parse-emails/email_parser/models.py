@@ -7,13 +7,13 @@ from datetime import datetime
 from typing import Any
 
 ACTOR_IDS = ("actor:user", "actor:employee", "actor:supplier")
-PLATFORM_IDS = ("platform:e_banking", "platform:hr", "platform:crm")
+PLATFORM_IDS = ("platform:e_banking", "platform:hr", "platform:crm", "platform:accounts_payable")
 SERVER_IDS = ("server:ebanking_primary",)
 SUPPLIER_IDS = ("actor:supplier",)
-EDGE_IDS = ("edge:user_login_ebanking", "edge:employee_login_hr", "edge:employee_login_crm", "edge:user_pays_supplier", "edge:ebanking_depends_on_server", "edge:server_provided_by_supplier")
+EDGE_IDS = ("edge:user_login_ebanking", "edge:employee_login_hr", "edge:employee_login_crm", "edge:employee_login_accounts_payable", "edge:accounts_payable_pays_supplier", "edge:ebanking_depends_on_server", "edge:server_provided_by_supplier")
 RELATIONSHIP_TYPES = ("LOGS_INTO", "PAYS", "VIA", "DEPENDS_ON", "PROVIDED_BY", "OPERATED_BY")
 NODE_IDS = ACTOR_IDS + PLATFORM_IDS + SERVER_IDS
-SYMPTOMS = ("login_failure", "timeout", "duplicate_payment", "server_unreachable", "unknown")
+SYMPTOMS = ("login_failure", "timeout", "duplicate_payment", "payment_failure", "server_unreachable", "unknown")
 REGIONS = ("CH", "EMEA", "APAC", "unknown")
 CHANNELS = ("mobile_ios", "mobile_android", "web", "api", "unknown")
 ENVIRONMENTS = ("production", "test", "unknown")

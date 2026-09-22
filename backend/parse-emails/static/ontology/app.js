@@ -1,510 +1,190 @@
-const graphContainer = document.querySelector('#cy');
-const loadingView = document.querySelector('#graph-loading');
-const errorView = document.querySelector('#graph-error');
-const errorDetail = document.querySelector('#graph-error-detail');
-const details = document.querySelector('#details-content');
-const entityCount = document.querySelector('#entity-count');
-const relationshipCount = document.querySelector('#relationship-count');
-const jumpSelect = document.querySelector('#element-jump');
-const fitButton = document.querySelector('#fit-graph');
-const resetButton = document.querySelector('#reset-graph');
-
-const NODE_TYPES = new Set(['actor', 'platform', 'server']);
-const RELATIONSHIP_TYPES = new Set(['LOGS_INTO', 'PAYS', 'VIA', 'DEPENDS_ON', 'PROVIDED_BY', 'OPERATED_BY']);
-
-const TYPE_DESCRIPTIONS = {
-  actor: 'A person or external party that interacts with a platform or another actor.',
-  platform: 'A business-facing technology system represented in the operating model.',
-  server: 'Infrastructure required by a platform and potentially provided by a supplier.',
+const $ = (s) => document.querySelector(s);
+const ui = {
+  cy: $('#cy'), loading: $('#graph-loading'), error: $('#graph-error'), errorText: $('#graph-error-detail'), details: $('#details-content'),
+  entities: $('#entity-count'), relations: $('#relationship-count'), jump: $('#element-jump'), fit: $('#fit-graph'), resetGraph: $('#reset-graph'),
+  status: $('#simulation-status'), clock: $('#simulation-clock'), processed: $('#processed-count'), total: $('#total-ticket-count'),
+  progress: $('#progress-fill'), speed: $('#speed-select'), next: $('#next-ticket'), play: $('#play-simulation'), reset: $('#reset-simulation'),
+  feedCount: $('#feed-count'), ticketList: $('#ticket-list'),
 };
-
-const RELATIONSHIP_DESCRIPTIONS = {
-  LOGS_INTO: 'The source actor authenticates to the target platform.',
-  PAYS: 'The source actor initiates a payment to the target actor.',
-  VIA: 'The interaction is performed through the target platform.',
-  DEPENDS_ON: 'The source platform requires the target infrastructure to operate.',
-  PROVIDED_BY: 'The source infrastructure asset is supplied by the target party.',
-  OPERATED_BY: 'The source infrastructure asset is actively operated by the target party.',
+const POS = {
+  'actor:user': {x: 90, y: 130}, 'actor:employee': {x: 90, y: 430}, 'platform:e_banking': {x: 360, y: 130},
+  'platform:hr': {x: 360, y: 350}, 'platform:crm': {x: 360, y: 500}, 'platform:accounts_payable': {x: 650, y: 445},
+  'server:ebanking_primary': {x: 640, y: 130}, 'actor:supplier': {x: 900, y: 285},
 };
+const WINDOW_MINUTES = 30;
+const WATCH = 10, CRITICAL = 20, WINDOW_MS = WINDOW_MINUTES * 60 * 1000;
+let cy, ontology, tickets = [], cursor = 0, timer = null, clusters = new Map(), recent = [];
 
-const PRESET_POSITIONS = {
-  'actor:user': {x: 100, y: 145},
-  'actor:employee': {x: 100, y: 430},
-  'platform:e_banking': {x: 380, y: 145},
-  'platform:hr': {x: 385, y: 365},
-  'platform:crm': {x: 385, y: 505},
-  'server:ebanking_primary': {x: 655, y: 145},
-  'actor:supplier': {x: 900, y: 275},
-};
+init();
 
-let graph = null;
-let ontology = null;
-
-initialize();
-
-async function initialize() {
+async function init() {
   try {
-    if (typeof window.cytoscape !== 'function') {
-      throw new Error('The local graph library could not be loaded.');
-    }
-
-    const response = await fetch('ontology.json', {cache: 'no-store'});
-    if (!response.ok) {
-      throw new Error(`Ontology request failed with status ${response.status}.`);
-    }
-
-    const value = await response.json();
-    validateOntology(value);
-    ontology = value;
-    graph = createGraph(value);
-    populateJumpSelect(value);
-    renderOverview(value);
-    entityCount.textContent = String(value.nodes.length);
-    relationshipCount.textContent = String(value.edges.length);
-    setControlsEnabled(true);
-    loadingView.hidden = true;
-
-    requestAnimationFrame(() => fitGraph());
-  } catch (cause) {
-    showError(cause instanceof Error ? cause.message : 'The graph data could not be loaded.');
-  }
+    const [or, tr] = await Promise.all([fetch('ontology.json', {cache: 'no-store'}), fetch('/api/simulation/tickets', {cache: 'no-store'})]);
+    if (!or.ok || !tr.ok) throw new Error('Could not load the demo data.');
+    ontology = await or.json(); tickets = (await tr.json()).tickets || [];
+    cy = makeGraph(); populateJump();
+    ui.entities.textContent = ontology.nodes.length; ui.relations.textContent = ontology.edges.length; ui.total.textContent = tickets.length;
+    [ui.jump, ui.fit, ui.resetGraph, ui.next, ui.play, ui.reset].forEach((x) => x.disabled = false);
+    resetSimulation(); ui.loading.hidden = true; requestAnimationFrame(fitGraph);
+  } catch (e) { ui.loading.hidden = true; ui.error.hidden = false; ui.errorText.textContent = e.message; }
 }
 
-function validateOntology(value) {
-  if (!value || typeof value !== 'object' || !Array.isArray(value.nodes) || !Array.isArray(value.edges)) {
-    throw new Error('Ontology data must contain node and edge arrays.');
-  }
-
-  const nodeIds = new Set();
-  for (const node of value.nodes) {
-    if (!node || typeof node.id !== 'string' || typeof node.label !== 'string' || !NODE_TYPES.has(node.type)) {
-      throw new Error('Ontology data contains an invalid node.');
-    }
-    if (!Array.isArray(node.aliases)) {
-      throw new Error(`Node ${node.id} must contain an aliases array.`);
-    }
-    if (nodeIds.has(node.id)) {
-      throw new Error(`Duplicate node ID: ${node.id}`);
-    }
-    nodeIds.add(node.id);
-  }
-
-  const elementIds = new Set(nodeIds);
-  for (const edge of value.edges) {
-    if (!edge || typeof edge.id !== 'string' || typeof edge.source !== 'string' || typeof edge.target !== 'string') {
-      throw new Error('Ontology data contains an invalid relationship.');
-    }
-    if (!RELATIONSHIP_TYPES.has(edge.relationship)) {
-      throw new Error(`Unknown relationship type: ${edge.relationship}`);
-    }
-    if (!nodeIds.has(edge.source) || !nodeIds.has(edge.target)) {
-      throw new Error(`Relationship ${edge.id} references a missing node.`);
-    }
-    if (elementIds.has(edge.id)) {
-      throw new Error(`Duplicate element ID: ${edge.id}`);
-    }
-    elementIds.add(edge.id);
-  }
-}
-
-function createGraph(value) {
+function makeGraph() {
   const elements = [
-    ...value.nodes.map((node, index) => ({
-      data: {
-        ...node,
-        runtimeState: 'unknown',
-      },
-      position: PRESET_POSITIONS[node.id] || {x: 160 + index * 110, y: 280},
-    })),
-    ...value.edges.map((edge) => ({
-      data: {
-        ...edge,
-        displayLabel: humanize(edge.relationship),
-      },
-    })),
+    ...ontology.nodes.map((x) => ({data: {...x, ticketCount: 0}, position: POS[x.id]})),
+    ...ontology.edges.map((x) => ({data: {...x, displayLabel: humanize(x.relationship), ticketCount: 0}})),
   ];
-
-  const cy = window.cytoscape({
-    container: graphContainer,
-    elements,
-    layout: {name: 'preset', fit: true, padding: 65},
-    minZoom: 0.45,
-    maxZoom: 2.1,
-    wheelSensitivity: 0.22,
-    boxSelectionEnabled: false,
-    selectionType: 'single',
-    style: graphStyles(),
-  });
-
-  cy.on('tap', 'node, edge', (event) => {
-    selectElement(event.target);
-  });
-
-  cy.on('tap', (event) => {
-    if (event.target === cy) {
-      clearSelection();
-    }
-  });
-
-  if (typeof ResizeObserver === 'function') {
-    const observer = new ResizeObserver(() => cy.resize());
-    observer.observe(graphContainer);
-  }
-
-  return cy;
+  const graph = cytoscape({container: ui.cy, elements, layout: {name: 'preset'}, minZoom: .45, maxZoom: 2, wheelSensitivity: .22,
+    boxSelectionEnabled: false, style: graphStyles()});
+  graph.on('tap', 'node, edge', (e) => selectElement(e.target));
+  graph.on('tap', (e) => { if (e.target === graph) showOverview(); });
+  return graph;
 }
 
 function graphStyles() {
-  return [
-    {
-      selector: 'node',
-      style: {
-        width: 84,
-        height: 84,
-        'background-color': '#1768e5',
-        'border-width': 3,
-        'border-color': '#ffffff',
-        'font-family': 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
-        'font-size': 12,
-        'font-weight': 700,
-        color: '#142238',
-        label: 'data(label)',
-        'text-wrap': 'wrap',
-        'text-max-width': 112,
-        'text-valign': 'bottom',
-        'text-margin-y': 12,
-        'overlay-opacity': 0,
-        'shadow-blur': 14,
-        'shadow-color': '#142238',
-        'shadow-opacity': 0.13,
-        'shadow-offset-y': 4,
-      },
-    },
-    {
-      selector: 'node[type = "platform"]',
-      style: {
-        shape: 'round-rectangle',
-        width: 118,
-        height: 68,
-        'background-color': '#65758b',
-      },
-    },
-    {
-      selector: 'node[type = "server"]',
-      style: {
-        shape: 'hexagon',
-        width: 108,
-        height: 82,
-        'background-color': '#7257d5',
-      },
-    },
-    {
-      selector: 'edge',
-      style: {
-        width: 2,
-        'curve-style': 'bezier',
-        'line-color': '#aebac7',
-        'target-arrow-color': '#7e8da0',
-        'target-arrow-shape': 'triangle',
-        'arrow-scale': 0.9,
-        label: 'data(displayLabel)',
-        color: '#536275',
-        'font-family': 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
-        'font-size': 9,
-        'font-weight': 700,
-        'text-background-color': '#fbfcfd',
-        'text-background-opacity': 0.95,
-        'text-background-padding': 4,
-        'text-rotation': 'autorotate',
-        'overlay-opacity': 0,
-      },
-    },
-    {
-      selector: 'node:selected',
-      style: {
-        'border-width': 5,
-        'border-color': '#142238',
-      },
-    },
-    {
-      selector: 'edge:selected',
-      style: {
-        'line-color': '#1768e5',
-        'target-arrow-color': '#1768e5',
-        width: 4,
-      },
-    },
-    {
-      selector: '.dimmed',
-      style: {
-        opacity: 0.17,
-      },
-    },
-    {
-      selector: 'node[runtimeState = "watch"]',
-      style: {
-        'border-color': '#f59e0b',
-        'border-width': 6,
-      },
-    },
-    {
-      selector: 'node[runtimeState = "critical"], node[runtimeState = "down"], .direct-impact',
-      style: {
-        'border-color': '#b42318',
-        'border-width': 7,
-        'line-color': '#b42318',
-        'target-arrow-color': '#b42318',
-      },
-    },
-    {
-      selector: '.propagated-impact',
-      style: {
-        'border-color': '#d97706',
-        'border-width': 6,
-        'line-color': '#d97706',
-        'target-arrow-color': '#d97706',
-      },
-    },
+  const out = [
+    {selector: 'node', style: {width: 84, height: 84, 'background-color': '#a8b1bc', 'border-width': 3, 'border-color': '#fff',
+      label: 'data(label)', color: '#142238', 'font-size': 12, 'font-weight': 700, 'text-wrap': 'wrap', 'text-max-width': 115,
+      'text-valign': 'bottom', 'text-margin-y': 12, 'overlay-opacity': 0, 'shadow-blur': 12, 'shadow-opacity': .12}},
+    {selector: 'node[type="platform"]', style: {shape: 'round-rectangle', width: 122, height: 70}},
+    {selector: 'node[type="server"]', style: {shape: 'hexagon', width: 108, height: 82}},
+    {selector: 'edge', style: {width: 3, 'curve-style': 'bezier', 'line-color': '#a8b1bc', 'target-arrow-color': '#a8b1bc',
+      'target-arrow-shape': 'triangle', label: 'data(displayLabel)', color: '#536275', 'font-size': 9, 'font-weight': 700,
+      'text-background-color': '#fbfcfd', 'text-background-opacity': .95, 'text-background-padding': 4, 'text-rotation': 'autorotate', 'overlay-opacity': 0}},
+    {selector: '.dimmed', style: {opacity: .15}},
+    {selector: 'node:selected', style: {'border-width': 6, 'border-color': '#142238'}},
+    {selector: 'edge:selected', style: {width: 6}},
   ];
-}
-
-function populateJumpSelect(value) {
-  const nodeGroup = document.createElement('optgroup');
-  nodeGroup.label = 'Entities';
-  for (const node of [...value.nodes].sort((a, b) => a.label.localeCompare(b.label))) {
-    nodeGroup.append(createOption(node.id, node.label));
-  }
-
-  const edgeGroup = document.createElement('optgroup');
-  edgeGroup.label = 'Relationships';
-  for (const edge of value.edges) {
-    const source = nodeById(edge.source);
-    const target = nodeById(edge.target);
-    edgeGroup.append(createOption(edge.id, `${source.label} → ${target.label} — ${humanize(edge.relationship)}`));
-  }
-
-  jumpSelect.append(nodeGroup, edgeGroup);
-}
-
-function createOption(value, label) {
-  const option = document.createElement('option');
-  option.value = value;
-  option.textContent = label;
-  return option;
-}
-
-function selectElement(element) {
-  if (!graph || !element || element.empty()) return;
-
-  graph.elements().unselect().addClass('dimmed');
-  element.select();
-  const focus = element.isNode()
-    ? element.closedNeighborhood()
-    : element.add(element.connectedNodes());
-  focus.removeClass('dimmed');
-
-  jumpSelect.value = element.id();
-  if (element.isNode()) {
-    renderNodeDetails(element.data());
-  } else {
-    renderEdgeDetails(element.data());
-  }
-}
-
-function clearSelection() {
-  if (!graph || !ontology) return;
-  graph.elements().unselect().removeClass('dimmed');
-  jumpSelect.value = '';
-  renderOverview(ontology);
-}
-
-function fitGraph() {
-  if (!graph) return;
-  graph.resize();
-  graph.fit(graph.elements(), 65);
-}
-
-function resetGraph() {
-  if (!graph) return;
-  graph.batch(() => {
-    graph.nodes().forEach((node) => {
-      const position = PRESET_POSITIONS[node.id()];
-      if (position) node.position(position);
-    });
+  const levels = [
+    ['[ticketCount > 0][ticketCount < 5]','#fde68a'],
+    ['[ticketCount >= 5][ticketCount < 10]','#facc15'],
+    ['[ticketCount >= 10][ticketCount < 15]','#f59e0b'],
+    ['[ticketCount >= 15][ticketCount < 20]','#ea580c'],
+    ['[ticketCount >= 20]','#991b1b'],
+  ];
+  levels.forEach(([q,color], i) => {
+    out.push({selector: `node${q}`, style: {'background-color': color}});
+    out.push({selector: `edge${q}`, style: {'line-color': color, 'target-arrow-color': color, width: 3 + i * .45}});
   });
-  clearSelection();
-  fitGraph();
+  out.push({selector: '.cluster-critical', style: {'background-color': '#7f1d1d', 'line-color': '#7f1d1d',
+    'target-arrow-color': '#7f1d1d', 'border-color': '#450a0a', 'border-width': 7, width: 7}});
+  return out;
 }
 
-function renderOverview(value) {
-  const counts = value.nodes.reduce((result, node) => {
-    result[node.type] = (result[node.type] || 0) + 1;
-    return result;
-  }, {});
-
-  const container = element('div', 'detail-intro');
-  container.append(
-    element('p', 'detail-kicker', 'Ontology overview'),
-    element('h2', '', 'Explore the operating graph'),
-    element('p', 'detail-description', 'Select an entity or relationship to inspect its ontology values and connected dependencies.'),
-  );
-
-  const grid = element('div', 'overview-grid');
-  grid.append(
-    overviewCard(counts.actor || 0, 'Actors'),
-    overviewCard(counts.platform || 0, 'Platforms'),
-    overviewCard(counts.server || 0, 'Servers'),
-    overviewCard(value.edges.length, 'Relations'),
-  );
-  container.append(grid);
-  container.append(element('p', 'detail-hint', 'Tip: select a node to isolate its immediate neighborhood, then choose a connected relationship for more detail.'));
-  details.replaceChildren(container);
-}
-
-function renderNodeDetails(node) {
-  const container = document.createDocumentFragment();
-  container.append(
-    badge(node.type, node.type),
-    element('p', 'detail-kicker', 'Entity details'),
-    element('h2', '', node.label),
-    element('p', 'detail-description', TYPE_DESCRIPTIONS[node.type]),
-  );
-
-  const list = element('dl', 'detail-list');
-  list.append(detailRow('Stable ID', node.id));
-  list.append(detailRow('Aliases', node.aliases.length ? node.aliases.join(', ') : 'None'));
-  if (node.type === 'server') {
-    const status = element('span', 'status-unobserved', 'No live state observed');
-    list.append(detailRow('Operational state', status));
+function processNext() {
+  if (cursor >= tickets.length) return stop('Replay complete');
+  const ticket = tickets[cursor++], v = ticket.ontology_values;
+  const ids = [...new Set([...(v.actor_ids||[]), ...(v.platform_ids||[]), ...(v.server_ids||[]), ...(v.supplier_ids||[]), ...(v.edge_ids||[])])];
+  const key = clusterKey(ticket);
+  if (key && v.symptom !== 'unknown') {
+    const cluster = clusters.get(key) || {key, tickets: [], peakTickets: [], peakCount: 0, status: 'normal', affected: new Set()};
+    cluster.tickets.push(ticket); ids.forEach((id) => cluster.affected.add(id)); clusters.set(key, cluster);
   }
-  container.append(list);
-
-  const connected = ontology.edges.filter((edge) => edge.source === node.id || edge.target === node.id);
-  const relationSection = element('section', 'relation-section');
-  relationSection.append(element('h3', '', `Connected relationships (${connected.length})`));
-  const buttons = element('div', 'relation-buttons');
-  for (const edge of connected) {
-    const outgoing = edge.source === node.id;
-    const otherNode = nodeById(outgoing ? edge.target : edge.source);
-    const direction = outgoing ? `To ${otherNode.label}` : `From ${otherNode.label}`;
-    const button = element('button', 'relation-button');
-    button.type = 'button';
-    button.append(
-      element('strong', '', humanize(edge.relationship)),
-      element('span', '', direction),
-    );
-    button.addEventListener('click', () => selectById(edge.id, true));
-    buttons.append(button);
-  }
-  relationSection.append(buttons);
-  container.append(relationSection);
-  details.replaceChildren(container);
+  recent.unshift(ticket); recent = recent.slice(0, 5);
+  const hit = refreshClusters(new Date(ticket.received_at));
+  renderProgress(ticket); renderFeed(); if (hit) renderCluster(hit);
+  if (cursor >= tickets.length) stop('Replay complete');
 }
 
-function renderEdgeDetails(edge) {
-  const source = nodeById(edge.source);
-  const target = nodeById(edge.target);
-  const container = document.createDocumentFragment();
-  container.append(
-    badge('relationship', humanize(edge.relationship)),
-    element('p', 'detail-kicker', 'Relationship details'),
-    element('h2', '', `${source.label} → ${target.label}`),
-    element('p', 'detail-description', RELATIONSHIP_DESCRIPTIONS[edge.relationship] || 'A directed relationship in the operating ontology.'),
-  );
+function clusterKey(t) {
+  const v = t.ontology_values; if (!v.primary_affected_node_id) return null;
+  return [v.primary_affected_node_id, (v.relationship_types||[])[0]||'NONE', v.symptom, v.channel, v.error_code||'NONE'].join('|');
+}
 
-  const list = element('dl', 'detail-list');
-  list.append(
-    detailRow('Stable ID', edge.id),
-    detailRow('Source', source.label),
-    detailRow('Target', target.label),
-    detailRow('Relationship', humanize(edge.relationship)),
-  );
-
-  const metadataEntries = Object.entries(edge.metadata || {});
-  if (metadataEntries.length) {
-    const chips = element('div', 'metadata-list');
-    for (const [key, value] of metadataEntries) {
-      chips.append(element('span', 'metadata-chip', `${humanize(key)}: ${value}`));
+function refreshClusters(now) {
+  let hit = null; cy.elements().removeClass('cluster-critical');
+  clusters.forEach((c) => {
+    c.windowTickets = c.tickets.filter((t) => now - new Date(t.received_at) <= WINDOW_MS);
+    if (c.windowTickets.length > c.peakCount) {
+      c.peakCount = c.windowTickets.length;
+      c.peakTickets = [...c.windowTickets];
     }
-    list.append(detailRow('Metadata', chips));
-  }
-
-  container.append(list);
-  details.replaceChildren(container);
+    const before = c.status; c.status = c.peakCount >= CRITICAL ? 'critical' : c.peakCount >= WATCH ? 'watch' : 'normal';
+    if (c.status === 'critical') { c.affected.forEach((id) => cy.getElementById(id).addClass('cluster-critical')); if (before !== 'critical') hit = c; }
+  });
+  cy.batch(() => {
+    cy.elements().forEach((x) => x.data('ticketCount', 0));
+    clusters.forEach((c) => c.affected.forEach((id) => {
+      const x = cy.getElementById(id);
+      if (!x.empty()) x.data('ticketCount', Math.max(+x.data('ticketCount'), c.peakCount));
+    }));
+  });
+  return hit;
 }
 
-function selectById(id, center = false) {
-  if (!graph) return;
-  const selected = graph.getElementById(id);
-  if (selected.empty()) return;
-  selectElement(selected);
-  if (center) graph.center(selected);
+function renderProgress(ticket) {
+  const count = [...clusters.values()].filter((c) => c.status === 'critical').length;
+  ui.processed.textContent = cursor; ui.progress.style.width = `${cursor / tickets.length * 100}%`;
+  ui.clock.textContent = new Date(ticket.received_at).toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'});
+  ui.status.textContent = count ? `${count} critical cluster${count === 1 ? '' : 's'} detected` : 'Monitoring ticket stream';
+  $('.status-dot').classList.toggle('critical', Boolean(count));
 }
 
-function detailRow(term, value) {
-  const row = element('div', 'detail-row');
-  row.append(element('dt', '', term));
-  const description = element('dd');
-  if (value instanceof Node) {
-    description.append(value);
-  } else {
-    description.textContent = value;
-  }
-  row.append(description);
-  return row;
+function renderFeed() {
+  ui.feedCount.textContent = `${cursor} processed`;
+  ui.ticketList.replaceChildren(...recent.map((t) => {
+    const card = el('article','ticket-card'), v = t.ontology_values, tags = el('div','ticket-tags');
+    tags.append(el('span','ticket-tag',humanize(v.symptom)), el('span','ticket-tag',v.error_code||'No code'));
+    card.append(el('span','ticket-time',new Date(t.received_at).toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'})), tags,
+      el('strong','',t.id), el('p','',t.summary)); return card;
+  }));
 }
 
-function overviewCard(value, label) {
-  const card = element('div', 'overview-card');
-  card.append(element('strong', '', String(value)), element('span', '', label));
-  return card;
+function renderCluster(c) {
+  const sample = c.peakTickets.at(-1) || c.tickets.at(-1), v = sample.ontology_values, count = c.peakCount;
+  let title = `${humanize(v.symptom)} on ${nodeLabel(v.primary_affected_node_id)}`;
+  let cause = `The shared ${humanize(v.channel)} channel and ${v.error_code||'symptom'} signature indicate one recurring operational fault.`;
+  let fix = 'Assign the cluster to the platform owner, compare the first failure with recent changes, and validate recovery with a canary test.';
+  if (v.error_code === 'A17') { title = 'Mobile iOS login regression after release 6.4.0'; cause = 'A17 failures concentrate on iOS immediately after mobile-6.4.0, indicating incompatible authentication or session handling.'; fix = 'Pause the rollout, compare authentication requests with 6.3.0, then roll back affected iOS clients.'; }
+  if (v.error_code === 'INFRA-001') { title = 'Primary E-Banking server is unreachable'; cause = 'Repeated health-check timeouts point to srv-eb-01 or its supplier-provided connectivity—not isolated user error.'; fix = 'Isolate srv-eb-01, shift traffic to healthy capacity, and engage the infrastructure supplier.'; }
+  const p = el('div','critical-panel');
+  p.append(el('span','critical-badge','Critical cluster'), el('p','detail-kicker','AI risk insight'), el('h2','',title),
+    el('p','cluster-metric',`${count} matching tickets in ${WINDOW_MINUTES} minutes · threshold ${CRITICAL}`),
+    insight('Identified issue', `${sample.summary} The pattern repeats across ${count} model-normalized tickets.`),
+    insight('Potential root cause',cause), insight('Suggested fix',fix));
+  const button = el('button','fix-button','Apply suggested fix'); button.type = 'button';
+  p.append(button, el('p','demo-note','Demo action only — no change will be made.')); ui.details.replaceChildren(p);
 }
 
-function badge(className, label) {
-  return element('span', `type-badge ${className}`, label);
+function insight(title, text) { const x = el('section','insight'); x.append(el('h3','',title),el('p','',text)); return x; }
+
+function selectElement(target) {
+  cy.elements().unselect().addClass('dimmed'); target.select();
+  (target.isNode() ? target.closedNeighborhood() : target.add(target.connectedNodes())).removeClass('dimmed'); ui.jump.value = target.id();
+  const c = [...clusters.values()].filter((x) => x.status === 'critical' && x.affected.has(target.id())).sort((a,b) => b.windowTickets.length-a.windowTickets.length)[0];
+  if (c) return renderCluster(c);
+  const d = target.data(), p = el('div','detail-intro');
+  p.append(el('p','detail-kicker',target.isNode()?'Entity details':'Relationship details'),
+    el('h2','',target.isNode()?d.label:`${nodeLabel(d.source)} → ${nodeLabel(d.target)}`),
+    el('p','detail-description',`${d.ticketCount} processed ticket${d.ticketCount===1?'':'s'} tagged this ontology value.`)); ui.details.replaceChildren(p);
 }
 
-function element(tag, className = '', text = '') {
-  const value = document.createElement(tag);
-  if (className) value.className = className;
-  if (text) value.textContent = text;
-  return value;
+function showOverview() {
+  if (!cy) return; cy.elements().unselect().removeClass('dimmed'); ui.jump.value = '';
+  const count = [...clusters.values()].filter((c) => c.status === 'critical').length, p = el('div','detail-intro');
+  p.append(el('p','detail-kicker','Live ontology'),el('h2','','Ticket intelligence simulation'),
+    el('p','detail-description','Press Play to replay model-1 tickets. Repeated ontology tags build intensity from grey through yellow and orange to red.'));
+  if (count) p.append(el('p','detail-hint',`${count} critical cluster detected. Select a red entity or relationship to inspect it.`)); ui.details.replaceChildren(p);
 }
 
-function nodeById(id) {
-  return ontology.nodes.find((node) => node.id === id);
+function populateJump() {
+  ontology.nodes.forEach((n) => ui.jump.append(new Option(n.label,n.id)));
+  ontology.edges.forEach((e) => ui.jump.append(new Option(`${nodeLabel(e.source)} → ${nodeLabel(e.target)}`,e.id)));
 }
-
-function humanize(value) {
-  return String(value)
-    .toLowerCase()
-    .replaceAll('_', ' ')
-    .replace(/\b\w/g, (letter) => letter.toUpperCase());
+function play() { if (timer) return pause(); ui.play.textContent='Pause'; const tick=()=>{ processNext(); if(cursor<tickets.length&&ui.play.textContent==='Pause') timer=setTimeout(tick,700/+ui.speed.value); }; timer=setTimeout(tick,80); }
+function pause() { clearTimeout(timer); timer=null; ui.play.textContent='Play'; }
+function stop(label) { pause(); ui.status.textContent=label; }
+function resetSimulation() {
+  pause(); cursor=0; clusters=new Map(); recent=[];
+  if(cy) cy.elements().forEach((x)=>{x.data('ticketCount',0);x.removeClass('cluster-critical dimmed');});
+  ui.processed.textContent='0';ui.progress.style.width='0%';ui.status.textContent='Simulation ready';ui.clock.textContent='Waiting for first ticket';ui.feedCount.textContent='No tickets yet';
+  ui.ticketList.replaceChildren(el('p','ticket-empty','Press Play to begin the timestamped replay.')); showOverview();
 }
+function fitGraph(){if(cy){cy.resize();cy.fit(cy.elements(),60);}}
+function nodeLabel(id){return ontology.nodes.find((n)=>n.id===id)?.label||id;}
+function humanize(v){return String(v).replaceAll('_',' ').replace(/\b\w/g,(c)=>c.toUpperCase());}
+function el(tag,className='',text=''){const x=document.createElement(tag);x.className=className;x.textContent=text;return x;}
 
-function setControlsEnabled(enabled) {
-  jumpSelect.disabled = !enabled;
-  fitButton.disabled = !enabled;
-  resetButton.disabled = !enabled;
-}
-
-function showError(message) {
-  loadingView.hidden = true;
-  errorDetail.textContent = message;
-  errorView.hidden = false;
-  setControlsEnabled(false);
-  details.replaceChildren();
-}
-
-jumpSelect.addEventListener('change', () => {
-  if (jumpSelect.value) {
-    selectById(jumpSelect.value, true);
-  } else {
-    clearSelection();
-  }
-});
-
-fitButton.addEventListener('click', fitGraph);
-resetButton.addEventListener('click', () => {
-  resetGraph();
-});
+ui.play.addEventListener('click',play); ui.next.addEventListener('click',()=>{pause();processNext();}); ui.reset.addEventListener('click',resetSimulation);
+ui.fit.addEventListener('click',fitGraph); ui.resetGraph.addEventListener('click',()=>{cy.nodes().forEach((n)=>n.position(POS[n.id()]));fitGraph();showOverview();});
+ui.jump.addEventListener('change',()=>ui.jump.value?selectElement(cy.getElementById(ui.jump.value)):showOverview());
