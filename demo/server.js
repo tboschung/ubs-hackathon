@@ -33,107 +33,6 @@ let seq = 4817;
 const newId = () => `INC-${new Date().getFullYear()}-${++seq}`;
 
 /* ------------------------------------------------------------------ *
- *  Dashboard integration
- *
- *  The Ticket Intelligence dashboard consumes tickets in its own
- *  contract, tagged with stable ontology IDs. We map our service-desk
- *  categories onto those IDs with plain rules.
- * ------------------------------------------------------------------ */
-const CATEGORY_ONTOLOGY = {
-  'Login & Authentication — e-banking':
-    { node_ids: ['actor:user', 'platform:e_banking'],      edge_ids: ['edge:user_login_ebanking'],        symptoms: ['login_failure'] },
-  'Login & Authentication — Mobile Banking':
-    { node_ids: ['actor:user', 'platform:e_banking'],      edge_ids: ['edge:user_login_ebanking'],        symptoms: ['login_failure'] },
-  'E-banking — Account overview':
-    { node_ids: ['actor:user', 'platform:e_banking'],      edge_ids: ['edge:user_login_ebanking'],        symptoms: ['display_error'] },
-  'E-banking — Payments & transfers':
-    { node_ids: ['actor:user', 'actor:supplier'],          edge_ids: ['edge:user_pays_supplier'],         symptoms: ['payment_failure'] },
-  'E-banking — QR-bill scanning':
-    { node_ids: ['actor:user', 'platform:e_banking'],      edge_ids: [],                                  symptoms: ['payment_failure'] },
-  'E-banking — Statements & documents':
-    { node_ids: ['actor:user', 'platform:e_banking'],      edge_ids: [],                                  symptoms: ['document_unavailable'] },
-  'Mobile App — Push notifications':
-    { node_ids: ['actor:user', 'platform:e_banking'],      edge_ids: [],                                  symptoms: ['notification_failure'] },
-  'UBS TWINT integration':
-    { node_ids: ['actor:user', 'actor:supplier'],          edge_ids: ['edge:user_pays_supplier'],         symptoms: ['payment_failure'] },
-  'Credit card portal':
-    { node_ids: ['actor:user', 'platform:e_banking'],      edge_ids: [],                                  symptoms: ['card_issue'] },
-  'Card blocking / replacement':
-    { node_ids: ['actor:user', 'platform:e_banking'],      edge_ids: [],                                  symptoms: ['card_issue'] },
-  'SEPA / SIC payment rails':
-    { node_ids: ['actor:user', 'actor:supplier'],          edge_ids: ['edge:user_pays_supplier'],         symptoms: ['payment_failure'] },
-  'Standing orders':
-    { node_ids: ['actor:user', 'actor:supplier'],          edge_ids: ['edge:user_pays_supplier'],         symptoms: ['payment_failure'] },
-  'Trading platform — order entry':
-    { node_ids: ['actor:user', 'platform:e_banking'],      edge_ids: [],                                  symptoms: ['order_failure'] },
-  'Custody account reporting':
-    { node_ids: ['actor:user', 'platform:e_banking'],      edge_ids: [],                                  symptoms: ['document_unavailable'] },
-  'Market data feed':
-    { node_ids: ['platform:e_banking', 'server:ebanking_primary'], edge_ids: ['edge:ebanking_depends_on_server'], symptoms: ['data_stale'] },
-  'Client advisor CRM':
-    { node_ids: ['actor:employee', 'platform:crm'],        edge_ids: ['edge:employee_login_crm'],         symptoms: ['login_failure'] },
-  'KYC / onboarding workflow':
-    { node_ids: ['actor:employee', 'platform:crm'],        edge_ids: ['edge:employee_login_crm'],         symptoms: ['workflow_blocked'] },
-  'Compliance reporting tool':
-    { node_ids: ['actor:employee', 'platform:crm'],        edge_ids: [],                                  symptoms: ['document_unavailable'] },
-  'Internal SSO / Active Directory':
-    { node_ids: ['actor:employee', 'platform:hr'],         edge_ids: ['edge:employee_login_hr'],          symptoms: ['login_failure'] },
-  'Branch terminal software':
-    { node_ids: ['actor:employee', 'server:ebanking_primary'], edge_ids: ['edge:ebanking_depends_on_server'], symptoms: ['terminal_failure'] }
-};
-
-// Always present, so the dashboard can be built against this endpoint
-// without anyone having to use the demo first.
-const SEED_TICKET = {
-  id: 'TCK-4001',
-  occurred_at: '2026-09-22T09:14:00+02:00',
-  title: 'Cannot log in to e-banking',
-  description: "Clicking Login shows 'Something went wrong. Please try again later.' " +
-               'Contract number and password are correct. Happens on every attempt.',
-  source: 'service_desk',
-  source_severity: 'medium',
-  status: 'awaiting_approval',
-  context: {
-    region: 'CH',
-    channel: 'web',
-    environment: 'production',
-    error_code: 'AUTH_JS_TYPEERROR',
-    release_id: 'ebanking-web-2026.09'
-  },
-  ontology_tags: {
-    node_ids: ['actor:user', 'platform:e_banking'],
-    edge_ids: ['edge:user_login_ebanking'],
-    symptoms: ['login_failure'],
-    tagging_method: 'rules',
-    confidence: 0.96
-  }
-};
-
-// Our internal ticket -> the dashboard's contract.
-function toContract(t) {
-  const tags = CATEGORY_ONTOLOGY[t.category];
-  return {
-    id: t.id,
-    occurred_at: t.createdAt,
-    title: t.summary || t.description.split('\n')[0].slice(0, 120) || t.category,
-    description: t.description || t.summary,
-    source: 'service_desk',
-    source_severity: 'medium',
-    status: t.status,
-    context: {
-      region: 'CH',
-      channel: 'web',
-      environment: 'production',
-      error_code: null,
-      release_id: 'ebanking-web-2026.09'
-    },
-    ontology_tags: tags
-      ? { ...tags, tagging_method: 'rules', confidence: 0.96 }
-      : { node_ids: [], edge_ids: [], symptoms: ['unknown'], tagging_method: 'rules', confidence: 0.3 }
-  };
-}
-
-/* ------------------------------------------------------------------ *
  *  Diff (LCS over lines)
  * ------------------------------------------------------------------ */
 function diffLines(before, after) {
@@ -270,7 +169,6 @@ async function runAgent(ticket) {
 
   fs.writeFileSync(TARGET, result.fixed_html, 'utf8');
   ticket.status = 'resolved';
-  ticket.diagnosis = result.diagnosis;
   console.log(`  ✓ ${ticket.id} resolved in ${((Date.now() - t0) / 1000).toFixed(1)}s — public/login.html patched\n`);
 }
 
@@ -280,14 +178,6 @@ async function runAgent(ticket) {
 const TYPES = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8',
                 '.css': 'text/css; charset=utf-8', '.svg': 'image/svg+xml',
                 '.png': 'image/png', '.jpg': 'image/jpeg', '.ico': 'image/x-icon' };
-
-// The dashboard runs on another localhost port, so its browser calls are
-// cross-origin. Without this they fail silently.
-const CORS = {
-  'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-  'Access-Control-Allow-Headers': 'Content-Type'
-};
 
 function readBody(req) {
   return new Promise((resolve) => {
@@ -302,11 +192,6 @@ const server = http.createServer(async (req, res) => {
   const p = url.pathname;
 
   // --- API ---------------------------------------------------------
-  if (req.method === 'OPTIONS') {           // CORS preflight
-    res.writeHead(204, CORS);
-    return res.end();
-  }
-
   if (p === '/api/tickets' && req.method === 'POST') {
     const body = await readBody(req);
     const ticket = {
@@ -314,58 +199,23 @@ const server = http.createServer(async (req, res) => {
       category: body.category || 'Unclassified',
       summary: body.summary || '',
       description: body.description || '',
-      status: 'awaiting_approval',
+      status: 'open',
       createdAt: new Date().toISOString()
     };
     tickets.set(ticket.id, ticket);
 
     console.log(`\n  [ticket] ${ticket.id}  ${ticket.category}`);
     if (ticket.summary) console.log(`           "${ticket.summary}"`);
-    console.log('           ⏸ waiting for dashboard approval');
-    console.log(`           curl -X POST localhost:${PORT}/api/tickets/${ticket.id}/approve`);
 
-    // The repair does NOT start here — it waits for /approve.
-    res.writeHead(201, { 'Content-Type': 'application/json', ...CORS });
+    // Acknowledge immediately, then repair in the background.
+    res.writeHead(201, { 'Content-Type': 'application/json' });
     res.end(JSON.stringify(ticket));
-    return;
-  }
 
-  // Dashboard reads the ticket feed in its own contract.
-  if (p === '/api/tickets' && req.method === 'GET') {
-    const feed = [SEED_TICKET, ...[...tickets.values()].map(toContract)];
-    res.writeHead(200, { 'Content-Type': 'application/json', 'Cache-Control': 'no-store', ...CORS });
-    return res.end(JSON.stringify(feed, null, 2));
-  }
-
-  // Dashboard releases the agent. GET is allowed too, so the gate can be
-  // tripped from a browser address bar if anything goes wrong on stage.
-  const approve = /^\/api\/tickets\/([\w-]+)\/approve$/.exec(p);
-  if (approve && (req.method === 'POST' || req.method === 'GET')) {
-    const ticket = tickets.get(approve[1]);
-    const json = (code, body) => {
-      res.writeHead(code, { 'Content-Type': 'application/json', ...CORS });
-      res.end(JSON.stringify(body));
-    };
-
-    if (!ticket) return json(404, { error: 'unknown ticket', id: approve[1] });
-    if (ticket.status !== 'awaiting_approval')
-      return json(409, { error: 'already approved', id: ticket.id, status: ticket.status });
-
-    ticket.status = 'in_progress';
-    console.log(`\n  [approved] ${ticket.id} — released by dashboard`);
-
-    const repair = runAgent(ticket).catch((err) => {
+    runAgent(ticket).catch((err) => {
       ticket.status = 'failed';
       console.error(`  ✕ ${ticket.id} failed:`, err.message || err);
     });
-
-    // Default: answer at once and let the dashboard poll the feed.
-    if (url.searchParams.get('wait') !== '1')
-      return json(202, { id: ticket.id, status: 'in_progress' });
-
-    // ?wait=1: hold the connection until the repair finishes.
-    await repair;
-    return json(200, { id: ticket.id, status: ticket.status, diagnosis: ticket.diagnosis || null });
+    return;
   }
 
   // --- static ------------------------------------------------------
@@ -390,8 +240,6 @@ server.listen(PORT, () => {
   console.log('  ─────────────────────────────────────────────');
   console.log(`  Login page    →  http://localhost:${PORT}/login.html`);
   console.log(`  Service desk  →  http://localhost:${PORT}/ticket.html`);
-  console.log(`  Ticket feed   →  http://localhost:${PORT}/api/tickets`);
-  console.log(`  Approve       →  POST http://localhost:${PORT}/api/tickets/{id}/approve`);
   console.log(`  Model         →  ${MODEL}  ${API_KEY ? '(key loaded)' : '(NO KEY — will use snapshot fallback)'}`);
   console.log('');
   console.log('  Break public/login.html by hand, then file a ticket.');
