@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UBS e-banking</title>
+<style>
+  :root { --ubs-red:#EC0016; --ink:#111; --muted:#6b6b6b; --line:#e2e2e2; --bg:#f4f4f4; }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family:"Helvetica Neue",Helvetica,Arial,sans-serif; background:var(--bg); color:var(--ink); }
+  header { background:#fff; border-bottom:1px solid var(--line); padding:14px 24px; display:flex; align-items:center; gap:14px; }
+  .logo { height:30px; width:auto; display:block; }
+  nav { margin-left:32px; display:flex; gap:26px; font-size:14px; font-weight:700; }
+  nav span { padding-bottom:4px; cursor:pointer; color:var(--muted); }
+  nav span.active { color:var(--ink); border-bottom:3px solid var(--ubs-red); }
+  .user { margin-left:auto; display:flex; align-items:center; gap:12px; font-size:13px; }
+  .avatar { width:32px; height:32px; border-radius:50%; background:var(--ubs-red); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:13px; }
+  .logout { color:var(--ubs-red); text-decoration:none; font-weight:700; }
+  .wrap { max-width:1080px; margin:0 auto; padding:28px 20px 60px; }
+  h1 { font-size:26px; margin:0 0 4px; }
+  .hello { color:var(--muted); font-size:14px; margin:0 0 26px; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:16px; margin-bottom:28px; }
+  .card { background:#fff; border:1px solid var(--line); padding:20px; }
+  .card .label { font-size:12px; color:var(--muted); text-transform:uppercase; letter-spacing:.06em; }
+  .card .iban { font-size:12px; color:var(--muted); margin-top:2px; }
+  .card .amount { font-size:26px; font-weight:700; margin-top:12px; }
+  .card .amount small { font-size:14px; color:var(--muted); font-weight:400; }
+  .delta { font-size:12px; margin-top:6px; }
+  .up { color:#0a7a28; } .down { color:var(--ubs-red); }
+  .cols { display:grid; grid-template-columns:2fr 1fr; gap:16px; }
+  @media (max-width:820px){ .cols { grid-template-columns:1fr; } }
+  h2 { font-size:16px; margin:0 0 14px; }
+  table { width:100%; border-collapse:collapse; font-size:14px; }
+  th { text-align:left; font-size:12px; color:var(--muted); text-transform:uppercase; letter-spacing:.05em; padding-bottom:10px; border-bottom:1px solid var(--line); }
+  td { padding:12px 0; border-bottom:1px solid #f0f0f0; }
+  td.num { text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap; }
+  .neg { color:var(--ubs-red); } .pos { color:#0a7a28; }
+  .tag { display:inline-block; font-size:11px; padding:2px 7px; background:#f0f0f0; color:var(--muted); margin-left:8px; }
+  .action { display:block; width:100%; text-align:left; padding:13px 14px; margin-bottom:9px; background:#fff; border:1px solid var(--line); font-size:14px; font-weight:700; cursor:pointer; font-family:inherit; }
+  .action:hover { border-color:var(--ubs-red); color:var(--ubs-red); }
+  .notice { background:#fff; border-left:4px solid var(--ubs-red); padding:14px 16px; font-size:13px; margin-bottom:22px; }
+  footer { text-align:center; font-size:12px; color:var(--muted); padding:24px; }
+</style>
+</head>
+<body>
+
+<header>
+  <img src="/ubs_logo.png" alt="UBS" class="logo">
+  <nav>
+    <span class="active">Accounts</span>
+    <span>Payments</span>
+    <span>Cards</span>
+    <span>Investments</span>
+    <span>Pension</span>
+  </nav>
+  <div class="user">
+    <div class="avatar">FC</div>
+    <span>F. Caldas</span>
+    <a class="logout" href="/login.html">Log out</a>
+  </div>
+</header>
+
+<div class="wrap">
+  <h1>Good afternoon, Francisco</h1>
+  <p class="hello">Last login: 22 September 2026, 15:02 CET &middot; Zurich</p>
+
+  <div class="notice">
+    <strong>Scheduled maintenance:</strong> e-banking will be unavailable on Sunday 27 September, 02:00&ndash;04:00 CET.
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <div class="label">Personal Account</div>
+      <div class="iban">CH93 0076 2011 6238 5295 7</div>
+      <div class="amount">CHF 24&#8239;815.40</div>
+      <div class="delta up">+ CHF 1&#8239;240.00 this month</div>
+    </div>
+    <div class="card">
+      <div class="label">Savings Account</div>
+      <div class="iban">CH56 0483 5012 3456 7800 9</div>
+      <div class="amount">CHF 112&#8239;300.00</div>
+      <div class="delta up">+ 0.75% p.a.</div>
+    </div>
+    <div class="card">
+      <div class="label">UBS Credit Card</div>
+      <div class="iban">**** **** **** 4417</div>
+      <div class="amount">CHF &minus;1&#8239;842.15</div>
+      <div class="delta down">Due 30 September 2026</div>
+    </div>
+    <div class="card">
+      <div class="label">Custody Account</div>
+      <div class="iban">Portfolio 7741-02</div>
+      <div class="amount">CHF 86&#8239;450.22</div>
+      <div class="delta up">+2.4% YTD</div>
+    </div>
+  </div>
+
+  <div class="cols">
+    <div class="card">
+      <h2>Recent transactions</h2>
+      <table>
+        <thead>
+          <tr><th>Date</th><th>Description</th><th class="num">Amount (CHF)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>22.09.2026</td><td>SBB Mobile <span class="tag">Travel</span></td><td class="num neg">&minus;74.00</td></tr>
+          <tr><td>21.09.2026</td><td>Coop Zürich HB <span class="tag">Groceries</span></td><td class="num neg">&minus;63.25</td></tr>
+          <tr><td>20.09.2026</td><td>Salary &mdash; UBS AG <span class="tag">Income</span></td><td class="num pos">+8&#8239;400.00</td></tr>
+          <tr><td>19.09.2026</td><td>Swisscom AG <span class="tag">Utilities</span></td><td class="num neg">&minus;89.90</td></tr>
+          <tr><td>18.09.2026</td><td>Standing order &mdash; Rent <span class="tag">Housing</span></td><td class="num neg">&minus;2&#8239;150.00</td></tr>
+          <tr><td>17.09.2026</td><td>Twint payment <span class="tag">Transfer</span></td><td class="num neg">&minus;45.00</td></tr>
+          <tr><td>16.09.2026</td><td>Digitec Galaxus <span class="tag">Shopping</span></td><td class="num neg">&minus;329.00</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div>
+      <div class="card" style="margin-bottom:16px;">
+        <h2>Quick actions</h2>
+        <button class="action">New payment</button>
+        <button class="action">Scan QR-bill</button>
+        <button class="action">Transfer between accounts</button>
+        <button class="action">Order statement</button>
+        <button class="action">Block card</button>
+      </div>
+      <div class="card">
+        <h2>Messages</h2>
+        <p style="font-size:13px;color:#6b6b6b;margin:0;">
+          You have <strong>2</strong> unread messages from your client advisor.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  &copy; UBS 1998 &ndash; 2026. All rights reserved. &middot; Hackathon demo environment
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UBS Service Desk</title>
+<style>
+  :root {
+    --ubs-red:#EC0016; --ink:#101010; --muted:#707070; --line:#d8d8d8;
+  }
+  * { box-sizing:border-box; }
+  html, body { height:100%; }
+  body {
+    margin:0; background:#ededed; color:var(--ink);
+    font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+    display:flex; flex-direction:column;
+  }
+
+  header {
+    background:#fff; border-bottom:1px solid var(--line);
+    padding:16px 34px; display:flex; align-items:center; gap:16px;
+  }
+  header .logo { height:32px; width:auto; display:block; }
+  .divider { width:1px; height:26px; background:var(--line); }
+  .title { font-size:14px; font-weight:700; color:#4a4a4a; }
+
+  main { flex:1; display:flex; justify-content:center; padding:44px 20px 70px; }
+  .col { width:100%; max-width:620px; }
+
+  h1 { font-size:28px; margin:0 0 8px; font-weight:700; letter-spacing:-.2px; }
+  .lead { color:var(--muted); font-size:14.5px; line-height:1.55; margin:0 0 28px; }
+
+  .panel {
+    background:#fff; border:1px solid #e3e3e3;
+    box-shadow:0 2px 14px rgba(0,0,0,.07); padding:34px 36px 30px;
+  }
+
+  label { display:block; font-size:13px; font-weight:700; margin-bottom:7px; }
+  select, textarea, input[type=text] {
+    width:100%; padding:12px 13px; font-size:14.5px; font-family:inherit;
+    color:var(--ink); background:#fff; border:1px solid #b4b4b4; margin-bottom:20px;
+  }
+  select:focus, textarea:focus, input:focus {
+    outline:none; border-color:var(--ubs-red); box-shadow:0 0 0 3px rgba(236,0,22,.12);
+  }
+  textarea { min-height:130px; resize:vertical; line-height:1.5; }
+  input::placeholder, textarea::placeholder { color:#b0b0b0; }
+
+  button.submit {
+    width:100%; padding:14px; font-size:15.5px; font-weight:700; font-family:inherit;
+    background:var(--ubs-red); color:#fff; border:none; cursor:pointer; transition:background .15s;
+  }
+  button.submit:hover { background:#c70013; }
+  button.submit:disabled { background:#bdbdbd; cursor:not-allowed; }
+
+  .err {
+    margin-top:16px; padding:13px 15px; font-size:13.5px; font-weight:700;
+    color:var(--ubs-red); background:#fdecee; border-left:3px solid var(--ubs-red);
+  }
+  .err:empty { display:none; }
+
+  /* confirmation */
+  .check {
+    width:52px; height:52px; border-radius:50%; background:#e8f6ed;
+    display:flex; align-items:center; justify-content:center; margin-bottom:20px;
+  }
+  .confirm h2 { font-size:22px; margin:0 0 10px; font-weight:700; }
+  .confirm .tid {
+    display:inline-block; font-size:13px; font-weight:700; letter-spacing:.5px;
+    background:#f2f2f2; padding:5px 11px; margin-bottom:16px;
+  }
+  .confirm p { font-size:14.5px; line-height:1.6; color:#3a3a3a; margin:0 0 22px; }
+  .meta {
+    display:flex; gap:40px; padding-top:20px; border-top:1px solid #ececec;
+    font-size:12px; color:var(--muted);
+  }
+  .meta b { display:block; color:var(--ink); font-size:14px; margin-top:4px; font-weight:700; }
+
+  footer { text-align:center; font-size:12px; color:#8a8a8a; padding:22px; }
+</style>
+</head>
+<body>
+
+<header>
+  <img src="/ubs_logo.png" alt="UBS" class="logo">
+  <div class="divider"></div>
+  <span class="title">Internal Service Desk</span>
+</header>
+
+<main>
+  <div class="col">
+    <h1>Report an incident</h1>
+    <p class="lead">
+      Tell us what went wrong and we will look into it. Please describe what you
+      did, what you expected, and what happened instead.
+    </p>
+
+    <div class="panel" id="panel">
+      <label for="category">Affected service</label>
+      <select id="category">
+        <optgroup label="Digital Channels">
+          <option>Login &amp; Authentication &mdash; e-banking</option>
+          <option>Login &amp; Authentication &mdash; Mobile Banking</option>
+          <option>E-banking &mdash; Account overview</option>
+          <option>E-banking &mdash; Payments &amp; transfers</option>
+          <option>E-banking &mdash; QR-bill scanning</option>
+          <option>E-banking &mdash; Statements &amp; documents</option>
+          <option>Mobile App &mdash; Push notifications</option>
+          <option>UBS TWINT integration</option>
+        </optgroup>
+        <optgroup label="Cards &amp; Payments">
+          <option>Credit card portal</option>
+          <option>Card blocking / replacement</option>
+          <option>SEPA / SIC payment rails</option>
+          <option>Standing orders</option>
+        </optgroup>
+        <optgroup label="Investments">
+          <option>Trading platform &mdash; order entry</option>
+          <option>Custody account reporting</option>
+          <option>Market data feed</option>
+        </optgroup>
+        <optgroup label="Internal Systems">
+          <option>Client advisor CRM</option>
+          <option>KYC / onboarding workflow</option>
+          <option>Compliance reporting tool</option>
+          <option>Internal SSO / Active Directory</option>
+          <option>Branch terminal software</option>
+        </optgroup>
+      </select>
+
+      <label for="summary">Short summary</label>
+      <input type="text" id="summary" placeholder="e.g. Login button shows an error">
+
+      <label for="description">What happened?</label>
+      <textarea id="description" placeholder="Steps to reproduce, what you expected, what you saw…"></textarea>
+
+      <button class="submit" id="submitBtn">Submit ticket</button>
+      <div class="err" id="err"></div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  &copy; UBS 1998 &ndash; 2026. All rights reserved.
+</footer>
+
+<script>
+  var params = new URLSearchParams(location.search);
+  if (params.get('source') === 'login') {
+    document.getElementById('category').value = 'Login & Authentication — e-banking';
+  }
+
+  function esc(s) {
+    return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  }
+
+  document.getElementById('submitBtn').addEventListener('click', function () {
+    var btn         = this;
+    var err         = document.getElementById('err');
+    var category    = document.getElementById('category').value;
+    var summary     = document.getElementById('summary').value.trim();
+    var description = document.getElementById('description').value.trim();
+
+    err.textContent = '';
+
+    if (!summary && !description) {
+      err.textContent = 'Please describe the problem before submitting.';
+      return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = 'Submitting…';
+
+    fetch('/api/tickets', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ category: category, summary: summary, description: description })
+    })
+    .then(function (r) { return r.json(); })
+    .then(function (ticket) {
+      document.getElementById('panel').innerHTML =
+        '<div class="confirm">' +
+          '<div class="check">' +
+            '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" ' +
+                 'stroke="#0a7a28" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">' +
+              '<path d="M4 12.5l5.5 5.5L20 7"/></svg>' +
+          '</div>' +
+          '<h2>Your ticket has been created</h2>' +
+          '<div class="tid">' + esc(ticket.id) + '</div>' +
+          '<p>Thank you for reporting this. Your report has been registered and ' +
+             'our team is working on it. You will be notified once it is resolved.</p>' +
+          '<div class="meta">' +
+            '<div>Service<b>' + esc(ticket.category) + '</b></div>' +
+          '</div>' +
+        '</div>';
+    })
+    .catch(function () {
+      btn.disabled = false;
+      btn.textContent = 'Submit ticket';
+      err.textContent = 'Could not submit the ticket. Please try again.';
+    });
+  });
+</script>
+
+</body>
+</html>
