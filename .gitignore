@@ -3,3 +3,11 @@ flake.*
 
 .direnv
 .envrc
+.DS_Store
+*.DS_Store
+/assets
+assets
+
+backend/__pycache__/
+backend/*.py[cod]
+

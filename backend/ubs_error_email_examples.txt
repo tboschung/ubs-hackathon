@@ -1,0 +1,19 @@
+EXTERNAL CUSTOMER EXAMPLES
+
+1.
+I am trying to make a payment in UBS e-banking, but after confirming it I receive an error saying that the request could not be processed. I have tried logging out and back in and using a different browser, but the issue remains. Could you please check whether there is a problem with my account or the payment service?
+
+2.
+Since this morning I have been unable to access e-banking. The authentication in the UBS Access App completes successfully, but the website then shows a technical error and returns me to the login page. Please let me know if this is a known issue or if something needs to be reset on my account.
+
+3.
+When I try to download my account statement as a PDF in e-banking, the page keeps loading and eventually shows an error message. I can view the transactions normally, but the download does not work. Could you please investigate this?
+
+
+INTERNAL EMPLOYEE EXAMPLES
+
+4.
+I am unable to open customer records in the CRM. The search works and shows the correct customer, but when I click on the profile I receive an application error and the page stays blank. This happens for several different customers and after restarting the browser.
+
+5.
+I am trying to submit my vacation request in the HR platform, but clicking the submit button results in an error and the request is not saved. I have checked that all required fields are completed and tried again after logging in again. Could you please check whether there is an issue with the leave request workflow?
