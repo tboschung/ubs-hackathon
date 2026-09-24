@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explore the operational ontology behind ticket intelligence.">
+  <title>Operational ontology</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div class="brand-lockup">
+        <span class="mark" aria-hidden="true">◎</span>
+        <div>
+          <p class="eyebrow">Risk intelligence</p>
+          <h1>Operational ontology</h1>
+          <p class="lede">Explore the actors, platforms, and infrastructure behind operational issues.</p>
+        </div>
+      </div>
+      <a class="header-link" href="/">
+        <span aria-hidden="true">←</span>
+        Email intake
+      </a>
+    </header>
+
+    <section class="summary-strip" aria-label="Ontology summary">
+      <div>
+        <span class="summary-value" id="entity-count">—</span>
+        <span class="summary-label">Entities</span>
+      </div>
+      <div>
+        <span class="summary-value" id="relationship-count">—</span>
+        <span class="summary-label">Relationships</span>
+      </div>
+      <div class="summary-status">
+        <span class="status-dot" aria-hidden="true"></span>
+        <span><strong id="simulation-status">Simulation ready</strong><small id="simulation-clock">Waiting for first ticket</small></span>
+      </div>
+    </section>
+
+    <section class="simulation-bar" aria-label="Ticket simulation controls">
+      <div class="simulation-copy">
+        <p class="eyebrow">Model 1 ticket stream</p>
+        <strong><span id="processed-count">0</span> / <span id="total-ticket-count">—</span> tickets processed</strong>
+      </div>
+      <div class="simulation-progress" aria-hidden="true"><span id="progress-fill"></span></div>
+      <div class="simulation-actions">
+        <label for="speed-select">Speed</label>
+        <select id="speed-select">
+          <option value="1">1×</option>
+          <option value="4" selected>4×</option>
+          <option value="10">10×</option>
+        </select>
+        <button type="button" id="next-ticket" disabled>Next ticket</button>
+        <button type="button" id="play-simulation" disabled>Play</button>
+        <button type="button" id="reset-simulation" class="quiet" disabled>Reset</button>
+      </div>
+    </section>
+
+    <section class="workspace" aria-label="Ontology explorer">
+      <div class="graph-column">
+        <div class="toolbar">
+          <div class="legend" aria-label="Entity type legend">
+            <span><i class="legend-signal idle" aria-hidden="true"></i>No tickets</span>
+            <span><i class="legend-signal low" aria-hidden="true"></i>Low</span>
+            <span><i class="legend-signal emerging" aria-hidden="true"></i>Emerging</span>
+            <span><i class="legend-signal critical" aria-hidden="true"></i>Critical</span>
+          </div>
+          <div class="graph-actions">
+            <label class="jump-label" for="element-jump">Jump to</label>
+            <select id="element-jump" disabled>
+              <option value="">Choose an element</option>
+            </select>
+            <button type="button" id="fit-graph" disabled>Fit graph</button>
+            <button type="button" id="reset-graph" class="quiet" disabled>Reset</button>
+          </div>
+        </div>
+
+        <div class="graph-stage">
+          <div id="cy" role="img" aria-label="Interactive graph of actors, platforms, servers, and their relationships"></div>
+          <div id="graph-loading" class="graph-message">
+            <span class="spinner" aria-hidden="true"></span>
+            <p>Loading ontology…</p>
+          </div>
+          <div id="graph-error" class="graph-message error-message" role="alert" hidden>
+            <span aria-hidden="true">!</span>
+            <h2>Ontology unavailable</h2>
+            <p id="graph-error-detail">The graph data could not be loaded.</p>
+          </div>
+        </div>
+
+        <section class="ticket-feed" aria-labelledby="ticket-feed-title">
+          <div class="ticket-feed-heading">
+            <div><p class="eyebrow">Live intake</p><h2 id="ticket-feed-title">Incoming model-1 tickets</h2></div>
+            <span id="feed-count">No tickets yet</span>
+          </div>
+          <div id="ticket-list" class="ticket-list">
+            <p class="ticket-empty">Press Play to begin the timestamped replay.</p>
+          </div>
+        </section>
+      </div>
+
+      <aside id="details" class="details" aria-live="polite" aria-atomic="true">
+        <div id="details-content"></div>
+      </aside>
+    </section>
+  </main>
+
+  <script src="vendor/cytoscape.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
