@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "source_contract": "ontology.md#6-model-pass-1-email-to-ticket-contract",
+  "source_contract": "docs/ontology.md#6-model-pass-1-email-to-ticket-contract",
   "pair_count": 100,
   "valid_pair_count": 100,
   "invalid_pair_count": 0,

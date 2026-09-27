@@ -1,0 +1,4747 @@
+[
+  {
+    "email": {
+      "id": "EMAIL-0044",
+      "received_at": "2026-09-22T08:30:00+02:00",
+      "from": "employee44@example.test",
+      "subject": "HR portal access request 44",
+      "body": "An employee in EMEA cannot log into the HR portal on the web in production and sees HR-401. Reference CASE-0044."
+    },
+    "ticket": {
+      "id": "TCK-0044",
+      "email_id": "EMAIL-0044",
+      "received_at": "2026-09-22T08:30:00+02:00",
+      "raw_email": "An employee in EMEA cannot log into the HR portal on the web in production and sees HR-401. Reference CASE-0044.",
+      "summary": "Employee cannot log into the HR Platform.",
+      "ontology_values": {
+        "actor_ids": [
+          "actor:employee"
+        ],
+        "platform_ids": [
+          "platform:hr"
+        ],
+        "server_ids": [],
+        "supplier_ids": [],
+        "edge_ids": [
+          "edge:employee_login_hr"
+        ],
+        "relationship_types": [
+          "LOGS_INTO"
+        ],
+        "primary_affected_node_id": "platform:hr",
+        "symptom": "login_failure",
+        "region": "EMEA",
+        "channel": "web",
+        "environment": "production",
+        "error_code": "HR-401",
+        "release_id": null
+      },
+      "extraction": {
+        "confidence": 0.96,
+        "evidence": [
+          "employee",
+          "log into",
+          "HR portal",
+          "web",
+          "HR-401"
+        ]
+      }
+    }
+  },
+  {
+    "email": {
+      "id": "EMAIL-0054",
+      "received_at": "2026-09-22T08:45:00+02:00",
+      "from": "adviser54@example.test",
+      "subject": "CRM issue 54",
+      "body": "A CH adviser says the production CRM web portal times out with CRM-504. Reference CASE-0054."
+    },
+    "ticket": {
+      "id": "TCK-0054",
+      "email_id": "EMAIL-0054",
+      "received_at": "2026-09-22T08:45:00+02:00",
+      "raw_email": "A CH adviser says the production CRM web portal times out with CRM-504. Reference CASE-0054.",
+      "summary": "Employee reports a CRM timeout.",
+      "ontology_values": {
+        "actor_ids": [
+          "actor:employee"
+        ],
+        "platform_ids": [
+          "platform:crm"
+        ],
+        "server_ids": [],
+        "supplier_ids": [],
+        "edge_ids": [
+          "edge:employee_login_crm"
+        ],
+        "relationship_types": [
+          "LOGS_INTO"
+        ],
+        "primary_affected_node_id": "platform:crm",
+        "symptom": "timeout",
+        "region": "CH",
+        "channel": "web",
+        "environment": "production",
+        "error_code": "CRM-504",
+        "release_id": null
+      },
+      "extraction": {
+        "confidence": 0.93,
+        "evidence": [
+          "adviser",
+          "CRM",
+          "web",
+          "CRM-504"
+        ]
+      }
+    }
+  },
+  {
+    "email": {
+      "id": "EMAIL-0045",
+      "received_at": "2026-09-22T08:54:00+02:00",
+      "from": "employee45@example.test",
+      "subject": "HR portal access request 45",
+      "body": "An employee in EMEA cannot log into the HR portal on the web in production and sees HR-401. Reference CASE-0045."
+    },
+    "ticket": {
+      "id": "TCK-0045",
+      "email_id": "EMAIL-0045",
+      "received_at": "2026-09-22T08:54:00+02:00",
+      "raw_email": "An employee in EMEA cannot log into the HR portal on the web in production and sees HR-401. Reference CASE-0045.",
+      "summary": "Employee cannot log into the HR Platform.",
+      "ontology_values": {
+        "actor_ids": [
+          "actor:employee"
+        ],
+        "platform_ids": [
+          "platform:hr"
+        ],
+        "server_ids": [],
+        "supplier_ids": [],
+        "edge_ids": [
+          "edge:employee_login_hr"
+        ],
+        "relationship_types": [
+          "LOGS_INTO"
+        ],
+        "primary_affected_node_id": "platform:hr",
+        "symptom": "login_failure",
+        "region": "EMEA",
+        "channel": "web",
+        "environment": "production",
+        "error_code": "HR-401",
+        "release_id": null
+      },
+      "extraction": {
+        "confidence": 0.96,
+        "evidence": [
+          "employee",
+          "log into",
+          "HR portal",
+          "web",
+          "HR-401"
+        ]
+      }
+    }
+  },
+  {
+    "email": {
+      "id": "EMAIL-0055",
+      "received_at": "2026-09-22T08:56:00+02:00",
+      "from": "adviser55@example.test",
+      "subject": "CRM issue 55",
+      "body": "A CH adviser says the production CRM web portal rejects the login with CRM-403. Reference CASE-0055."
+    },
+    "ticket": {
+      "id": "TCK-0055",
+      "email_id": "EMAIL-0055",
+      "received_at": "2026-09-22T08:56:00+02:00",
+      "raw_email": "A CH adviser says the production CRM web portal rejects the login with CRM-403. Reference CASE-0055.",
+      "summary": "Employee reports a CRM login failure.",
+      "ontology_values": {
+        "actor_ids": [
+          "actor:employee"
+        ],
+        "platform_ids": [
+          "platform:crm"
+        ],
+        "server_ids": [],
+        "supplier_ids": [],
+        "edge_ids": [
+          "edge:employee_login_crm"
+        ],
+        "relationship_types": [
+          "LOGS_INTO"
+        ],
+        "primary_affected_node_id": "platform:crm",
+        "symptom": "login_failure",
+        "region": "CH",
+        "channel": "web",
+        "environment": "production",
+        "error_code": "CRM-403",
+        "release_id": null
+      },
+      "extraction": {
+        "confidence": 0.93,
+        "evidence": [
+          "adviser",
+          "CRM",
+          "web",
+          "CRM-403"
+        ]
+      }
+    }
+  },
+  {
+    "email": {
+      "id": "EMAIL-0056",
+      "received_at": "2026-09-22T09:07:00+02:00",
+      "from": "adviser56@example.test",
+      "subject": "CRM issue 56",
+      "body": "A CH adviser says the production CRM web portal times out with CRM-504. Reference CASE-0056."
+    },
+    "ticket": {
+      "id": "TCK-0056",
+      "email_id": "EMAIL-0056",
+      "received_at": "2026-09-22T09:07:00+02:00",
+      "raw_email": "A CH adviser says the production CRM web portal times out with CRM-504. Reference CASE-0056.",
+      "summary": "Employee reports a CRM timeout.",
+      "ontology_values": {
+        "actor_ids": [
+          "actor:employee"
+        ],
+        "platform_ids": [
+          "platform:crm"
+        ],
+        "server_ids": [],
+        "supplier_ids": [],
+        "edge_ids": [
+          "edge:employee_login_crm"
+        ],
+        "relationship_types": [
+          "LOGS_INTO"
+        ],
+        "primary_affected_node_id": "platform:crm",
+        "symptom": "timeout",
+        "region": "CH",
+        "channel": "web",
+        "environment": "production",
+        "error_code": "CRM-504",
+        "release_id": null
+      },
+      "extraction": {
+        "confidence": 0.93,
+        "evidence": [
+          "adviser",
+          "CRM",
+          "web",
+          "CRM-504"
+        ]
+      }
+    }
+  },
+  {
+    "email": {
+      "id": "EMAIL-0001",
+      "received_at": "2026-09-22T09:12:00+02:00",
+      "from": "support.agent1@example.test",
+      "subject": "iOS login failure A17 case 1",
+      "body": "After installing mobile release 6.4.0, customer 1 gets error A17 while signing into E-Banking on iOS. Reference CASE-0001."
+    },
+    "ticket": {
+      "id": "TCK-0001",
+      "email_id": "EMAIL-0001",
+      "received_at": "2026-09-22T09:12:00+02:00",
+      "raw_email": "After installing mobile release 6.4.0, customer 1 gets error A17 while signing into E-Banking on iOS. Reference CASE-0001.",
+      "summary": "Mobile iOS user cannot log into E-Banking after release 6.4.0.",
+      "ontology_values": {
+        "actor_ids": [
+          "actor:user"
+        ],
+        "platform_ids": [
+          "platform:e_banking"
+        ],
+        "server_ids": [],
+        "supplier_ids": [],
+        "edge_ids": [
+          "edge:user_login_ebanking"
+        ],
+        "relationship_types": [
+          "LOGS_INTO"
+        ],
+        "primary_affected_node_id": "platform:e_banking",
+        "symptom": "login_failure",
+        "region": "CH",
+        "channel": "mobile_ios",
+        "environment": "production",
+        "error_code": "A17",
+        "release_id": "mobile-6.4.0"
+      },
+      "extraction": {
+        "confidence": 0.97,
+        "evidence": [
+          "mobile",
+          "A17",
+          "6.4.0"
+        ]
+      }
+    }
+  },
+  {
+    "email": {
+      "id": "EMAIL-0002",
+      "received_at": "2026-09-22T09:13:00+02:00",
+      "from": "support.agent2@example.test",
+      "subject": "iOS login failure A17 case 2",
+      "body": "A client reports that E-Banking login on the iPhone app fails with A17 since mobile-6.4.0. Reference CASE-0002."
+    },
+    "ticket": {
+      "id": "TCK-0002",
+      "email_id": "EMAIL-0002",
+      "received_at": "2026-09-22T09:13:00+02:00",
+      "raw_email": "A client reports that E-Banking login on the iPhone app fails with A17 since mobile-6.4.0. Reference CASE-0002.",
+      "summary": "Mobile iOS user cannot log into E-Banking after release 6.4.0.",
+      "ontology_values": {
+        "actor_ids": [
+          "actor:user"
+        ],
+        "platform_ids": [
+          "platform:e_banking"
+        ],
+        "server_ids": [],
+        "supplier_ids": [],
+        "edge_ids": [
+          "edge:user_login_ebanking"
+        ],
+        "relationship_types": [
+          "LOGS_INTO"
+        ],
+        "primary_affected_node_id": "platform:e_banking",
+        "symptom": "login_failure",
+        "region": "CH",
+        "channel": "mobile_ios",
+        "environment": "production",
+        "error_code": "A17",
+        "release_id": "mobile-6.4.0"
+      },
+      "extraction": {
+        "confidence": 0.97,
+        "evidence": [
+          "mobile",
+          "A17",
+          "6.4.0"
+        ]
+      }
+    }
+  },
+  {
+    "email": {
+      "id": "EMAIL-0003",
+      "received_at": "2026-09-22T09:14:00+02:00",
+      "from": "support.agent3@example.test",
+      "subject": "iOS login failure A17 case 3",
+      "body": "Mobile user 3 cannot authenticate to online banking on iOS; the screen shows error A17 after today's 6.4.0 update. Reference CASE-0003."
+    },
+    "ticket": {
+      "id": "TCK-0003",
+      "email_id": "EMAIL-0003",
+      "received_at": "2026-09-22T09:14:00+02:00",
+      "raw_email": "Mobile user 3 cannot authenticate to online banking on iOS; the screen shows error A17 after today's 6.4.0 update. Reference CASE-0003.",
+      "summary": "Mobile iOS user cannot log into E-Banking after release 6.4.0.",
+      "ontology_values": {
+        "actor_ids": [
+          "actor:user"
+        ],
+        "platform_ids": [
+          "platform:e_banking"
+        ],
+        "server_ids": [],
+        "supplier_ids": [],
+        "edge_ids": [
+          "edge:user_login_ebanking"
+        ],
+        "relationship_types": [
+          "LOGS_INTO"
+        ],
+        "primary_affected_node_id": "platform:e_banking",
+        "symptom": "login_failure",
+        "region": "CH",
+        "channel": "mobile_ios",
+        "environment": "production",
+        "error_code": "A17",
+        "release_id": "mobile-6.4.0"
+      },
+      "extraction": {
+        "confidence": 0.97,
+        "evidence": [
+          "mobile",
+          "A17",
+          "6.4.0"
+        ]
+      }
+    }
+  },
+  {
+    "email": {
+      "id": "EMAIL-0004",
+      "received_at": "2026-09-22T09:15:00+02:00",
+      "from": "support.agent4@example.test",
+      "subject": "iOS login failure A17 case 4",
+      "body": "Since the mobile-6.4.0 rollout, E-Banking rejects an iOS customer's sign-in with code A17. Reference CASE-0004."
+    },
+    "ticket": {
+      "id": "TCK-0004",
+      "email_id": "EMAIL-0004",
+      "received_at": "2026-09-22T09:15:00+02:00",
+      "raw_email": "Since the mobile-6.4.0 rollout, E-Banking rejects an iOS customer's sign-in with code A17. Reference CASE-0004.",
+      "summary": "Mobile iOS user cannot log into E-Banking after release 6.4.0.",
+      "ontology_values": {
+        "actor_ids": [
+          "actor:user"
+        ],
+        "platform_ids": [
+          "platform:e_banking"
+        ],
+        "server_ids": [],
+        "supplier_ids": [],
+        "edge_ids": [
+          "edge:user_login_ebanking"
+        ],
+        "relationship_types": [
+          "LOGS_INTO"
+        ],
+        "primary_affected_node_id": "platform:e_banking",
+        "symptom": "login_failure",
+        "region": "CH",
+        "channel": "mobile_ios",
+        "environment": "production",
+        "error_code": "A17",
+        "release_id": "mobile-6.4.0"
+      },
+      "extraction": {
+        "confidence": 0.97,
+        "evidence": [
+          "mobile",
+          "A17",
+          "6.4.0"
+        ]
+      }
+    }
+  },
+  {
+    "email": {
+      "id": "EMAIL-0005",
+      "received_at": "2026-09-22T09:16:00+02:00",
+      "from": "support.agent5@example.test",
+      "subject": "iOS login failure A17 case 5",
+      "body": "Customer 5 says the updated iOS mobile banking app returns A17 at login on version mobile-6.4.0. Reference CASE-0005."
+    },
+    "ticket": {
+      "id": "TCK-0005",
+      "email_id": "EMAIL-0005",
+      "received_at": "2026-09-22T09:16:00+02:00",
+      "raw_email": "Customer 5 says the updated iOS mobile banking app returns A17 at login on version mobile-6.4.0. Reference CASE-0005.",
+      "summary": "Mobile iOS user cannot log into E-Banking after release 6.4.0.",
+      "ontology_values": {
+        "actor_ids": [
+          "actor:user"
+        ],
+        "platform_ids": [
+          "platform:e_banking"
+        ],
+        "server_ids": [],
+        "supplier_ids": [],
+        "edge_ids": [
+          "edge:user_login_ebanking"
+        ],
+        "relationship_types": [
+          "LOGS_INTO"
+        ],
+        "primary_affected_node_id": "platform:e_banking",
+        "symptom": "login_failure",
+        "region": "CH",
+        "channel": "mobile_ios",
+        "environment": "production",
+        "error_code": "A17",
+        "release_id": "mobile-6.4.0"
+      },
+      "extraction": {
+        "confidence": 0.97,
+        "evidence": [
+          "mobile",
+          "A17",
+          "6.4.0"
+        ]
+      }
+    }
+  },
+  {
+    "email": {
+      "id": "EMAIL-0006",
+      "received_at": "2026-09-22T09:17:00+02:00",
+      "from": "support.agent6@example.test",
+      "subject": "iOS login failure A17 case 6",
+      "body": "After installing mobile release 6.4.0, customer 6 gets error A17 while signing into E-Banking on iOS. Reference CASE-0006."
+    },
+    "ticket": {
+      "id": "TCK-0006",
+      "email_id": "EMAIL-0006",
+      "received_at": "2026-09-22T09:17:00+02:00",
+      "raw_email": "After installing mobile release 6.4.0, customer 6 gets error A17 while signing into E-Banking on iOS. Reference CASE-0006.",
+      "summary": "Mobile iOS user cannot log into E-Banking after release 6.4.0.",
+      "ontology_values": {
+        "actor_ids": [
+          "actor:user"
+        ],
+        "platform_ids": [
+          "platform:e_banking"
+        ],
+        "server_ids": [],
+        "supplier_ids": [],
+        "edge_ids": [
+          "edge:user_login_ebanking"
+        ],
+        "relationship_types": [
+          "LOGS_INTO"
+        ],
+        "primary_affected_node_id": "platform:e_banking",
+        "symptom": "login_failure",
+        "region": "CH",
+        "channel": "mobile_ios",
+        "environment": "production",
+        "error_code": "A17",
+        "release_id": "mobile-6.4.0"
+      },
+      "extraction": {
+        "confidence": 0.97,
+        "evidence": [
+          "mobile",
+          "A17",
+          "6.4.0"
+        ]
+      }
+    }
+  },
+  {
+    "email": {
+      "id": "EMAIL-0007",
+      "received_at": "2026-09-22T09:18:00+02:00",
+      "from": "support.agent1@example.test",
+      "subject": "iOS login failure A17 case 7",
+      "body": "A client reports that E-Banking login on the iPhone app fails with A17 since mobile-6.4.0. Reference CASE-0007."
+    },
+    "ticket": {
+      "id": "TCK-0007",
+      "email_id": "EMAIL-0007",
+      "received_at": "2026-09-22T09:18:00+02:00",
+      "raw_email": "A client reports that E-Banking login on the iPhone app fails with A17 since mobile-6.4.0. Reference CASE-0007.",
+      "summary": "Mobile iOS user cannot log into E-Banking after release 6.4.0.",
+      "ontology_values": {
+        "actor_ids": [
+          "actor:user"
+        ],
+        "platform_ids": [
+          "platform:e_banking"
+        ],
+        "server_ids": [],
+        "supplier_ids": [],
+        "edge_ids": [
+          "edge:user_login_ebanking"
+        ],
+        "relationship_types": [
+          "LOGS_INTO"
+        ],
+        "primary_affected_node_id": "platform:e_banking",
+        "symptom": "login_failure",
+        "region": "CH",
+        "channel": "mobile_ios",
+        "environment": "production",
+        "error_code": "A17",
+        "release_id": "mobile-6.4.0"
+      },
+      "extraction": {
+        "confidence": 0.97,
+        "evidence": [
+          "mobile",
+          "A17",
+          "6.4.0"
+        ]
+      }
+    }
+  },
+  {
+    "email": {
+      "id": "EMAIL-0046",
+      "received_at": "2026-09-22T09:18:00+02:00",
+      "from": "employee46@example.test",
+      "subject": "HR portal access request 46",
+      "body": "An employee in EMEA cannot log into the HR portal on the web in production and sees HR-401. Reference CASE-0046."
+    },
+    "ticket": {
+      "id": "TCK-0046",
+      "email_id": "EMAIL-0046",
+      "received_at": "2026-09-22T09:18:00+02:00",
+      "raw_email": "An employee in EMEA cannot log into the HR portal on the web in production and sees HR-401. Reference CASE-0046.",
+      "summary": "Employee cannot log into the HR Platform.",
+      "ontology_values": {
+        "actor_ids": [
+          "actor:employee"
+        ],
+        "platform_ids": [
+          "platform:hr"
+        ],
+        "server_ids": [],
+        "supplier_ids": [],
+        "edge_ids": [
+          "edge:employee_login_hr"
+        ],
+        "relationship_types": [
+          "LOGS_INTO"
+        ],
+        "primary_affected_node_id": "platform:hr",
+        "symptom": "login_failure",
+        "region": "EMEA",
+        "channel": "web",
+        "environment": "production",
+        "error_code": "HR-401",
+        "release_id": null
+      },
+      "extraction": {
+        "confidence": 0.96,
+        "evidence": [
+          "employee",
+          "log into",
+          "HR portal",
+          "web",
+          "HR-401"
+        ]
+      }
+    }
+  },
+  {
+    "email": {
+      "id": "EMAIL-0057",
+      "received_at": "2026-09-22T09:18:00+02:00",
+      "from": "adviser57@example.test",
+      "subject": "CRM issue 57",
+      "body": "A CH adviser says the production CRM web portal rejects the login with CRM-403. Reference CASE-0057."
+    },
+    "ticket": {
+      "id": "TCK-0057",
+      "email_id": "EMAIL-0057",
+      "received_at": "2026-09-22T09:18:00+02:00",
+      "raw_email": "A CH adviser says the production CRM web portal rejects the login with CRM-403. Reference CASE-0057.",
+      "summary": "Employee reports a CRM login failure.",
+      "ontology_values": {
+        "actor_ids": [
+          "actor:employee"
+        ],
+        "platform_ids": [
+          "platform:crm"
+        ],
+        "server_ids": [],
+        "supplier_ids": [],
+        "edge_ids": [
+          "edge:employee_login_crm"
+        ],
+        "relationship_types": [
+          "LOGS_INTO"
+        ],
+        "primary_affected_node_id": "platform:crm",
+        "symptom": "login_failure",
+        "region": "CH",
+        "channel": "web",
+        "environment": "production",
+        "error_code": "CRM-403",
+        "release_id": null
+      },
+      "extraction": {
+        "confidence": 0.93,
+        "evidence": [
+          "adviser",
+          "CRM",
+          "web",
+          "CRM-403"
+        ]
+      }
+    }
+  },
+  {
+    "email": {
+      "id": "EMAIL-0008",
+      "received_at": "2026-09-22T09:19:00+02:00",
+      "from": "support.agent2@example.test",
+      "subject": "iOS login failure A17 case 8",
+      "body": "Mobile user 8 cannot authenticate to online banking on iOS; the screen shows error A17 after today's 6.4.0 update. Reference CASE-0008."
+    },
+    "ticket": {
+      "id": "TCK-0008",
+      "email_id": "EMAIL-0008",
+      "received_at": "2026-09-22T09:19:00+02:00",
+      "raw_email": "Mobile user 8 cannot authenticate to online banking on iOS; the screen shows error A17 after today's 6.4.0 update. Reference CASE-0008.",
+      "summary": "Mobile iOS user cannot log into E-Banking after release 6.4.0.",
+      "ontology_values": {
+        "actor_ids": [
+          "actor:user"
+        ],
+        "platform_ids": [
+          "platform:e_banking"
+        ],
+        "server_ids": [],
+        "supplier_ids": [],
+        "edge_ids": [
+          "edge:user_login_ebanking"
+        ],
+        "relationship_types": [
+          "LOGS_INTO"
+        ],
+        "primary_affected_node_id": "platform:e_banking",
+        "symptom": "login_failure",
+        "region": "CH",
+        "channel": "mobile_ios",
+        "environment": "production",
+        "error_code": "A17",
+        "release_id": "mobile-6.4.0"
+      },
+      "extraction": {
+        "confidence": 0.97,
+        "evidence": [
+          "mobile",
+          "A17",
+          "6.4.0"
+        ]
+      }
+    }
+  },
+  {
+    "email": {
+      "id": "EMAIL-0009",
+      "received_at": "2026-09-22T09:20:00+02:00",
+      "from": "support.agent3@example.test",
+      "subject": "iOS login failure A17 case 9",
+      "body": "Since the mobile-6.4.0 rollout, E-Banking rejects an iOS customer's sign-in with code A17. Reference CASE-0009."
+    },
+    "ticket": {
+      "id": "TCK-0009",
+      "email_id": "EMAIL-0009",
+      "received_at": "2026-09-22T09:20:00+02:00",
+      "raw_email": "Since the mobile-6.4.0 rollout, E-Banking rejects an iOS customer's sign-in with code A17. Reference CASE-0009.",
+      "summary": "Mobile iOS user cannot log into E-Banking after release 6.4.0.",
+      "ontology_values": {
+        "actor_ids": [
+          "actor:user"
+        ],
+        "platform_ids": [
+          "platform:e_banking"
+        ],
+        "server_ids": [],
+        "supplier_ids": [],
+        "edge_ids": [
+          "edge:user_login_ebanking"
+        ],
+        "relationship_types": [
+          "LOGS_INTO"
+        ],
+        "primary_affected_node_id": "platform:e_banking",
+        "symptom": "login_failure",
+        "region": "CH",
+        "channel": "mobile_ios",
+        "environment": "production",
+        "error_code": "A17",
+        "release_id": "mobile-6.4.0"
+      },
+      "extraction": {
+        "confidence": 0.97,
+        "evidence": [
+          "mobile",
+          "A17",
+          "6.4.0"
+        ]
+      }
+    }
+  },
+  {
+    "email": {
+      "id": "EMAIL-0010",
+      "received_at": "2026-09-22T09:21:00+02:00",
+      "from": "support.agent4@example.test",
+      "subject": "iOS login failure A17 case 10",
+      "body": "Customer 10 says the updated iOS mobile banking app returns A17 at login on version mobile-6.4.0. Reference CASE-0010."
+    },
+    "ticket": {
+      "id": "TCK-0010",
+      "email_id": "EMAIL-0010",
+      "received_at": "2026-09-22T09:21:00+02:00",
+      "raw_email": "Customer 10 says the updated iOS mobile banking app returns A17 at login on version mobile-6.4.0. Reference CASE-0010.",
+      "summary": "Mobile iOS user cannot log into E-Banking after release 6.4.0.",
+      "ontology_values": {
+        "actor_ids": [
+          "actor:user"
+        ],
+        "platform_ids": [
+          "platform:e_banking"
+        ],
+        "server_ids": [],
+        "supplier_ids": [],
+        "edge_ids": [
+          "edge:user_login_ebanking"
+        ],
+        "relationship_types": [
+          "LOGS_INTO"
+        ],
+        "primary_affected_node_id": "platform:e_banking",
+        "symptom": "login_failure",
+        "region": "CH",
+        "channel": "mobile_ios",
+        "environment": "production",
+        "error_code": "A17",
+        "release_id": "mobile-6.4.0"
+      },
+      "extraction": {
+        "confidence": 0.97,
+        "evidence": [
+          "mobile",
+          "A17",
+          "6.4.0"
+        ]
+      }
+    }
+  },
+  {
+    "email": {
+      "id": "EMAIL-0011",
+      "received_at": "2026-09-22T09:22:00+02:00",
+      "from": "support.agent5@example.test",
+      "subject": "iOS login failure A17 case 11",
+      "body": "After installing mobile release 6.4.0, customer 11 gets error A17 while signing into E-Banking on iOS. Reference CASE-0011."
+    },
+    "ticket": {
+      "id": "TCK-0011",
+      "email_id": "EMAIL-0011",
+      "received_at": "2026-09-22T09:22:00+02:00",
+      "raw_email": "After installing mobile release 6.4.0, customer 11 gets error A17 while signing into E-Banking on iOS. Reference CASE-0011.",
+      "summary": "Mobile iOS user cannot log into E-Banking after release 6.4.0.",
+      "ontology_values": {
+        "actor_ids": [
+          "actor:user"
+        ],
+        "platform_ids": [
+          "platform:e_banking"
+        ],
+        "server_ids": [],
+        "supplier_ids": [],
+        "edge_ids": [
+          "edge:user_login_ebanking"
+        ],
+        "relationship_types": [
+          "LOGS_INTO"
+        ],
+        "primary_affected_node_id": "platform:e_banking",
+        "symptom": "login_failure",
+        "region": "CH",
+        "channel": "mobile_ios",
+        "environment": "production",
+        "error_code": "A17",
+        "release_id": "mobile-6.4.0"
+      },
+      "extraction": {
+        "confidence": 0.97,
+        "evidence": [
+          "mobile",
+          "A17",
+          "6.4.0"
+        ]
+      }
+    }
+  },
+  {
+    "email": {
+      "id": "EMAIL-0012",
+      "received_at": "2026-09-22T09:23:00+02:00",
+      "from": "support.agent6@example.test",
+      "subject": "iOS login failure A17 case 12",
+      "body": "A client reports that E-Banking login on the iPhone app fails with A17 since mobile-6.4.0. Reference CASE-0012."
+    },
+    "ticket": {
+      "id": "TCK-0012",
+      "email_id": "EMAIL-0012",
+      "received_at": "2026-09-22T09:23:00+02:00",
+      "raw_email": "A client reports that E-Banking login on the iPhone app fails with A17 since mobile-6.4.0. Reference CASE-0012.",
+      "summary": "Mobile iOS user cannot log into E-Banking after release 6.4.0.",
+      "ontology_values": {
+        "actor_ids": [
+          "actor:user"
+        ],
+        "platform_ids": [
+          "platform:e_banking"
+        ],
+        "server_ids": [],
+        "supplier_ids": [],
+        "edge_ids": [
+          "edge:user_login_ebanking"
+        ],
+        "relationship_types": [
+          "LOGS_INTO"
+        ],
+        "primary_affected_node_id": "platform:e_banking",
+        "symptom": "login_failure",
+        "region": "CH",
+        "channel": "mobile_ios",
+        "environment": "production",
+        "error_code": "A17",
+        "release_id": "mobile-6.4.0"
+      },
+      "extraction": {
+        "confidence": 0.97,
+        "evidence": [
+          "mobile",
+          "A17",
+          "6.4.0"
+        ]
+      }
+    }
+  },
+  {
+    "email": {
+      "id": "EMAIL-0013",
+      "received_at": "2026-09-22T09:24:00+02:00",
+      "from": "support.agent1@example.test",
+      "subject": "iOS login failure A17 case 13",
+      "body": "Mobile user 13 cannot authenticate to online banking on iOS; the screen shows error A17 after today's 6.4.0 update. Reference CASE-0013."
+    },
+    "ticket": {
+      "id": "TCK-0013",
+      "email_id": "EMAIL-0013",
+      "received_at": "2026-09-22T09:24:00+02:00",
+      "raw_email": "Mobile user 13 cannot authenticate to online banking on iOS; the screen shows error A17 after today's 6.4.0 update. Reference CASE-0013.",
+      "summary": "Mobile iOS user cannot log into E-Banking after release 6.4.0.",
+      "ontology_values": {
+        "actor_ids": [
+          "actor:user"
+        ],
+        "platform_ids": [
+          "platform:e_banking"
+        ],
+        "server_ids": [],
+        "supplier_ids": [],
+        "edge_ids": [
+          "edge:user_login_ebanking"
+        ],
+        "relationship_types": [
+          "LOGS_INTO"
+        ],
+        "primary_affected_node_id": "platform:e_banking",
+        "symptom": "login_failure",
+        "region": "CH",
+        "channel": "mobile_ios",
+        "environment": "production",
+        "error_code": "A17",
+        "release_id": "mobile-6.4.0"
+      },
+      "extraction": {
+        "confidence": 0.97,
+        "evidence": [
+          "mobile",
+          "A17",
+          "6.4.0"
+        ]
+      }
+    }
+  },
+  {
+    "email": {
+      "id": "EMAIL-0014",
+      "received_at": "2026-09-22T09:25:00+02:00",
+      "from": "support.agent2@example.test",
+      "subject": "iOS login failure A17 case 14",
+      "body": "Since the mobile-6.4.0 rollout, E-Banking rejects an iOS customer's sign-in with code A17. Reference CASE-0014."
+    },
+    "ticket": {
+      "id": "TCK-0014",
+      "email_id": "EMAIL-0014",
+      "received_at": "2026-09-22T09:25:00+02:00",
+      "raw_email": "Since the mobile-6.4.0 rollout, E-Banking rejects an iOS customer's sign-in with code A17. Reference CASE-0014.",
+      "summary": "Mobile iOS user cannot log into E-Banking after release 6.4.0.",
+      "ontology_values": {
+        "actor_ids": [
+          "actor:user"
+        ],
+        "platform_ids": [
+          "platform:e_banking"
+        ],
+        "server_ids": [],
+        "supplier_ids": [],
+        "edge_ids": [
+          "edge:user_login_ebanking"
+        ],
+        "relationship_types": [
+          "LOGS_INTO"
+        ],
+        "primary_affected_node_id": "platform:e_banking",
+        "symptom": "login_failure",
+        "region": "CH",
+        "channel": "mobile_ios",
+        "environment": "production",
+        "error_code": "A17",
+        "release_id": "mobile-6.4.0"
+      },
+      "extraction": {
+        "confidence": 0.97,
+        "evidence": [
+          "mobile",
+          "A17",
+          "6.4.0"
+        ]
+      }
+    }
+  },
+  {
+    "email": {
+      "id": "EMAIL-0079",
+      "received_at": "2026-09-22T09:25:00+02:00",
+      "from": "infrastructure.monitor1@example.test",
+      "subject": "srv-eb-01 connectivity alert 79",
+      "body": "Production health check cannot reach srv-eb-01, the E-Banking backend server in CH; connection timeout INFRA-001. Reference CASE-0079."
+    },
+    "ticket": {
+      "id": "TCK-0079",
+      "email_id": "EMAIL-0079",
+      "received_at": "2026-09-22T09:25:00+02:00",
+      "raw_email": "Production health check cannot reach srv-eb-01, the E-Banking backend server in CH; connection timeout INFRA-001. Reference CASE-0079.",
+      "summary": "The primary E-Banking Server is unreachable.",
+      "ontology_values": {
+        "actor_ids": [],
+        "platform_ids": [
+          "platform:e_banking"
+        ],
+        "server_ids": [
+          "server:ebanking_primary"
+        ],
+        "supplier_ids": [],
+        "edge_ids": [
+          "edge:ebanking_depends_on_server"
+        ],
+        "relationship_types": [
+          "DEPENDS_ON"
+        ],
+        "primary_affected_node_id": "server:ebanking_primary",
+        "symptom": "server_unreachable",
+        "region": "CH",
+        "channel": "api",
+        "environment": "production",
+        "error_code": "INFRA-001",
+        "release_id": null
+      },
+      "extraction": {
+        "confidence": 0.99,
+        "evidence": [
+          "srv-eb-01",
+          "E-Banking",
+          "server",
+          "connection timeout",
+          "INFRA-001"
+        ]
+      }
+    }
+  },
+  {
+    "email": {
+      "id": "EMAIL-0015",
+      "received_at": "2026-09-22T09:26:00+02:00",
+      "from": "support.agent3@example.test",
+      "subject": "iOS login failure A17 case 15",
+      "body": "Customer 15 says the updated iOS mobile banking app returns A17 at login on version mobile-6.4.0. Reference CASE-0015."
+    },
+    "ticket": {
+      "id": "TCK-0015",
+      "email_id": "EMAIL-0015",
+      "received_at": "2026-09-22T09:26:00+02:00",
+      "raw_email": "Customer 15 says the updated iOS mobile banking app returns A17 at login on version mobile-6.4.0. Reference CASE-0015.",
+      "summary": "Mobile iOS user cannot log into E-Banking after release 6.4.0.",
+      "ontology_values": {
+        "actor_ids": [
+          "actor:user"
+        ],
+        "platform_ids": [
+          "platform:e_banking"
+        ],
+        "server_ids": [],
+        "supplier_ids": [],
+        "edge_ids": [
+          "edge:user_login_ebanking"
+        ],
+        "relationship_types": [
+          "LOGS_INTO"
+        ],
+        "primary_affected_node_id": "platform:e_banking",
+        "symptom": "login_failure",
+        "region": "CH",
+        "channel": "mobile_ios",
+        "environment": "production",
+        "error_code": "A17",
+        "release_id": "mobile-6.4.0"
+      },
+      "extraction": {
+        "confidence": 0.97,
+        "evidence": [
+          "mobile",
+          "A17",
+          "6.4.0"
+        ]
+      }
+    }
+  },
+  {
+    "email": {
+      "id": "EMAIL-0016",
+      "received_at": "2026-09-22T09:27:00+02:00",
+      "from": "support.agent4@example.test",
+      "subject": "iOS login failure A17 case 16",
+      "body": "After installing mobile release 6.4.0, customer 16 gets error A17 while signing into E-Banking on iOS. Reference CASE-0016."
+    },
+    "ticket": {
+      "id": "TCK-0016",
+      "email_id": "EMAIL-0016",
+      "received_at": "2026-09-22T09:27:00+02:00",
+      "raw_email": "After installing mobile release 6.4.0, customer 16 gets error A17 while signing into E-Banking on iOS. Reference CASE-0016.",
+      "summary": "Mobile iOS user cannot log into E-Banking after release 6.4.0.",
+      "ontology_values": {
+        "actor_ids": [
+          "actor:user"
+        ],
+        "platform_ids": [
+          "platform:e_banking"
+        ],
+        "server_ids": [],
+        "supplier_ids": [],
+        "edge_ids": [
+          "edge:user_login_ebanking"
+        ],
+        "relationship_types": [
+          "LOGS_INTO"
+        ],
+        "primary_affected_node_id": "platform:e_banking",
+        "symptom": "login_failure",
+        "region": "CH",
+        "channel": "mobile_ios",
+        "environment": "production",
+        "error_code": "A17",
+        "release_id": "mobile-6.4.0"
+      },
+      "extraction": {
+        "confidence": 0.97,
+        "evidence": [
+          "mobile",
+          "A17",
+          "6.4.0"
+        ]
+      }
+    }
+  },
+  {
+    "email": {
+      "id": "EMAIL-0080",
+      "received_at": "2026-09-22T09:27:00+02:00",
+      "from": "infrastructure.monitor2@example.test",
+      "subject": "srv-eb-01 connectivity alert 80",
+      "body": "Production health check cannot reach srv-eb-01, the E-Banking backend server in CH; connection timeout INFRA-001. Reference CASE-0080."
+    },
+    "ticket": {
+      "id": "TCK-0080",
+      "email_id": "EMAIL-0080",
+      "received_at": "2026-09-22T09:27:00+02:00",
+      "raw_email": "Production health check cannot reach srv-eb-01, the E-Banking backend server in CH; connection timeout INFRA-001. Reference CASE-0080.",
+      "summary": "The primary E-Banking Server is unreachable.",
+      "ontology_values": {
+        "actor_ids": [],
+        "platform_ids": [
+          "platform:e_banking"
+        ],
+        "server_ids": [
+          "server:ebanking_primary"
+        ],
+        "supplier_ids": [],
+        "edge_ids": [
+          "edge:ebanking_depends_on_server"
+        ],
+        "relationship_types": [
+          "DEPENDS_ON"
+        ],
+        "primary_affected_node_id": "server:ebanking_primary",
+        "symptom": "server_unreachable",
+        "region": "CH",
+        "channel": "api",
+        "environment": "production",
+        "error_code": "INFRA-001",
+        "release_id": null
+      },
+      "extraction": {
+        "confidence": 0.99,
+        "evidence": [
+          "srv-eb-01",
+          "E-Banking",
+          "server",
+          "connection timeout",
+          "INFRA-001"
+        ]
+      }
+    }
+  },
+  {
+    "email": {
+      "id": "EMAIL-0017",
+      "received_at": "2026-09-22T09:28:00+02:00",
+      "from": "support.agent5@example.test",
+      "subject": "iOS login failure A17 case 17",
+      "body": "A client reports that E-Banking login on the iPhone app fails with A17 since mobile-6.4.0. Reference CASE-0017."
+    },
+    "ticket": {
+      "id": "TCK-0017",
+      "email_id": "EMAIL-0017",
+      "received_at": "2026-09-22T09:28:00+02:00",
+      "raw_email": "A client reports that E-Banking login on the iPhone app fails with A17 since mobile-6.4.0. Reference CASE-0017.",
+      "summary": "Mobile iOS user cannot log into E-Banking after release 6.4.0.",
+      "ontology_values": {
+        "actor_ids": [
+          "actor:user"
+        ],
+        "platform_ids": [
+          "platform:e_banking"
+        ],
+        "server_ids": [],
+        "supplier_ids": [],
+        "edge_ids": [
+          "edge:user_login_ebanking"
+        ],
+        "relationship_types": [
+          "LOGS_INTO"
+        ],
+        "primary_affected_node_id": "platform:e_banking",
+        "symptom": "login_failure",
+        "region": "CH",
+        "channel": "mobile_ios",
+        "environment": "production",
+        "error_code": "A17",
+        "release_id": "mobile-6.4.0"
+      },
+      "extraction": {
+        "confidence": 0.97,
+        "evidence": [
+          "mobile",
+          "A17",
+          "6.4.0"
+        ]
+      }
+    }
+  },
+  {
+    "email": {
+      "id": "EMAIL-0018",
+      "received_at": "2026-09-22T09:29:00+02:00",
+      "from": "support.agent6@example.test",
+      "subject": "iOS login failure A17 case 18",
+      "body": "Mobile user 18 cannot authenticate to online banking on iOS; the screen shows error A17 after today's 6.4.0 update. Reference CASE-0018."
+    },
+    "ticket": {
+      "id": "TCK-0018",
+      "email_id": "EMAIL-0018",
+      "received_at": "2026-09-22T09:29:00+02:00",
+      "raw_email": "Mobile user 18 cannot authenticate to online banking on iOS; the screen shows error A17 after today's 6.4.0 update. Reference CASE-0018.",
+      "summary": "Mobile iOS user cannot log into E-Banking after release 6.4.0.",
+      "ontology_values": {
+        "actor_ids": [
+          "actor:user"
+        ],
+        "platform_ids": [
+          "platform:e_banking"
+        ],
+        "server_ids": [],
+        "supplier_ids": [],
+        "edge_ids": [
+          "edge:user_login_ebanking"
+        ],
+        "relationship_types": [
+          "LOGS_INTO"
+        ],
+        "primary_affected_node_id": "platform:e_banking",
+        "symptom": "login_failure",
+        "region": "CH",
+        "channel": "mobile_ios",
+        "environment": "production",
+        "error_code": "A17",
+        "release_id": "mobile-6.4.0"
+      },
+      "extraction": {
+        "confidence": 0.97,
+        "evidence": [
+          "mobile",
+          "A17",
+          "6.4.0"
+        ]
+      }
+    }
+  },
+  {
+    "email": {
+      "id": "EMAIL-0058",
+      "received_at": "2026-09-22T09:29:00+02:00",
+      "from": "adviser58@example.test",
+      "subject": "CRM issue 58",
+      "body": "A CH adviser says the production CRM web portal times out with CRM-504. Reference CASE-0058."
+    },
+    "ticket": {
+      "id": "TCK-0058",
+      "email_id": "EMAIL-0058",
+      "received_at": "2026-09-22T09:29:00+02:00",
+      "raw_email": "A CH adviser says the production CRM web portal times out with CRM-504. Reference CASE-0058.",
+      "summary": "Employee reports a CRM timeout.",
+      "ontology_values": {
+        "actor_ids": [
+          "actor:employee"
+        ],
+        "platform_ids": [
+          "platform:crm"
+        ],
+        "server_ids": [],
+        "supplier_ids": [],
+        "edge_ids": [
+          "edge:employee_login_crm"
+        ],
+        "relationship_types": [
+          "LOGS_INTO"
+        ],
+        "primary_affected_node_id": "platform:crm",
+        "symptom": "timeout",
+        "region": "CH",
+        "channel": "web",
+        "environment": "production",
+        "error_code": "CRM-504",
+        "release_id": null
+      },
+      "extraction": {
+        "confidence": 0.93,
+        "evidence": [
+          "adviser",
+          "CRM",
+          "web",
+          "CRM-504"
+        ]
+      }
+    }
+  },
+  {
+    "email": {
+      "id": "EMAIL-0081",
+      "received_at": "2026-09-22T09:29:00+02:00",
+      "from": "infrastructure.monitor3@example.test",
+      "subject": "srv-eb-01 connectivity alert 81",
+      "body": "Production health check cannot reach srv-eb-01, the E-Banking backend server in CH; connection timeout INFRA-001. Reference CASE-0081."
+    },
+    "ticket": {
+      "id": "TCK-0081",
+      "email_id": "EMAIL-0081",
+      "received_at": "2026-09-22T09:29:00+02:00",
+      "raw_email": "Production health check cannot reach srv-eb-01, the E-Banking backend server in CH; connection timeout INFRA-001. Reference CASE-0081.",
+      "summary": "The primary E-Banking Server is unreachable.",
+      "ontology_values": {
+        "actor_ids": [],
+        "platform_ids": [
+          "platform:e_banking"
+        ],
+        "server_ids": [
+          "server:ebanking_primary"
+        ],
+        "supplier_ids": [],
+        "edge_ids": [
+          "edge:ebanking_depends_on_server"
+        ],
+        "relationship_types": [
+          "DEPENDS_ON"
+        ],
+        "primary_affected_node_id": "server:ebanking_primary",
+        "symptom": "server_unreachable",
+        "region": "CH",
+        "channel": "api",
+        "environment": "production",
+        "error_code": "INFRA-001",
+        "release_id": null
+      },
+      "extraction": {
+        "confidence": 0.99,
+        "evidence": [
+          "srv-eb-01",
+          "E-Banking",
+          "server",
+          "connection timeout",
+          "INFRA-001"
+        ]
+      }
+    }
+  },
+  {
+    "email": {
+      "id": "EMAIL-0019",
+      "received_at": "2026-09-22T09:30:00+02:00",
+      "from": "support.agent1@example.test",
+      "subject": "iOS login failure A17 case 19",
+      "body": "Since the mobile-6.4.0 rollout, E-Banking rejects an iOS customer's sign-in with code A17. Reference CASE-0019."
+    },
+    "ticket": {
+      "id": "TCK-0019",
+      "email_id": "EMAIL-0019",
+      "received_at": "2026-09-22T09:30:00+02:00",
+      "raw_email": "Since the mobile-6.4.0 rollout, E-Banking rejects an iOS customer's sign-in with code A17. Reference CASE-0019.",
+      "summary": "Mobile iOS user cannot log into E-Banking after release 6.4.0.",
+      "ontology_values": {
+        "actor_ids": [
+          "actor:user"
+        ],
+        "platform_ids": [
+          "platform:e_banking"
+        ],
+        "server_ids": [],
+        "supplier_ids": [],
+        "edge_ids": [
+          "edge:user_login_ebanking"
+        ],
+        "relationship_types": [
+          "LOGS_INTO"
+        ],
+        "primary_affected_node_id": "platform:e_banking",
+        "symptom": "login_failure",
+        "region": "CH",
+        "channel": "mobile_ios",
+        "environment": "production",
+        "error_code": "A17",
+        "release_id": "mobile-6.4.0"
+      },
+      "extraction": {
+        "confidence": 0.97,
+        "evidence": [
+          "mobile",
+          "A17",
+          "6.4.0"
+        ]
+      }
+    }
+  },
+  {
+    "email": {
+      "id": "EMAIL-0020",
+      "received_at": "2026-09-22T09:31:00+02:00",
+      "from": "support.agent2@example.test",
+      "subject": "iOS login failure A17 case 20",
+      "body": "Customer 20 says the updated iOS mobile banking app returns A17 at login on version mobile-6.4.0. Reference CASE-0020."
+    },
+    "ticket": {
+      "id": "TCK-0020",
+      "email_id": "EMAIL-0020",
+      "received_at": "2026-09-22T09:31:00+02:00",
+      "raw_email": "Customer 20 says the updated iOS mobile banking app returns A17 at login on version mobile-6.4.0. Reference CASE-0020.",
+      "summary": "Mobile iOS user cannot log into E-Banking after release 6.4.0.",
+      "ontology_values": {
+        "actor_ids": [
+          "actor:user"
+        ],
+        "platform_ids": [
+          "platform:e_banking"
+        ],
+        "server_ids": [],
+        "supplier_ids": [],
+        "edge_ids": [
+          "edge:user_login_ebanking"
+        ],
+        "relationship_types": [
+          "LOGS_INTO"
+        ],
+        "primary_affected_node_id": "platform:e_banking",
+        "symptom": "login_failure",
+        "region": "CH",
+        "channel": "mobile_ios",
+        "environment": "production",
+        "error_code": "A17",
+        "release_id": "mobile-6.4.0"
+      },
+      "extraction": {
+        "confidence": 0.97,
+        "evidence": [
+          "mobile",
+          "A17",
+          "6.4.0"
+        ]
+      }
+    }
+  },
+  {
+    "email": {
+      "id": "EMAIL-0082",
+      "received_at": "2026-09-22T09:31:00+02:00",
+      "from": "infrastructure.monitor1@example.test",
+      "subject": "srv-eb-01 connectivity alert 82",
+      "body": "Production health check cannot reach srv-eb-01, the E-Banking backend server in CH; connection timeout INFRA-001. Reference CASE-0082."
+    },
+    "ticket": {
+      "id": "TCK-0082",
+      "email_id": "EMAIL-0082",
+      "received_at": "2026-09-22T09:31:00+02:00",
+      "raw_email": "Production health check cannot reach srv-eb-01, the E-Banking backend server in CH; connection timeout INFRA-001. Reference CASE-0082.",
+      "summary": "The primary E-Banking Server is unreachable.",
+      "ontology_values": {
+        "actor_ids": [],
+        "platform_ids": [
+          "platform:e_banking"
+        ],
+        "server_ids": [
+          "server:ebanking_primary"
+        ],
+        "supplier_ids": [],
+        "edge_ids": [
+          "edge:ebanking_depends_on_server"
+        ],
+        "relationship_types": [
+          "DEPENDS_ON"
+        ],
+        "primary_affected_node_id": "server:ebanking_primary",
+        "symptom": "server_unreachable",
+        "region": "CH",
+        "channel": "api",
+        "environment": "production",
+        "error_code": "INFRA-001",
+        "release_id": null
+      },
+      "extraction": {
+        "confidence": 0.99,
+        "evidence": [
+          "srv-eb-01",
+          "E-Banking",
+          "server",
+          "connection timeout",
+          "INFRA-001"
+        ]
+      }
+    }
+  },
+  {
+    "email": {
+      "id": "EMAIL-0021",
+      "received_at": "2026-09-22T09:32:00+02:00",
+      "from": "support.agent3@example.test",
+      "subject": "iOS login failure A17 case 21",
+      "body": "After installing mobile release 6.4.0, customer 21 gets error A17 while signing into E-Banking on iOS. Reference CASE-0021."
+    },
+    "ticket": {
+      "id": "TCK-0021",
+      "email_id": "EMAIL-0021",
+      "received_at": "2026-09-22T09:32:00+02:00",
+      "raw_email": "After installing mobile release 6.4.0, customer 21 gets error A17 while signing into E-Banking on iOS. Reference CASE-0021.",
+      "summary": "Mobile iOS user cannot log into E-Banking after release 6.4.0.",
+      "ontology_values": {
+        "actor_ids": [
+          "actor:user"
+        ],
+        "platform_ids": [
+          "platform:e_banking"
+        ],
+        "server_ids": [],
+        "supplier_ids": [],
+        "edge_ids": [
+          "edge:user_login_ebanking"
+        ],
+        "relationship_types": [
+          "LOGS_INTO"
+        ],
+        "primary_affected_node_id": "platform:e_banking",
+        "symptom": "login_failure",
+        "region": "CH",
+        "channel": "mobile_ios",
+        "environment": "production",
+        "error_code": "A17",
+        "release_id": "mobile-6.4.0"
+      },
+      "extraction": {
+        "confidence": 0.97,
+        "evidence": [
+          "mobile",
+          "A17",
+          "6.4.0"
+        ]
+      }
+    }
+  },
+  {
+    "email": {
+      "id": "EMAIL-0091",
+      "received_at": "2026-09-22T09:32:00+02:00",
+      "from": "vendor.management1@example.test",
+      "subject": "Infrastructure supplier notice 91",
+      "body": "Our supplier reports degraded service for the production E-Banking server srv-eb-01 in EMEA under contract INFRA-SLA. Reference CASE-0091."
+    },
+    "ticket": {
+      "id": "TCK-0091",
+      "email_id": "EMAIL-0091",
+      "received_at": "2026-09-22T09:32:00+02:00",
+      "raw_email": "Our supplier reports degraded service for the production E-Banking server srv-eb-01 in EMEA under contract INFRA-SLA. Reference CASE-0091.",
+      "summary": "Supplier reports degraded service for the E-Banking Server.",
+      "ontology_values": {
+        "actor_ids": [
+          "actor:supplier"
+        ],
+        "platform_ids": [],
+        "server_ids": [
+          "server:ebanking_primary"
+        ],
+        "supplier_ids": [
+          "actor:supplier"
+        ],
+        "edge_ids": [
+          "edge:server_provided_by_supplier"
+        ],
+        "relationship_types": [
+          "PROVIDED_BY"
+        ],
+        "primary_affected_node_id": "server:ebanking_primary",
+        "symptom": "server_unreachable",
+        "region": "EMEA",
+        "channel": "unknown",
+        "environment": "production",
+        "error_code": null,
+        "release_id": null
+      },
+      "extraction": {
+        "confidence": 0.91,
+        "evidence": [
+          "supplier",
+          "E-Banking server",
+          "srv-eb-01",
+          "degraded service"
+        ]
+      }
+    }
+  },
+  {
+    "email": {
+      "id": "EMAIL-0022",
+      "received_at": "2026-09-22T09:33:00+02:00",
+      "from": "support.agent4@example.test",
+      "subject": "iOS login failure A17 case 22",
+      "body": "A client reports that E-Banking login on the iPhone app fails with A17 since mobile-6.4.0. Reference CASE-0022."
+    },
+    "ticket": {
+      "id": "TCK-0022",
+      "email_id": "EMAIL-0022",
+      "received_at": "2026-09-22T09:33:00+02:00",
+      "raw_email": "A client reports that E-Banking login on the iPhone app fails with A17 since mobile-6.4.0. Reference CASE-0022.",
+      "summary": "Mobile iOS user cannot log into E-Banking after release 6.4.0.",
+      "ontology_values": {
+        "actor_ids": [
+          "actor:user"
+        ],
+        "platform_ids": [
+          "platform:e_banking"
+        ],
+        "server_ids": [],
+        "supplier_ids": [],
+        "edge_ids": [
+          "edge:user_login_ebanking"
+        ],
+        "relationship_types": [
+          "LOGS_INTO"
+        ],
+        "primary_affected_node_id": "platform:e_banking",
+        "symptom": "login_failure",
+        "region": "CH",
+        "channel": "mobile_ios",
+        "environment": "production",
+        "error_code": "A17",
+        "release_id": "mobile-6.4.0"
+      },
+      "extraction": {
+        "confidence": 0.97,
+        "evidence": [
+          "mobile",
+          "A17",
+          "6.4.0"
+        ]
+      }
+    }
+  },
+  {
+    "email": {
+      "id": "EMAIL-0083",
+      "received_at": "2026-09-22T09:33:00+02:00",
+      "from": "infrastructure.monitor2@example.test",
+      "subject": "srv-eb-01 connectivity alert 83",
+      "body": "Production health check cannot reach srv-eb-01, the E-Banking backend server in CH; connection timeout INFRA-001. Reference CASE-0083."
+    },
+    "ticket": {
+      "id": "TCK-0083",
+      "email_id": "EMAIL-0083",
+      "received_at": "2026-09-22T09:33:00+02:00",
+      "raw_email": "Production health check cannot reach srv-eb-01, the E-Banking backend server in CH; connection timeout INFRA-001. Reference CASE-0083.",
+      "summary": "The primary E-Banking Server is unreachable.",
+      "ontology_values": {
+        "actor_ids": [],
+        "platform_ids": [
+          "platform:e_banking"
+        ],
+        "server_ids": [
+          "server:ebanking_primary"
+        ],
+        "supplier_ids": [],
+        "edge_ids": [
+          "edge:ebanking_depends_on_server"
+        ],
+        "relationship_types": [
+          "DEPENDS_ON"
+        ],
+        "primary_affected_node_id": "server:ebanking_primary",
+        "symptom": "server_unreachable",
+        "region": "CH",
+        "channel": "api",
+        "environment": "production",
+        "error_code": "INFRA-001",
+        "release_id": null
+      },
+      "extraction": {
+        "confidence": 0.99,
+        "evidence": [
+          "srv-eb-01",
+          "E-Banking",
+          "server",
+          "connection timeout",
+          "INFRA-001"
+        ]
+      }
+    }
+  },
+  {
+    "email": {
+      "id": "EMAIL-0023",
+      "received_at": "2026-09-22T09:34:00+02:00",
+      "from": "support.agent5@example.test",
+      "subject": "iOS login failure A17 case 23",
+      "body": "Mobile user 23 cannot authenticate to online banking on iOS; the screen shows error A17 after today's 6.4.0 update. Reference CASE-0023."
+    },
+    "ticket": {
+      "id": "TCK-0023",
+      "email_id": "EMAIL-0023",
+      "received_at": "2026-09-22T09:34:00+02:00",
+      "raw_email": "Mobile user 23 cannot authenticate to online banking on iOS; the screen shows error A17 after today's 6.4.0 update. Reference CASE-0023.",
+      "summary": "Mobile iOS user cannot log into E-Banking after release 6.4.0.",
+      "ontology_values": {
+        "actor_ids": [
+          "actor:user"
+        ],
+        "platform_ids": [
+          "platform:e_banking"
+        ],
+        "server_ids": [],
+        "supplier_ids": [],
+        "edge_ids": [
+          "edge:user_login_ebanking"
+        ],
+        "relationship_types": [
+          "LOGS_INTO"
+        ],
+        "primary_affected_node_id": "platform:e_banking",
+        "symptom": "login_failure",
+        "region": "CH",
+        "channel": "mobile_ios",
+        "environment": "production",
+        "error_code": "A17",
+        "release_id": "mobile-6.4.0"
+      },
+      "extraction": {
+        "confidence": 0.97,
+        "evidence": [
+          "mobile",
+          "A17",
+          "6.4.0"
+        ]
+      }
+    }
+  },
+  {
+    "email": {
+      "id": "EMAIL-0024",
+      "received_at": "2026-09-22T09:35:00+02:00",
+      "from": "support.agent6@example.test",
+      "subject": "iOS login failure A17 case 24",
+      "body": "Since the mobile-6.4.0 rollout, E-Banking rejects an iOS customer's sign-in with code A17. Reference CASE-0024."
+    },
+    "ticket": {
+      "id": "TCK-0024",
+      "email_id": "EMAIL-0024",
+      "received_at": "2026-09-22T09:35:00+02:00",
+      "raw_email": "Since the mobile-6.4.0 rollout, E-Banking rejects an iOS customer's sign-in with code A17. Reference CASE-0024.",
+      "summary": "Mobile iOS user cannot log into E-Banking after release 6.4.0.",
+      "ontology_values": {
+        "actor_ids": [
+          "actor:user"
+        ],
+        "platform_ids": [
+          "platform:e_banking"
+        ],
+        "server_ids": [],
+        "supplier_ids": [],
+        "edge_ids": [
+          "edge:user_login_ebanking"
+        ],
+        "relationship_types": [
+          "LOGS_INTO"
+        ],
+        "primary_affected_node_id": "platform:e_banking",
+        "symptom": "login_failure",
+        "region": "CH",
+        "channel": "mobile_ios",
+        "environment": "production",
+        "error_code": "A17",
+        "release_id": "mobile-6.4.0"
+      },
+      "extraction": {
+        "confidence": 0.97,
+        "evidence": [
+          "mobile",
+          "A17",
+          "6.4.0"
+        ]
+      }
+    }
+  },
+  {
+    "email": {
+      "id": "EMAIL-0084",
+      "received_at": "2026-09-22T09:35:00+02:00",
+      "from": "infrastructure.monitor3@example.test",
+      "subject": "srv-eb-01 connectivity alert 84",
+      "body": "Production health check cannot reach srv-eb-01, the E-Banking backend server in CH; connection timeout INFRA-001. Reference CASE-0084."
+    },
+    "ticket": {
+      "id": "TCK-0084",
+      "email_id": "EMAIL-0084",
+      "received_at": "2026-09-22T09:35:00+02:00",
+      "raw_email": "Production health check cannot reach srv-eb-01, the E-Banking backend server in CH; connection timeout INFRA-001. Reference CASE-0084.",
+      "summary": "The primary E-Banking Server is unreachable.",
+      "ontology_values": {
+        "actor_ids": [],
+        "platform_ids": [
+          "platform:e_banking"
+        ],
+        "server_ids": [
+          "server:ebanking_primary"
+        ],
+        "supplier_ids": [],
+        "edge_ids": [
+          "edge:ebanking_depends_on_server"
+        ],
+        "relationship_types": [
+          "DEPENDS_ON"
+        ],
+        "primary_affected_node_id": "server:ebanking_primary",
+        "symptom": "server_unreachable",
+        "region": "CH",
+        "channel": "api",
+        "environment": "production",
+        "error_code": "INFRA-001",
+        "release_id": null
+      },
+      "extraction": {
+        "confidence": 0.99,
+        "evidence": [
+          "srv-eb-01",
+          "E-Banking",
+          "server",
+          "connection timeout",
+          "INFRA-001"
+        ]
+      }
+    }
+  },
+  {
+    "email": {
+      "id": "EMAIL-0025",
+      "received_at": "2026-09-22T09:36:00+02:00",
+      "from": "support.agent1@example.test",
+      "subject": "iOS login failure A17 case 25",
+      "body": "Customer 25 says the updated iOS mobile banking app returns A17 at login on version mobile-6.4.0. Reference CASE-0025."
+    },
+    "ticket": {
+      "id": "TCK-0025",
+      "email_id": "EMAIL-0025",
+      "received_at": "2026-09-22T09:36:00+02:00",
+      "raw_email": "Customer 25 says the updated iOS mobile banking app returns A17 at login on version mobile-6.4.0. Reference CASE-0025.",
+      "summary": "Mobile iOS user cannot log into E-Banking after release 6.4.0.",
+      "ontology_values": {
+        "actor_ids": [
+          "actor:user"
+        ],
+        "platform_ids": [
+          "platform:e_banking"
+        ],
+        "server_ids": [],
+        "supplier_ids": [],
+        "edge_ids": [
+          "edge:user_login_ebanking"
+        ],
+        "relationship_types": [
+          "LOGS_INTO"
+        ],
+        "primary_affected_node_id": "platform:e_banking",
+        "symptom": "login_failure",
+        "region": "CH",
+        "channel": "mobile_ios",
+        "environment": "production",
+        "error_code": "A17",
+        "release_id": "mobile-6.4.0"
+      },
+      "extraction": {
+        "confidence": 0.97,
+        "evidence": [
+          "mobile",
+          "A17",
+          "6.4.0"
+        ]
+      }
+    }
+  },
+  {
+    "email": {
+      "id": "EMAIL-0085",
+      "received_at": "2026-09-22T09:37:00+02:00",
+      "from": "infrastructure.monitor1@example.test",
+      "subject": "srv-eb-01 connectivity alert 85",
+      "body": "Production health check cannot reach srv-eb-01, the E-Banking backend server in CH; connection timeout INFRA-001. Reference CASE-0085."
+    },
+    "ticket": {
+      "id": "TCK-0085",
+      "email_id": "EMAIL-0085",
+      "received_at": "2026-09-22T09:37:00+02:00",
+      "raw_email": "Production health check cannot reach srv-eb-01, the E-Banking backend server in CH; connection timeout INFRA-001. Reference CASE-0085.",
+      "summary": "The primary E-Banking Server is unreachable.",
+      "ontology_values": {
+        "actor_ids": [],
+        "platform_ids": [
+          "platform:e_banking"
+        ],
+        "server_ids": [
+          "server:ebanking_primary"
+        ],
+        "supplier_ids": [],
+        "edge_ids": [
+          "edge:ebanking_depends_on_server"
+        ],
+        "relationship_types": [
+          "DEPENDS_ON"
+        ],
+        "primary_affected_node_id": "server:ebanking_primary",
+        "symptom": "server_unreachable",
+        "region": "CH",
+        "channel": "api",
+        "environment": "production",
+        "error_code": "INFRA-001",
+        "release_id": null
+      },
+      "extraction": {
+        "confidence": 0.99,
+        "evidence": [
+          "srv-eb-01",
+          "E-Banking",
+          "server",
+          "connection timeout",
+          "INFRA-001"
+        ]
+      }
+    }
+  },
+  {
+    "email": {
+      "id": "EMAIL-0086",
+      "received_at": "2026-09-22T09:39:00+02:00",
+      "from": "infrastructure.monitor2@example.test",
+      "subject": "srv-eb-01 connectivity alert 86",
+      "body": "Production health check cannot reach srv-eb-01, the E-Banking backend server in CH; connection timeout INFRA-001. Reference CASE-0086."
+    },
+    "ticket": {
+      "id": "TCK-0086",
+      "email_id": "EMAIL-0086",
+      "received_at": "2026-09-22T09:39:00+02:00",
+      "raw_email": "Production health check cannot reach srv-eb-01, the E-Banking backend server in CH; connection timeout INFRA-001. Reference CASE-0086.",
+      "summary": "The primary E-Banking Server is unreachable.",
+      "ontology_values": {
+        "actor_ids": [],
+        "platform_ids": [
+          "platform:e_banking"
+        ],
+        "server_ids": [
+          "server:ebanking_primary"
+        ],
+        "supplier_ids": [],
+        "edge_ids": [
+          "edge:ebanking_depends_on_server"
+        ],
+        "relationship_types": [
+          "DEPENDS_ON"
+        ],
+        "primary_affected_node_id": "server:ebanking_primary",
+        "symptom": "server_unreachable",
+        "region": "CH",
+        "channel": "api",
+        "environment": "production",
+        "error_code": "INFRA-001",
+        "release_id": null
+      },
+      "extraction": {
+        "confidence": 0.99,
+        "evidence": [
+          "srv-eb-01",
+          "E-Banking",
+          "server",
+          "connection timeout",
+          "INFRA-001"
+        ]
+      }
+    }
+  },
+  {
+    "email": {
+      "id": "EMAIL-0092",
+      "received_at": "2026-09-22T09:39:00+02:00",
+      "from": "vendor.management2@example.test",
+      "subject": "Infrastructure supplier notice 92",
+      "body": "Our supplier reports degraded service for the production E-Banking server srv-eb-01 in EMEA under contract INFRA-SLA. Reference CASE-0092."
+    },
+    "ticket": {
+      "id": "TCK-0092",
+      "email_id": "EMAIL-0092",
+      "received_at": "2026-09-22T09:39:00+02:00",
+      "raw_email": "Our supplier reports degraded service for the production E-Banking server srv-eb-01 in EMEA under contract INFRA-SLA. Reference CASE-0092.",
+      "summary": "Supplier reports degraded service for the E-Banking Server.",
+      "ontology_values": {
+        "actor_ids": [
+          "actor:supplier"
+        ],
+        "platform_ids": [],
+        "server_ids": [
+          "server:ebanking_primary"
+        ],
+        "supplier_ids": [
+          "actor:supplier"
+        ],
+        "edge_ids": [
+          "edge:server_provided_by_supplier"
+        ],
+        "relationship_types": [
+          "PROVIDED_BY"
+        ],
+        "primary_affected_node_id": "server:ebanking_primary",
+        "symptom": "server_unreachable",
+        "region": "EMEA",
+        "channel": "unknown",
+        "environment": "production",
+        "error_code": null,
+        "release_id": null
+      },
+      "extraction": {
+        "confidence": 0.91,
+        "evidence": [
+          "supplier",
+          "E-Banking server",
+          "srv-eb-01",
+          "degraded service"
+        ]
+      }
+    }
+  },
+  {
+    "email": {
+      "id": "EMAIL-0059",
+      "received_at": "2026-09-22T09:40:00+02:00",
+      "from": "adviser59@example.test",
+      "subject": "CRM issue 59",
+      "body": "A CH adviser says the production CRM web portal rejects the login with CRM-403. Reference CASE-0059."
+    },
+    "ticket": {
+      "id": "TCK-0059",
+      "email_id": "EMAIL-0059",
+      "received_at": "2026-09-22T09:40:00+02:00",
+      "raw_email": "A CH adviser says the production CRM web portal rejects the login with CRM-403. Reference CASE-0059.",
+      "summary": "Employee reports a CRM login failure.",
+      "ontology_values": {
+        "actor_ids": [
+          "actor:employee"
+        ],
+        "platform_ids": [
+          "platform:crm"
+        ],
+        "server_ids": [],
+        "supplier_ids": [],
+        "edge_ids": [
+          "edge:employee_login_crm"
+        ],
+        "relationship_types": [
+          "LOGS_INTO"
+        ],
+        "primary_affected_node_id": "platform:crm",
+        "symptom": "login_failure",
+        "region": "CH",
+        "channel": "web",
+        "environment": "production",
+        "error_code": "CRM-403",
+        "release_id": null
+      },
+      "extraction": {
+        "confidence": 0.93,
+        "evidence": [
+          "adviser",
+          "CRM",
+          "web",
+          "CRM-403"
+        ]
+      }
+    }
+  },
+  {
+    "email": {
+      "id": "EMAIL-0087",
+      "received_at": "2026-09-22T09:41:00+02:00",
+      "from": "infrastructure.monitor3@example.test",
+      "subject": "srv-eb-01 connectivity alert 87",
+      "body": "Production health check cannot reach srv-eb-01, the E-Banking backend server in CH; connection timeout INFRA-001. Reference CASE-0087."
+    },
+    "ticket": {
+      "id": "TCK-0087",
+      "email_id": "EMAIL-0087",
+      "received_at": "2026-09-22T09:41:00+02:00",
+      "raw_email": "Production health check cannot reach srv-eb-01, the E-Banking backend server in CH; connection timeout INFRA-001. Reference CASE-0087.",
+      "summary": "The primary E-Banking Server is unreachable.",
+      "ontology_values": {
+        "actor_ids": [],
+        "platform_ids": [
+          "platform:e_banking"
+        ],
+        "server_ids": [
+          "server:ebanking_primary"
+        ],
+        "supplier_ids": [],
+        "edge_ids": [
+          "edge:ebanking_depends_on_server"
+        ],
+        "relationship_types": [
+          "DEPENDS_ON"
+        ],
+        "primary_affected_node_id": "server:ebanking_primary",
+        "symptom": "server_unreachable",
+        "region": "CH",
+        "channel": "api",
+        "environment": "production",
+        "error_code": "INFRA-001",
+        "release_id": null
+      },
+      "extraction": {
+        "confidence": 0.99,
+        "evidence": [
+          "srv-eb-01",
+          "E-Banking",
+          "server",
+          "connection timeout",
+          "INFRA-001"
+        ]
+      }
+    }
+  },
+  {
+    "email": {
+      "id": "EMAIL-0047",
+      "received_at": "2026-09-22T09:42:00+02:00",
+      "from": "employee47@example.test",
+      "subject": "HR portal access request 47",
+      "body": "An employee in EMEA cannot log into the HR portal on the web in production and sees HR-401. Reference CASE-0047."
+    },
+    "ticket": {
+      "id": "TCK-0047",
+      "email_id": "EMAIL-0047",
+      "received_at": "2026-09-22T09:42:00+02:00",
+      "raw_email": "An employee in EMEA cannot log into the HR portal on the web in production and sees HR-401. Reference CASE-0047.",
+      "summary": "Employee cannot log into the HR Platform.",
+      "ontology_values": {
+        "actor_ids": [
+          "actor:employee"
+        ],
+        "platform_ids": [
+          "platform:hr"
+        ],
+        "server_ids": [],
+        "supplier_ids": [],
+        "edge_ids": [
+          "edge:employee_login_hr"
+        ],
+        "relationship_types": [
+          "LOGS_INTO"
+        ],
+        "primary_affected_node_id": "platform:hr",
+        "symptom": "login_failure",
+        "region": "EMEA",
+        "channel": "web",
+        "environment": "production",
+        "error_code": "HR-401",
+        "release_id": null
+      },
+      "extraction": {
+        "confidence": 0.96,
+        "evidence": [
+          "employee",
+          "log into",
+          "HR portal",
+          "web",
+          "HR-401"
+        ]
+      }
+    }
+  },
+  {
+    "email": {
+      "id": "EMAIL-0088",
+      "received_at": "2026-09-22T09:43:00+02:00",
+      "from": "infrastructure.monitor1@example.test",
+      "subject": "srv-eb-01 connectivity alert 88",
+      "body": "Production health check cannot reach srv-eb-01, the E-Banking backend server in CH; connection timeout INFRA-001. Reference CASE-0088."
+    },
+    "ticket": {
+      "id": "TCK-0088",
+      "email_id": "EMAIL-0088",
+      "received_at": "2026-09-22T09:43:00+02:00",
+      "raw_email": "Production health check cannot reach srv-eb-01, the E-Banking backend server in CH; connection timeout INFRA-001. Reference CASE-0088.",
+      "summary": "The primary E-Banking Server is unreachable.",
+      "ontology_values": {
+        "actor_ids": [],
+        "platform_ids": [
+          "platform:e_banking"
+        ],
+        "server_ids": [
+          "server:ebanking_primary"
+        ],
+        "supplier_ids": [],
+        "edge_ids": [
+          "edge:ebanking_depends_on_server"
+        ],
+        "relationship_types": [
+          "DEPENDS_ON"
+        ],
+        "primary_affected_node_id": "server:ebanking_primary",
+        "symptom": "server_unreachable",
+        "region": "CH",
+        "channel": "api",
+        "environment": "production",
+        "error_code": "INFRA-001",
+        "release_id": null
+      },
+      "extraction": {
+        "confidence": 0.99,
+        "evidence": [
+          "srv-eb-01",
+          "E-Banking",
+          "server",
+          "connection timeout",
+          "INFRA-001"
+        ]
+      }
+    }
+  },
+  {
+    "email": {
+      "id": "EMAIL-0026",
+      "received_at": "2026-09-22T09:45:00+02:00",
+      "from": "contact.centre1@example.test",
+      "subject": "Android authentication issue B42 #26",
+      "body": "Customer 26 cannot log into E-Banking from Android; production app mobile-6.4.0 displays B42 in CH. Reference CASE-0026."
+    },
+    "ticket": {
+      "id": "TCK-0026",
+      "email_id": "EMAIL-0026",
+      "received_at": "2026-09-22T09:45:00+02:00",
+      "raw_email": "Customer 26 cannot log into E-Banking from Android; production app mobile-6.4.0 displays B42 in CH. Reference CASE-0026.",
+      "summary": "Android user receives B42 while logging into E-Banking.",
+      "ontology_values": {
+        "actor_ids": [
+          "actor:user"
+        ],
+        "platform_ids": [
+          "platform:e_banking"
+        ],
+        "server_ids": [],
+        "supplier_ids": [],
+        "edge_ids": [
+          "edge:user_login_ebanking"
+        ],
+        "relationship_types": [
+          "LOGS_INTO"
+        ],
+        "primary_affected_node_id": "platform:e_banking",
+        "symptom": "login_failure",
+        "region": "CH",
+        "channel": "mobile_android",
+        "environment": "production",
+        "error_code": "B42",
+        "release_id": "mobile-6.4.0"
+      },
+      "extraction": {
+        "confidence": 0.96,
+        "evidence": [
+          "Customer",
+          "log into E-Banking",
+          "Android",
+          "B42"
+        ]
+      }
+    }
+  },
+  {
+    "email": {
+      "id": "EMAIL-0089",
+      "received_at": "2026-09-22T09:45:00+02:00",
+      "from": "infrastructure.monitor2@example.test",
+      "subject": "srv-eb-01 connectivity alert 89",
+      "body": "Production health check cannot reach srv-eb-01, the E-Banking backend server in CH; connection timeout INFRA-001. Reference CASE-0089."
+    },
+    "ticket": {
+      "id": "TCK-0089",
+      "email_id": "EMAIL-0089",
+      "received_at": "2026-09-22T09:45:00+02:00",
+      "raw_email": "Production health check cannot reach srv-eb-01, the E-Banking backend server in CH; connection timeout INFRA-001. Reference CASE-0089.",
+      "summary": "The primary E-Banking Server is unreachable.",
+      "ontology_values": {
+        "actor_ids": [],
+        "platform_ids": [
+          "platform:e_banking"
+        ],
+        "server_ids": [
+          "server:ebanking_primary"
+        ],
+        "supplier_ids": [],
+        "edge_ids": [
+          "edge:ebanking_depends_on_server"
+        ],
+        "relationship_types": [
+          "DEPENDS_ON"
+        ],
+        "primary_affected_node_id": "server:ebanking_primary",
+        "symptom": "server_unreachable",
+        "region": "CH",
+        "channel": "api",
+        "environment": "production",
+        "error_code": "INFRA-001",
+        "release_id": null
+      },
+      "extraction": {
+        "confidence": 0.99,
+        "evidence": [
+          "srv-eb-01",
+          "E-Banking",
+          "server",
+          "connection timeout",
+          "INFRA-001"
+        ]
+      }
+    }
+  },
+  {
+    "email": {
+      "id": "EMAIL-0093",
+      "received_at": "2026-09-22T09:46:00+02:00",
+      "from": "vendor.management1@example.test",
+      "subject": "Infrastructure supplier notice 93",
+      "body": "Our supplier reports degraded service for the production E-Banking server srv-eb-01 in EMEA under contract INFRA-SLA. Reference CASE-0093."
+    },
+    "ticket": {
+      "id": "TCK-0093",
+      "email_id": "EMAIL-0093",
+      "received_at": "2026-09-22T09:46:00+02:00",
+      "raw_email": "Our supplier reports degraded service for the production E-Banking server srv-eb-01 in EMEA under contract INFRA-SLA. Reference CASE-0093.",
+      "summary": "Supplier reports degraded service for the E-Banking Server.",
+      "ontology_values": {
+        "actor_ids": [
+          "actor:supplier"
+        ],
+        "platform_ids": [],
+        "server_ids": [
+          "server:ebanking_primary"
+        ],
+        "supplier_ids": [
+          "actor:supplier"
+        ],
+        "edge_ids": [
+          "edge:server_provided_by_supplier"
+        ],
+        "relationship_types": [
+          "PROVIDED_BY"
+        ],
+        "primary_affected_node_id": "server:ebanking_primary",
+        "symptom": "server_unreachable",
+        "region": "EMEA",
+        "channel": "unknown",
+        "environment": "production",
+        "error_code": null,
+        "release_id": null
+      },
+      "extraction": {
+        "confidence": 0.91,
+        "evidence": [
+          "supplier",
+          "E-Banking server",
+          "srv-eb-01",
+          "degraded service"
+        ]
+      }
+    }
+  },
+  {
+    "email": {
+      "id": "EMAIL-0027",
+      "received_at": "2026-09-22T09:47:00+02:00",
+      "from": "contact.centre2@example.test",
+      "subject": "Android authentication issue B42 #27",
+      "body": "Customer 27 cannot log into E-Banking from Android; production app mobile-6.4.0 displays B42 in CH. Reference CASE-0027."
+    },
+    "ticket": {
+      "id": "TCK-0027",
+      "email_id": "EMAIL-0027",
+      "received_at": "2026-09-22T09:47:00+02:00",
+      "raw_email": "Customer 27 cannot log into E-Banking from Android; production app mobile-6.4.0 displays B42 in CH. Reference CASE-0027.",
+      "summary": "Android user receives B42 while logging into E-Banking.",
+      "ontology_values": {
+        "actor_ids": [
+          "actor:user"
+        ],
+        "platform_ids": [
+          "platform:e_banking"
+        ],
+        "server_ids": [],
+        "supplier_ids": [],
+        "edge_ids": [
+          "edge:user_login_ebanking"
+        ],
+        "relationship_types": [
+          "LOGS_INTO"
+        ],
+        "primary_affected_node_id": "platform:e_banking",
+        "symptom": "login_failure",
+        "region": "CH",
+        "channel": "mobile_android",
+        "environment": "production",
+        "error_code": "B42",
+        "release_id": "mobile-6.4.0"
+      },
+      "extraction": {
+        "confidence": 0.96,
+        "evidence": [
+          "Customer",
+          "log into E-Banking",
+          "Android",
+          "B42"
+        ]
+      }
+    }
+  },
+  {
+    "email": {
+      "id": "EMAIL-0090",
+      "received_at": "2026-09-22T09:47:00+02:00",
+      "from": "infrastructure.monitor3@example.test",
+      "subject": "srv-eb-01 connectivity alert 90",
+      "body": "Production health check cannot reach srv-eb-01, the E-Banking backend server in CH; connection timeout INFRA-001. Reference CASE-0090."
+    },
+    "ticket": {
+      "id": "TCK-0090",
+      "email_id": "EMAIL-0090",
+      "received_at": "2026-09-22T09:47:00+02:00",
+      "raw_email": "Production health check cannot reach srv-eb-01, the E-Banking backend server in CH; connection timeout INFRA-001. Reference CASE-0090.",
+      "summary": "The primary E-Banking Server is unreachable.",
+      "ontology_values": {
+        "actor_ids": [],
+        "platform_ids": [
+          "platform:e_banking"
+        ],
+        "server_ids": [
+          "server:ebanking_primary"
+        ],
+        "supplier_ids": [],
+        "edge_ids": [
+          "edge:ebanking_depends_on_server"
+        ],
+        "relationship_types": [
+          "DEPENDS_ON"
+        ],
+        "primary_affected_node_id": "server:ebanking_primary",
+        "symptom": "server_unreachable",
+        "region": "CH",
+        "channel": "api",
+        "environment": "production",
+        "error_code": "INFRA-001",
+        "release_id": null
+      },
+      "extraction": {
+        "confidence": 0.99,
+        "evidence": [
+          "srv-eb-01",
+          "E-Banking",
+          "server",
+          "connection timeout",
+          "INFRA-001"
+        ]
+      }
+    }
+  },
+  {
+    "email": {
+      "id": "EMAIL-0028",
+      "received_at": "2026-09-22T09:49:00+02:00",
+      "from": "contact.centre3@example.test",
+      "subject": "Android authentication issue B42 #28",
+      "body": "Customer 28 cannot log into E-Banking from Android; production app mobile-6.4.0 displays B42 in CH. Reference CASE-0028."
+    },
+    "ticket": {
+      "id": "TCK-0028",
+      "email_id": "EMAIL-0028",
+      "received_at": "2026-09-22T09:49:00+02:00",
+      "raw_email": "Customer 28 cannot log into E-Banking from Android; production app mobile-6.4.0 displays B42 in CH. Reference CASE-0028.",
+      "summary": "Android user receives B42 while logging into E-Banking.",
+      "ontology_values": {
+        "actor_ids": [
+          "actor:user"
+        ],
+        "platform_ids": [
+          "platform:e_banking"
+        ],
+        "server_ids": [],
+        "supplier_ids": [],
+        "edge_ids": [
+          "edge:user_login_ebanking"
+        ],
+        "relationship_types": [
+          "LOGS_INTO"
+        ],
+        "primary_affected_node_id": "platform:e_banking",
+        "symptom": "login_failure",
+        "region": "CH",
+        "channel": "mobile_android",
+        "environment": "production",
+        "error_code": "B42",
+        "release_id": "mobile-6.4.0"
+      },
+      "extraction": {
+        "confidence": 0.96,
+        "evidence": [
+          "Customer",
+          "log into E-Banking",
+          "Android",
+          "B42"
+        ]
+      }
+    }
+  },
+  {
+    "email": {
+      "id": "EMAIL-0029",
+      "received_at": "2026-09-22T09:51:00+02:00",
+      "from": "contact.centre4@example.test",
+      "subject": "Android authentication issue B42 #29",
+      "body": "Customer 29 cannot log into E-Banking from Android; production app mobile-6.4.0 displays B42 in CH. Reference CASE-0029."
+    },
+    "ticket": {
+      "id": "TCK-0029",
+      "email_id": "EMAIL-0029",
+      "received_at": "2026-09-22T09:51:00+02:00",
+      "raw_email": "Customer 29 cannot log into E-Banking from Android; production app mobile-6.4.0 displays B42 in CH. Reference CASE-0029.",
+      "summary": "Android user receives B42 while logging into E-Banking.",
+      "ontology_values": {
+        "actor_ids": [
+          "actor:user"
+        ],
+        "platform_ids": [
+          "platform:e_banking"
+        ],
+        "server_ids": [],
+        "supplier_ids": [],
+        "edge_ids": [
+          "edge:user_login_ebanking"
+        ],
+        "relationship_types": [
+          "LOGS_INTO"
+        ],
+        "primary_affected_node_id": "platform:e_banking",
+        "symptom": "login_failure",
+        "region": "CH",
+        "channel": "mobile_android",
+        "environment": "production",
+        "error_code": "B42",
+        "release_id": "mobile-6.4.0"
+      },
+      "extraction": {
+        "confidence": 0.96,
+        "evidence": [
+          "Customer",
+          "log into E-Banking",
+          "Android",
+          "B42"
+        ]
+      }
+    }
+  },
+  {
+    "email": {
+      "id": "EMAIL-0060",
+      "received_at": "2026-09-22T09:51:00+02:00",
+      "from": "adviser60@example.test",
+      "subject": "CRM issue 60",
+      "body": "A CH adviser says the production CRM web portal times out with CRM-504. Reference CASE-0060."
+    },
+    "ticket": {
+      "id": "TCK-0060",
+      "email_id": "EMAIL-0060",
+      "received_at": "2026-09-22T09:51:00+02:00",
+      "raw_email": "A CH adviser says the production CRM web portal times out with CRM-504. Reference CASE-0060.",
+      "summary": "Employee reports a CRM timeout.",
+      "ontology_values": {
+        "actor_ids": [
+          "actor:employee"
+        ],
+        "platform_ids": [
+          "platform:crm"
+        ],
+        "server_ids": [],
+        "supplier_ids": [],
+        "edge_ids": [
+          "edge:employee_login_crm"
+        ],
+        "relationship_types": [
+          "LOGS_INTO"
+        ],
+        "primary_affected_node_id": "platform:crm",
+        "symptom": "timeout",
+        "region": "CH",
+        "channel": "web",
+        "environment": "production",
+        "error_code": "CRM-504",
+        "release_id": null
+      },
+      "extraction": {
+        "confidence": 0.93,
+        "evidence": [
+          "adviser",
+          "CRM",
+          "web",
+          "CRM-504"
+        ]
+      }
+    }
+  },
+  {
+    "email": {
+      "id": "EMAIL-0030",
+      "received_at": "2026-09-22T09:53:00+02:00",
+      "from": "contact.centre1@example.test",
+      "subject": "Android authentication issue B42 #30",
+      "body": "Customer 30 cannot log into E-Banking from Android; production app mobile-6.4.0 displays B42 in CH. Reference CASE-0030."
+    },
+    "ticket": {
+      "id": "TCK-0030",
+      "email_id": "EMAIL-0030",
+      "received_at": "2026-09-22T09:53:00+02:00",
+      "raw_email": "Customer 30 cannot log into E-Banking from Android; production app mobile-6.4.0 displays B42 in CH. Reference CASE-0030.",
+      "summary": "Android user receives B42 while logging into E-Banking.",
+      "ontology_values": {
+        "actor_ids": [
+          "actor:user"
+        ],
+        "platform_ids": [
+          "platform:e_banking"
+        ],
+        "server_ids": [],
+        "supplier_ids": [],
+        "edge_ids": [
+          "edge:user_login_ebanking"
+        ],
+        "relationship_types": [
+          "LOGS_INTO"
+        ],
+        "primary_affected_node_id": "platform:e_banking",
+        "symptom": "login_failure",
+        "region": "CH",
+        "channel": "mobile_android",
+        "environment": "production",
+        "error_code": "B42",
+        "release_id": "mobile-6.4.0"
+      },
+      "extraction": {
+        "confidence": 0.96,
+        "evidence": [
+          "Customer",
+          "log into E-Banking",
+          "Android",
+          "B42"
+        ]
+      }
+    }
+  },
+  {
+    "email": {
+      "id": "EMAIL-0094",
+      "received_at": "2026-09-22T09:53:00+02:00",
+      "from": "vendor.management2@example.test",
+      "subject": "Infrastructure supplier notice 94",
+      "body": "Our supplier reports degraded service for the production E-Banking server srv-eb-01 in EMEA under contract INFRA-SLA. Reference CASE-0094."
+    },
+    "ticket": {
+      "id": "TCK-0094",
+      "email_id": "EMAIL-0094",
+      "received_at": "2026-09-22T09:53:00+02:00",
+      "raw_email": "Our supplier reports degraded service for the production E-Banking server srv-eb-01 in EMEA under contract INFRA-SLA. Reference CASE-0094.",
+      "summary": "Supplier reports degraded service for the E-Banking Server.",
+      "ontology_values": {
+        "actor_ids": [
+          "actor:supplier"
+        ],
+        "platform_ids": [],
+        "server_ids": [
+          "server:ebanking_primary"
+        ],
+        "supplier_ids": [
+          "actor:supplier"
+        ],
+        "edge_ids": [
+          "edge:server_provided_by_supplier"
+        ],
+        "relationship_types": [
+          "PROVIDED_BY"
+        ],
+        "primary_affected_node_id": "server:ebanking_primary",
+        "symptom": "server_unreachable",
+        "region": "EMEA",
+        "channel": "unknown",
+        "environment": "production",
+        "error_code": null,
+        "release_id": null
+      },
+      "extraction": {
+        "confidence": 0.91,
+        "evidence": [
+          "supplier",
+          "E-Banking server",
+          "srv-eb-01",
+          "degraded service"
+        ]
+      }
+    }
+  },
+  {
+    "email": {
+      "id": "EMAIL-0031",
+      "received_at": "2026-09-22T09:55:00+02:00",
+      "from": "contact.centre2@example.test",
+      "subject": "Android authentication issue B42 #31",
+      "body": "Customer 31 cannot log into E-Banking from Android; production app mobile-6.4.0 displays B42 in CH. Reference CASE-0031."
+    },
+    "ticket": {
+      "id": "TCK-0031",
+      "email_id": "EMAIL-0031",
+      "received_at": "2026-09-22T09:55:00+02:00",
+      "raw_email": "Customer 31 cannot log into E-Banking from Android; production app mobile-6.4.0 displays B42 in CH. Reference CASE-0031.",
+      "summary": "Android user receives B42 while logging into E-Banking.",
+      "ontology_values": {
+        "actor_ids": [
+          "actor:user"
+        ],
+        "platform_ids": [
+          "platform:e_banking"
+        ],
+        "server_ids": [],
+        "supplier_ids": [],
+        "edge_ids": [
+          "edge:user_login_ebanking"
+        ],
+        "relationship_types": [
+          "LOGS_INTO"
+        ],
+        "primary_affected_node_id": "platform:e_banking",
+        "symptom": "login_failure",
+        "region": "CH",
+        "channel": "mobile_android",
+        "environment": "production",
+        "error_code": "B42",
+        "release_id": "mobile-6.4.0"
+      },
+      "extraction": {
+        "confidence": 0.96,
+        "evidence": [
+          "Customer",
+          "log into E-Banking",
+          "Android",
+          "B42"
+        ]
+      }
+    }
+  },
+  {
+    "email": {
+      "id": "EMAIL-0032",
+      "received_at": "2026-09-22T09:57:00+02:00",
+      "from": "contact.centre3@example.test",
+      "subject": "Android authentication issue B42 #32",
+      "body": "Customer 32 cannot log into E-Banking from Android; production app mobile-6.4.0 displays B42 in CH. Reference CASE-0032."
+    },
+    "ticket": {
+      "id": "TCK-0032",
+      "email_id": "EMAIL-0032",
+      "received_at": "2026-09-22T09:57:00+02:00",
+      "raw_email": "Customer 32 cannot log into E-Banking from Android; production app mobile-6.4.0 displays B42 in CH. Reference CASE-0032.",
+      "summary": "Android user receives B42 while logging into E-Banking.",
+      "ontology_values": {
+        "actor_ids": [
+          "actor:user"
+        ],
+        "platform_ids": [
+          "platform:e_banking"
+        ],
+        "server_ids": [],
+        "supplier_ids": [],
+        "edge_ids": [
+          "edge:user_login_ebanking"
+        ],
+        "relationship_types": [
+          "LOGS_INTO"
+        ],
+        "primary_affected_node_id": "platform:e_banking",
+        "symptom": "login_failure",
+        "region": "CH",
+        "channel": "mobile_android",
+        "environment": "production",
+        "error_code": "B42",
+        "release_id": "mobile-6.4.0"
+      },
+      "extraction": {
+        "confidence": 0.96,
+        "evidence": [
+          "Customer",
+          "log into E-Banking",
+          "Android",
+          "B42"
+        ]
+      }
+    }
+  },
+  {
+    "email": {
+      "id": "EMAIL-0033",
+      "received_at": "2026-09-22T09:59:00+02:00",
+      "from": "contact.centre4@example.test",
+      "subject": "Android authentication issue B42 #33",
+      "body": "Customer 33 cannot log into E-Banking from Android; production app mobile-6.4.0 displays B42 in CH. Reference CASE-0033."
+    },
+    "ticket": {
+      "id": "TCK-0033",
+      "email_id": "EMAIL-0033",
+      "received_at": "2026-09-22T09:59:00+02:00",
+      "raw_email": "Customer 33 cannot log into E-Banking from Android; production app mobile-6.4.0 displays B42 in CH. Reference CASE-0033.",
+      "summary": "Android user receives B42 while logging into E-Banking.",
+      "ontology_values": {
+        "actor_ids": [
+          "actor:user"
+        ],
+        "platform_ids": [
+          "platform:e_banking"
+        ],
+        "server_ids": [],
+        "supplier_ids": [],
+        "edge_ids": [
+          "edge:user_login_ebanking"
+        ],
+        "relationship_types": [
+          "LOGS_INTO"
+        ],
+        "primary_affected_node_id": "platform:e_banking",
+        "symptom": "login_failure",
+        "region": "CH",
+        "channel": "mobile_android",
+        "environment": "production",
+        "error_code": "B42",
+        "release_id": "mobile-6.4.0"
+      },
+      "extraction": {
+        "confidence": 0.96,
+        "evidence": [
+          "Customer",
+          "log into E-Banking",
+          "Android",
+          "B42"
+        ]
+      }
+    }
+  },
+  {
+    "email": {
+      "id": "EMAIL-0095",
+      "received_at": "2026-09-22T10:00:00+02:00",
+      "from": "vendor.management1@example.test",
+      "subject": "Infrastructure supplier notice 95",
+      "body": "Our supplier reports degraded service for the production E-Banking server srv-eb-01 in EMEA under contract INFRA-SLA. Reference CASE-0095."
+    },
+    "ticket": {
+      "id": "TCK-0095",
+      "email_id": "EMAIL-0095",
+      "received_at": "2026-09-22T10:00:00+02:00",
+      "raw_email": "Our supplier reports degraded service for the production E-Banking server srv-eb-01 in EMEA under contract INFRA-SLA. Reference CASE-0095.",
+      "summary": "Supplier reports degraded service for the E-Banking Server.",
+      "ontology_values": {
+        "actor_ids": [
+          "actor:supplier"
+        ],
+        "platform_ids": [],
+        "server_ids": [
+          "server:ebanking_primary"
+        ],
+        "supplier_ids": [
+          "actor:supplier"
+        ],
+        "edge_ids": [
+          "edge:server_provided_by_supplier"
+        ],
+        "relationship_types": [
+          "PROVIDED_BY"
+        ],
+        "primary_affected_node_id": "server:ebanking_primary",
+        "symptom": "server_unreachable",
+        "region": "EMEA",
+        "channel": "unknown",
+        "environment": "production",
+        "error_code": null,
+        "release_id": null
+      },
+      "extraction": {
+        "confidence": 0.91,
+        "evidence": [
+          "supplier",
+          "E-Banking server",
+          "srv-eb-01",
+          "degraded service"
+        ]
+      }
+    }
+  },
+  {
+    "email": {
+      "id": "EMAIL-0034",
+      "received_at": "2026-09-22T10:01:00+02:00",
+      "from": "contact.centre1@example.test",
+      "subject": "Android authentication issue B42 #34",
+      "body": "Customer 34 cannot log into E-Banking from Android; production app mobile-6.4.0 displays B42 in CH. Reference CASE-0034."
+    },
+    "ticket": {
+      "id": "TCK-0034",
+      "email_id": "EMAIL-0034",
+      "received_at": "2026-09-22T10:01:00+02:00",
+      "raw_email": "Customer 34 cannot log into E-Banking from Android; production app mobile-6.4.0 displays B42 in CH. Reference CASE-0034.",
+      "summary": "Android user receives B42 while logging into E-Banking.",
+      "ontology_values": {
+        "actor_ids": [
+          "actor:user"
+        ],
+        "platform_ids": [
+          "platform:e_banking"
+        ],
+        "server_ids": [],
+        "supplier_ids": [],
+        "edge_ids": [
+          "edge:user_login_ebanking"
+        ],
+        "relationship_types": [
+          "LOGS_INTO"
+        ],
+        "primary_affected_node_id": "platform:e_banking",
+        "symptom": "login_failure",
+        "region": "CH",
+        "channel": "mobile_android",
+        "environment": "production",
+        "error_code": "B42",
+        "release_id": "mobile-6.4.0"
+      },
+      "extraction": {
+        "confidence": 0.96,
+        "evidence": [
+          "Customer",
+          "log into E-Banking",
+          "Android",
+          "B42"
+        ]
+      }
+    }
+  },
+  {
+    "email": {
+      "id": "EMAIL-0061",
+      "received_at": "2026-09-22T10:02:00+02:00",
+      "from": "adviser61@example.test",
+      "subject": "CRM issue 61",
+      "body": "A CH adviser says the production CRM web portal rejects the login with CRM-403. Reference CASE-0061."
+    },
+    "ticket": {
+      "id": "TCK-0061",
+      "email_id": "EMAIL-0061",
+      "received_at": "2026-09-22T10:02:00+02:00",
+      "raw_email": "A CH adviser says the production CRM web portal rejects the login with CRM-403. Reference CASE-0061.",
+      "summary": "Employee reports a CRM login failure.",
+      "ontology_values": {
+        "actor_ids": [
+          "actor:employee"
+        ],
+        "platform_ids": [
+          "platform:crm"
+        ],
+        "server_ids": [],
+        "supplier_ids": [],
+        "edge_ids": [
+          "edge:employee_login_crm"
+        ],
+        "relationship_types": [
+          "LOGS_INTO"
+        ],
+        "primary_affected_node_id": "platform:crm",
+        "symptom": "login_failure",
+        "region": "CH",
+        "channel": "web",
+        "environment": "production",
+        "error_code": "CRM-403",
+        "release_id": null
+      },
+      "extraction": {
+        "confidence": 0.93,
+        "evidence": [
+          "adviser",
+          "CRM",
+          "web",
+          "CRM-403"
+        ]
+      }
+    }
+  },
+  {
+    "email": {
+      "id": "EMAIL-0035",
+      "received_at": "2026-09-22T10:03:00+02:00",
+      "from": "contact.centre2@example.test",
+      "subject": "Android authentication issue B42 #35",
+      "body": "Customer 35 cannot log into E-Banking from Android; production app mobile-6.4.0 displays B42 in CH. Reference CASE-0035."
+    },
+    "ticket": {
+      "id": "TCK-0035",
+      "email_id": "EMAIL-0035",
+      "received_at": "2026-09-22T10:03:00+02:00",
+      "raw_email": "Customer 35 cannot log into E-Banking from Android; production app mobile-6.4.0 displays B42 in CH. Reference CASE-0035.",
+      "summary": "Android user receives B42 while logging into E-Banking.",
+      "ontology_values": {
+        "actor_ids": [
+          "actor:user"
+        ],
+        "platform_ids": [
+          "platform:e_banking"
+        ],
+        "server_ids": [],
+        "supplier_ids": [],
+        "edge_ids": [
+          "edge:user_login_ebanking"
+        ],
+        "relationship_types": [
+          "LOGS_INTO"
+        ],
+        "primary_affected_node_id": "platform:e_banking",
+        "symptom": "login_failure",
+        "region": "CH",
+        "channel": "mobile_android",
+        "environment": "production",
+        "error_code": "B42",
+        "release_id": "mobile-6.4.0"
+      },
+      "extraction": {
+        "confidence": 0.96,
+        "evidence": [
+          "Customer",
+          "log into E-Banking",
+          "Android",
+          "B42"
+        ]
+      }
+    }
+  },
+  {
+    "email": {
+      "id": "EMAIL-0048",
+      "received_at": "2026-09-22T10:06:00+02:00",
+      "from": "employee48@example.test",
+      "subject": "HR portal access request 48",
+      "body": "An employee in EMEA cannot log into the HR portal on the web in production and sees HR-401. Reference CASE-0048."
+    },
+    "ticket": {
+      "id": "TCK-0048",
+      "email_id": "EMAIL-0048",
+      "received_at": "2026-09-22T10:06:00+02:00",
+      "raw_email": "An employee in EMEA cannot log into the HR portal on the web in production and sees HR-401. Reference CASE-0048.",
+      "summary": "Employee cannot log into the HR Platform.",
+      "ontology_values": {
+        "actor_ids": [
+          "actor:employee"
+        ],
+        "platform_ids": [
+          "platform:hr"
+        ],
+        "server_ids": [],
+        "supplier_ids": [],
+        "edge_ids": [
+          "edge:employee_login_hr"
+        ],
+        "relationship_types": [
+          "LOGS_INTO"
+        ],
+        "primary_affected_node_id": "platform:hr",
+        "symptom": "login_failure",
+        "region": "EMEA",
+        "channel": "web",
+        "environment": "production",
+        "error_code": "HR-401",
+        "release_id": null
+      },
+      "extraction": {
+        "confidence": 0.96,
+        "evidence": [
+          "employee",
+          "log into",
+          "HR portal",
+          "web",
+          "HR-401"
+        ]
+      }
+    }
+  },
+  {
+    "email": {
+      "id": "EMAIL-0036",
+      "received_at": "2026-09-22T10:10:00+02:00",
+      "from": "web.ops1@example.test",
+      "subject": "Web banking timeout 36",
+      "body": "A CH client using the E-Banking web channel in production sees a timeout before the login page completes; code WEB-504. Reference CASE-0036."
+    },
+    "ticket": {
+      "id": "TCK-0036",
+      "email_id": "EMAIL-0036",
+      "received_at": "2026-09-22T10:10:00+02:00",
+      "raw_email": "A CH client using the E-Banking web channel in production sees a timeout before the login page completes; code WEB-504. Reference CASE-0036.",
+      "summary": "E-Banking web login times out with WEB-504.",
+      "ontology_values": {
+        "actor_ids": [
+          "actor:user"
+        ],
+        "platform_ids": [
+          "platform:e_banking"
+        ],
+        "server_ids": [],
+        "supplier_ids": [],
+        "edge_ids": [
+          "edge:user_login_ebanking"
+        ],
+        "relationship_types": [
+          "LOGS_INTO"
+        ],
+        "primary_affected_node_id": "platform:e_banking",
+        "symptom": "timeout",
+        "region": "CH",
+        "channel": "web",
+        "environment": "production",
+        "error_code": "WEB-504",
+        "release_id": null
+      },
+      "extraction": {
+        "confidence": 0.94,
+        "evidence": [
+          "client",
+          "E-Banking",
+          "web",
+          "timeout",
+          "WEB-504"
+        ]
+      }
+    }
+  },
+  {
+    "email": {
+      "id": "EMAIL-0062",
+      "received_at": "2026-09-22T10:13:00+02:00",
+      "from": "adviser62@example.test",
+      "subject": "CRM issue 62",
+      "body": "A CH adviser says the production CRM web portal times out with CRM-504. Reference CASE-0062."
+    },
+    "ticket": {
+      "id": "TCK-0062",
+      "email_id": "EMAIL-0062",
+      "received_at": "2026-09-22T10:13:00+02:00",
+      "raw_email": "A CH adviser says the production CRM web portal times out with CRM-504. Reference CASE-0062.",
+      "summary": "Employee reports a CRM timeout.",
+      "ontology_values": {
+        "actor_ids": [
+          "actor:employee"
+        ],
+        "platform_ids": [
+          "platform:crm"
+        ],
+        "server_ids": [],
+        "supplier_ids": [],
+        "edge_ids": [
+          "edge:employee_login_crm"
+        ],
+        "relationship_types": [
+          "LOGS_INTO"
+        ],
+        "primary_affected_node_id": "platform:crm",
+        "symptom": "timeout",
+        "region": "CH",
+        "channel": "web",
+        "environment": "production",
+        "error_code": "CRM-504",
+        "release_id": null
+      },
+      "extraction": {
+        "confidence": 0.93,
+        "evidence": [
+          "adviser",
+          "CRM",
+          "web",
+          "CRM-504"
+        ]
+      }
+    }
+  },
+  {
+    "email": {
+      "id": "EMAIL-0037",
+      "received_at": "2026-09-22T10:14:00+02:00",
+      "from": "web.ops2@example.test",
+      "subject": "Web banking timeout 37",
+      "body": "A CH client using the E-Banking web channel in production sees a timeout before the login page completes; code WEB-504. Reference CASE-0037."
+    },
+    "ticket": {
+      "id": "TCK-0037",
+      "email_id": "EMAIL-0037",
+      "received_at": "2026-09-22T10:14:00+02:00",
+      "raw_email": "A CH client using the E-Banking web channel in production sees a timeout before the login page completes; code WEB-504. Reference CASE-0037.",
+      "summary": "E-Banking web login times out with WEB-504.",
+      "ontology_values": {
+        "actor_ids": [
+          "actor:user"
+        ],
+        "platform_ids": [
+          "platform:e_banking"
+        ],
+        "server_ids": [],
+        "supplier_ids": [],
+        "edge_ids": [
+          "edge:user_login_ebanking"
+        ],
+        "relationship_types": [
+          "LOGS_INTO"
+        ],
+        "primary_affected_node_id": "platform:e_banking",
+        "symptom": "timeout",
+        "region": "CH",
+        "channel": "web",
+        "environment": "production",
+        "error_code": "WEB-504",
+        "release_id": null
+      },
+      "extraction": {
+        "confidence": 0.94,
+        "evidence": [
+          "client",
+          "E-Banking",
+          "web",
+          "timeout",
+          "WEB-504"
+        ]
+      }
+    }
+  },
+  {
+    "email": {
+      "id": "EMAIL-0038",
+      "received_at": "2026-09-22T10:18:00+02:00",
+      "from": "web.ops3@example.test",
+      "subject": "Web banking timeout 38",
+      "body": "A CH client using the E-Banking web channel in production sees a timeout before the login page completes; code WEB-504. Reference CASE-0038."
+    },
+    "ticket": {
+      "id": "TCK-0038",
+      "email_id": "EMAIL-0038",
+      "received_at": "2026-09-22T10:18:00+02:00",
+      "raw_email": "A CH client using the E-Banking web channel in production sees a timeout before the login page completes; code WEB-504. Reference CASE-0038.",
+      "summary": "E-Banking web login times out with WEB-504.",
+      "ontology_values": {
+        "actor_ids": [
+          "actor:user"
+        ],
+        "platform_ids": [
+          "platform:e_banking"
+        ],
+        "server_ids": [],
+        "supplier_ids": [],
+        "edge_ids": [
+          "edge:user_login_ebanking"
+        ],
+        "relationship_types": [
+          "LOGS_INTO"
+        ],
+        "primary_affected_node_id": "platform:e_banking",
+        "symptom": "timeout",
+        "region": "CH",
+        "channel": "web",
+        "environment": "production",
+        "error_code": "WEB-504",
+        "release_id": null
+      },
+      "extraction": {
+        "confidence": 0.94,
+        "evidence": [
+          "client",
+          "E-Banking",
+          "web",
+          "timeout",
+          "WEB-504"
+        ]
+      }
+    }
+  },
+  {
+    "email": {
+      "id": "EMAIL-0039",
+      "received_at": "2026-09-22T10:22:00+02:00",
+      "from": "web.ops1@example.test",
+      "subject": "Web banking timeout 39",
+      "body": "A CH client using the E-Banking web channel in production sees a timeout before the login page completes; code WEB-504. Reference CASE-0039."
+    },
+    "ticket": {
+      "id": "TCK-0039",
+      "email_id": "EMAIL-0039",
+      "received_at": "2026-09-22T10:22:00+02:00",
+      "raw_email": "A CH client using the E-Banking web channel in production sees a timeout before the login page completes; code WEB-504. Reference CASE-0039.",
+      "summary": "E-Banking web login times out with WEB-504.",
+      "ontology_values": {
+        "actor_ids": [
+          "actor:user"
+        ],
+        "platform_ids": [
+          "platform:e_banking"
+        ],
+        "server_ids": [],
+        "supplier_ids": [],
+        "edge_ids": [
+          "edge:user_login_ebanking"
+        ],
+        "relationship_types": [
+          "LOGS_INTO"
+        ],
+        "primary_affected_node_id": "platform:e_banking",
+        "symptom": "timeout",
+        "region": "CH",
+        "channel": "web",
+        "environment": "production",
+        "error_code": "WEB-504",
+        "release_id": null
+      },
+      "extraction": {
+        "confidence": 0.94,
+        "evidence": [
+          "client",
+          "E-Banking",
+          "web",
+          "timeout",
+          "WEB-504"
+        ]
+      }
+    }
+  },
+  {
+    "email": {
+      "id": "EMAIL-0063",
+      "received_at": "2026-09-22T10:24:00+02:00",
+      "from": "adviser63@example.test",
+      "subject": "CRM issue 63",
+      "body": "A CH adviser says the production CRM web portal rejects the login with CRM-403. Reference CASE-0063."
+    },
+    "ticket": {
+      "id": "TCK-0063",
+      "email_id": "EMAIL-0063",
+      "received_at": "2026-09-22T10:24:00+02:00",
+      "raw_email": "A CH adviser says the production CRM web portal rejects the login with CRM-403. Reference CASE-0063.",
+      "summary": "Employee reports a CRM login failure.",
+      "ontology_values": {
+        "actor_ids": [
+          "actor:employee"
+        ],
+        "platform_ids": [
+          "platform:crm"
+        ],
+        "server_ids": [],
+        "supplier_ids": [],
+        "edge_ids": [
+          "edge:employee_login_crm"
+        ],
+        "relationship_types": [
+          "LOGS_INTO"
+        ],
+        "primary_affected_node_id": "platform:crm",
+        "symptom": "login_failure",
+        "region": "CH",
+        "channel": "web",
+        "environment": "production",
+        "error_code": "CRM-403",
+        "release_id": null
+      },
+      "extraction": {
+        "confidence": 0.93,
+        "evidence": [
+          "adviser",
+          "CRM",
+          "web",
+          "CRM-403"
+        ]
+      }
+    }
+  },
+  {
+    "email": {
+      "id": "EMAIL-0040",
+      "received_at": "2026-09-22T10:26:00+02:00",
+      "from": "web.ops2@example.test",
+      "subject": "Web banking timeout 40",
+      "body": "A CH client using the E-Banking web channel in production sees a timeout before the login page completes; code WEB-504. Reference CASE-0040."
+    },
+    "ticket": {
+      "id": "TCK-0040",
+      "email_id": "EMAIL-0040",
+      "received_at": "2026-09-22T10:26:00+02:00",
+      "raw_email": "A CH client using the E-Banking web channel in production sees a timeout before the login page completes; code WEB-504. Reference CASE-0040.",
+      "summary": "E-Banking web login times out with WEB-504.",
+      "ontology_values": {
+        "actor_ids": [
+          "actor:user"
+        ],
+        "platform_ids": [
+          "platform:e_banking"
+        ],
+        "server_ids": [],
+        "supplier_ids": [],
+        "edge_ids": [
+          "edge:user_login_ebanking"
+        ],
+        "relationship_types": [
+          "LOGS_INTO"
+        ],
+        "primary_affected_node_id": "platform:e_banking",
+        "symptom": "timeout",
+        "region": "CH",
+        "channel": "web",
+        "environment": "production",
+        "error_code": "WEB-504",
+        "release_id": null
+      },
+      "extraction": {
+        "confidence": 0.94,
+        "evidence": [
+          "client",
+          "E-Banking",
+          "web",
+          "timeout",
+          "WEB-504"
+        ]
+      }
+    }
+  },
+  {
+    "email": {
+      "id": "EMAIL-0041",
+      "received_at": "2026-09-22T10:30:00+02:00",
+      "from": "web.ops3@example.test",
+      "subject": "Web banking timeout 41",
+      "body": "A CH client using the E-Banking web channel in production sees a timeout before the login page completes; code WEB-504. Reference CASE-0041."
+    },
+    "ticket": {
+      "id": "TCK-0041",
+      "email_id": "EMAIL-0041",
+      "received_at": "2026-09-22T10:30:00+02:00",
+      "raw_email": "A CH client using the E-Banking web channel in production sees a timeout before the login page completes; code WEB-504. Reference CASE-0041.",
+      "summary": "E-Banking web login times out with WEB-504.",
+      "ontology_values": {
+        "actor_ids": [
+          "actor:user"
+        ],
+        "platform_ids": [
+          "platform:e_banking"
+        ],
+        "server_ids": [],
+        "supplier_ids": [],
+        "edge_ids": [
+          "edge:user_login_ebanking"
+        ],
+        "relationship_types": [
+          "LOGS_INTO"
+        ],
+        "primary_affected_node_id": "platform:e_banking",
+        "symptom": "timeout",
+        "region": "CH",
+        "channel": "web",
+        "environment": "production",
+        "error_code": "WEB-504",
+        "release_id": null
+      },
+      "extraction": {
+        "confidence": 0.94,
+        "evidence": [
+          "client",
+          "E-Banking",
+          "web",
+          "timeout",
+          "WEB-504"
+        ]
+      }
+    }
+  },
+  {
+    "email": {
+      "id": "EMAIL-0049",
+      "received_at": "2026-09-22T10:30:00+02:00",
+      "from": "employee49@example.test",
+      "subject": "HR portal access request 49",
+      "body": "An employee in EMEA cannot log into the HR portal on the web in production and sees HR-401. Reference CASE-0049."
+    },
+    "ticket": {
+      "id": "TCK-0049",
+      "email_id": "EMAIL-0049",
+      "received_at": "2026-09-22T10:30:00+02:00",
+      "raw_email": "An employee in EMEA cannot log into the HR portal on the web in production and sees HR-401. Reference CASE-0049.",
+      "summary": "Employee cannot log into the HR Platform.",
+      "ontology_values": {
+        "actor_ids": [
+          "actor:employee"
+        ],
+        "platform_ids": [
+          "platform:hr"
+        ],
+        "server_ids": [],
+        "supplier_ids": [],
+        "edge_ids": [
+          "edge:employee_login_hr"
+        ],
+        "relationship_types": [
+          "LOGS_INTO"
+        ],
+        "primary_affected_node_id": "platform:hr",
+        "symptom": "login_failure",
+        "region": "EMEA",
+        "channel": "web",
+        "environment": "production",
+        "error_code": "HR-401",
+        "release_id": null
+      },
+      "extraction": {
+        "confidence": 0.96,
+        "evidence": [
+          "employee",
+          "log into",
+          "HR portal",
+          "web",
+          "HR-401"
+        ]
+      }
+    }
+  },
+  {
+    "email": {
+      "id": "EMAIL-0042",
+      "received_at": "2026-09-22T10:34:00+02:00",
+      "from": "web.ops1@example.test",
+      "subject": "Web banking timeout 42",
+      "body": "A CH client using the E-Banking web channel in production sees a timeout before the login page completes; code WEB-504. Reference CASE-0042."
+    },
+    "ticket": {
+      "id": "TCK-0042",
+      "email_id": "EMAIL-0042",
+      "received_at": "2026-09-22T10:34:00+02:00",
+      "raw_email": "A CH client using the E-Banking web channel in production sees a timeout before the login page completes; code WEB-504. Reference CASE-0042.",
+      "summary": "E-Banking web login times out with WEB-504.",
+      "ontology_values": {
+        "actor_ids": [
+          "actor:user"
+        ],
+        "platform_ids": [
+          "platform:e_banking"
+        ],
+        "server_ids": [],
+        "supplier_ids": [],
+        "edge_ids": [
+          "edge:user_login_ebanking"
+        ],
+        "relationship_types": [
+          "LOGS_INTO"
+        ],
+        "primary_affected_node_id": "platform:e_banking",
+        "symptom": "timeout",
+        "region": "CH",
+        "channel": "web",
+        "environment": "production",
+        "error_code": "WEB-504",
+        "release_id": null
+      },
+      "extraction": {
+        "confidence": 0.94,
+        "evidence": [
+          "client",
+          "E-Banking",
+          "web",
+          "timeout",
+          "WEB-504"
+        ]
+      }
+    }
+  },
+  {
+    "email": {
+      "id": "EMAIL-0043",
+      "received_at": "2026-09-22T10:38:00+02:00",
+      "from": "web.ops2@example.test",
+      "subject": "Web banking timeout 43",
+      "body": "A CH client using the E-Banking web channel in production sees a timeout before the login page completes; code WEB-504. Reference CASE-0043."
+    },
+    "ticket": {
+      "id": "TCK-0043",
+      "email_id": "EMAIL-0043",
+      "received_at": "2026-09-22T10:38:00+02:00",
+      "raw_email": "A CH client using the E-Banking web channel in production sees a timeout before the login page completes; code WEB-504. Reference CASE-0043.",
+      "summary": "E-Banking web login times out with WEB-504.",
+      "ontology_values": {
+        "actor_ids": [
+          "actor:user"
+        ],
+        "platform_ids": [
+          "platform:e_banking"
+        ],
+        "server_ids": [],
+        "supplier_ids": [],
+        "edge_ids": [
+          "edge:user_login_ebanking"
+        ],
+        "relationship_types": [
+          "LOGS_INTO"
+        ],
+        "primary_affected_node_id": "platform:e_banking",
+        "symptom": "timeout",
+        "region": "CH",
+        "channel": "web",
+        "environment": "production",
+        "error_code": "WEB-504",
+        "release_id": null
+      },
+      "extraction": {
+        "confidence": 0.94,
+        "evidence": [
+          "client",
+          "E-Banking",
+          "web",
+          "timeout",
+          "WEB-504"
+        ]
+      }
+    }
+  },
+  {
+    "email": {
+      "id": "EMAIL-0064",
+      "received_at": "2026-09-22T10:40:00+02:00",
+      "from": "accounts.payable1@example.test",
+      "subject": "Supplier payment report 64",
+      "body": "The CH Accounts Payable Platform was submitted twice a supplier payment; code PAY-208 in production. Reference CASE-0064."
+    },
+    "ticket": {
+      "id": "TCK-0064",
+      "email_id": "EMAIL-0064",
+      "received_at": "2026-09-22T10:40:00+02:00",
+      "raw_email": "The CH Accounts Payable Platform was submitted twice a supplier payment; code PAY-208 in production. Reference CASE-0064.",
+      "summary": "Accounts Payable reports a duplicate payment to a supplier.",
+      "ontology_values": {
+        "actor_ids": [],
+        "platform_ids": [
+          "platform:accounts_payable"
+        ],
+        "server_ids": [],
+        "supplier_ids": [
+          "actor:supplier"
+        ],
+        "edge_ids": [
+          "edge:accounts_payable_pays_supplier"
+        ],
+        "relationship_types": [
+          "PAYS"
+        ],
+        "primary_affected_node_id": "platform:accounts_payable",
+        "symptom": "duplicate_payment",
+        "region": "CH",
+        "channel": "web",
+        "environment": "production",
+        "error_code": "PAY-208",
+        "release_id": null
+      },
+      "extraction": {
+        "confidence": 0.95,
+        "evidence": [
+          "Accounts Payable Platform",
+          "supplier payment",
+          "PAY-208"
+        ]
+      }
+    }
+  },
+  {
+    "email": {
+      "id": "EMAIL-0065",
+      "received_at": "2026-09-22T10:43:00+02:00",
+      "from": "accounts.payable2@example.test",
+      "subject": "Supplier payment report 65",
+      "body": "The CH Accounts Payable Platform failed a supplier payment; code PAY-503 in production. Reference CASE-0065."
+    },
+    "ticket": {
+      "id": "TCK-0065",
+      "email_id": "EMAIL-0065",
+      "received_at": "2026-09-22T10:43:00+02:00",
+      "raw_email": "The CH Accounts Payable Platform failed a supplier payment; code PAY-503 in production. Reference CASE-0065.",
+      "summary": "Accounts Payable reports a payment failure to a supplier.",
+      "ontology_values": {
+        "actor_ids": [],
+        "platform_ids": [
+          "platform:accounts_payable"
+        ],
+        "server_ids": [],
+        "supplier_ids": [
+          "actor:supplier"
+        ],
+        "edge_ids": [
+          "edge:accounts_payable_pays_supplier"
+        ],
+        "relationship_types": [
+          "PAYS"
+        ],
+        "primary_affected_node_id": "platform:accounts_payable",
+        "symptom": "payment_failure",
+        "region": "CH",
+        "channel": "web",
+        "environment": "production",
+        "error_code": "PAY-503",
+        "release_id": null
+      },
+      "extraction": {
+        "confidence": 0.95,
+        "evidence": [
+          "Accounts Payable Platform",
+          "supplier payment",
+          "PAY-503"
+        ]
+      }
+    }
+  },
+  {
+    "email": {
+      "id": "EMAIL-0066",
+      "received_at": "2026-09-22T10:46:00+02:00",
+      "from": "accounts.payable3@example.test",
+      "subject": "Supplier payment report 66",
+      "body": "The CH Accounts Payable Platform was submitted twice a supplier payment; code PAY-208 in production. Reference CASE-0066."
+    },
+    "ticket": {
+      "id": "TCK-0066",
+      "email_id": "EMAIL-0066",
+      "received_at": "2026-09-22T10:46:00+02:00",
+      "raw_email": "The CH Accounts Payable Platform was submitted twice a supplier payment; code PAY-208 in production. Reference CASE-0066.",
+      "summary": "Accounts Payable reports a duplicate payment to a supplier.",
+      "ontology_values": {
+        "actor_ids": [],
+        "platform_ids": [
+          "platform:accounts_payable"
+        ],
+        "server_ids": [],
+        "supplier_ids": [
+          "actor:supplier"
+        ],
+        "edge_ids": [
+          "edge:accounts_payable_pays_supplier"
+        ],
+        "relationship_types": [
+          "PAYS"
+        ],
+        "primary_affected_node_id": "platform:accounts_payable",
+        "symptom": "duplicate_payment",
+        "region": "CH",
+        "channel": "web",
+        "environment": "production",
+        "error_code": "PAY-208",
+        "release_id": null
+      },
+      "extraction": {
+        "confidence": 0.95,
+        "evidence": [
+          "Accounts Payable Platform",
+          "supplier payment",
+          "PAY-208"
+        ]
+      }
+    }
+  },
+  {
+    "email": {
+      "id": "EMAIL-0067",
+      "received_at": "2026-09-22T10:49:00+02:00",
+      "from": "accounts.payable4@example.test",
+      "subject": "Supplier payment report 67",
+      "body": "The CH Accounts Payable Platform failed a supplier payment; code PAY-503 in production. Reference CASE-0067."
+    },
+    "ticket": {
+      "id": "TCK-0067",
+      "email_id": "EMAIL-0067",
+      "received_at": "2026-09-22T10:49:00+02:00",
+      "raw_email": "The CH Accounts Payable Platform failed a supplier payment; code PAY-503 in production. Reference CASE-0067.",
+      "summary": "Accounts Payable reports a payment failure to a supplier.",
+      "ontology_values": {
+        "actor_ids": [],
+        "platform_ids": [
+          "platform:accounts_payable"
+        ],
+        "server_ids": [],
+        "supplier_ids": [
+          "actor:supplier"
+        ],
+        "edge_ids": [
+          "edge:accounts_payable_pays_supplier"
+        ],
+        "relationship_types": [
+          "PAYS"
+        ],
+        "primary_affected_node_id": "platform:accounts_payable",
+        "symptom": "payment_failure",
+        "region": "CH",
+        "channel": "web",
+        "environment": "production",
+        "error_code": "PAY-503",
+        "release_id": null
+      },
+      "extraction": {
+        "confidence": 0.95,
+        "evidence": [
+          "Accounts Payable Platform",
+          "supplier payment",
+          "PAY-503"
+        ]
+      }
+    }
+  },
+  {
+    "email": {
+      "id": "EMAIL-0068",
+      "received_at": "2026-09-22T10:52:00+02:00",
+      "from": "accounts.payable5@example.test",
+      "subject": "Supplier payment report 68",
+      "body": "The CH Accounts Payable Platform was submitted twice a supplier payment; code PAY-208 in production. Reference CASE-0068."
+    },
+    "ticket": {
+      "id": "TCK-0068",
+      "email_id": "EMAIL-0068",
+      "received_at": "2026-09-22T10:52:00+02:00",
+      "raw_email": "The CH Accounts Payable Platform was submitted twice a supplier payment; code PAY-208 in production. Reference CASE-0068.",
+      "summary": "Accounts Payable reports a duplicate payment to a supplier.",
+      "ontology_values": {
+        "actor_ids": [],
+        "platform_ids": [
+          "platform:accounts_payable"
+        ],
+        "server_ids": [],
+        "supplier_ids": [
+          "actor:supplier"
+        ],
+        "edge_ids": [
+          "edge:accounts_payable_pays_supplier"
+        ],
+        "relationship_types": [
+          "PAYS"
+        ],
+        "primary_affected_node_id": "platform:accounts_payable",
+        "symptom": "duplicate_payment",
+        "region": "CH",
+        "channel": "web",
+        "environment": "production",
+        "error_code": "PAY-208",
+        "release_id": null
+      },
+      "extraction": {
+        "confidence": 0.95,
+        "evidence": [
+          "Accounts Payable Platform",
+          "supplier payment",
+          "PAY-208"
+        ]
+      }
+    }
+  },
+  {
+    "email": {
+      "id": "EMAIL-0050",
+      "received_at": "2026-09-22T10:54:00+02:00",
+      "from": "employee50@example.test",
+      "subject": "HR portal access request 50",
+      "body": "An employee in EMEA cannot log into the HR portal on the web in production and sees HR-401. Reference CASE-0050."
+    },
+    "ticket": {
+      "id": "TCK-0050",
+      "email_id": "EMAIL-0050",
+      "received_at": "2026-09-22T10:54:00+02:00",
+      "raw_email": "An employee in EMEA cannot log into the HR portal on the web in production and sees HR-401. Reference CASE-0050.",
+      "summary": "Employee cannot log into the HR Platform.",
+      "ontology_values": {
+        "actor_ids": [
+          "actor:employee"
+        ],
+        "platform_ids": [
+          "platform:hr"
+        ],
+        "server_ids": [],
+        "supplier_ids": [],
+        "edge_ids": [
+          "edge:employee_login_hr"
+        ],
+        "relationship_types": [
+          "LOGS_INTO"
+        ],
+        "primary_affected_node_id": "platform:hr",
+        "symptom": "login_failure",
+        "region": "EMEA",
+        "channel": "web",
+        "environment": "production",
+        "error_code": "HR-401",
+        "release_id": null
+      },
+      "extraction": {
+        "confidence": 0.96,
+        "evidence": [
+          "employee",
+          "log into",
+          "HR portal",
+          "web",
+          "HR-401"
+        ]
+      }
+    }
+  },
+  {
+    "email": {
+      "id": "EMAIL-0069",
+      "received_at": "2026-09-22T10:55:00+02:00",
+      "from": "accounts.payable1@example.test",
+      "subject": "Supplier payment report 69",
+      "body": "The CH Accounts Payable Platform failed a supplier payment; code PAY-503 in production. Reference CASE-0069."
+    },
+    "ticket": {
+      "id": "TCK-0069",
+      "email_id": "EMAIL-0069",
+      "received_at": "2026-09-22T10:55:00+02:00",
+      "raw_email": "The CH Accounts Payable Platform failed a supplier payment; code PAY-503 in production. Reference CASE-0069.",
+      "summary": "Accounts Payable reports a payment failure to a supplier.",
+      "ontology_values": {
+        "actor_ids": [],
+        "platform_ids": [
+          "platform:accounts_payable"
+        ],
+        "server_ids": [],
+        "supplier_ids": [
+          "actor:supplier"
+        ],
+        "edge_ids": [
+          "edge:accounts_payable_pays_supplier"
+        ],
+        "relationship_types": [
+          "PAYS"
+        ],
+        "primary_affected_node_id": "platform:accounts_payable",
+        "symptom": "payment_failure",
+        "region": "CH",
+        "channel": "web",
+        "environment": "production",
+        "error_code": "PAY-503",
+        "release_id": null
+      },
+      "extraction": {
+        "confidence": 0.95,
+        "evidence": [
+          "Accounts Payable Platform",
+          "supplier payment",
+          "PAY-503"
+        ]
+      }
+    }
+  },
+  {
+    "email": {
+      "id": "EMAIL-0070",
+      "received_at": "2026-09-22T10:58:00+02:00",
+      "from": "accounts.payable2@example.test",
+      "subject": "Supplier payment report 70",
+      "body": "The CH Accounts Payable Platform was submitted twice a supplier payment; code PAY-208 in production. Reference CASE-0070."
+    },
+    "ticket": {
+      "id": "TCK-0070",
+      "email_id": "EMAIL-0070",
+      "received_at": "2026-09-22T10:58:00+02:00",
+      "raw_email": "The CH Accounts Payable Platform was submitted twice a supplier payment; code PAY-208 in production. Reference CASE-0070.",
+      "summary": "Accounts Payable reports a duplicate payment to a supplier.",
+      "ontology_values": {
+        "actor_ids": [],
+        "platform_ids": [
+          "platform:accounts_payable"
+        ],
+        "server_ids": [],
+        "supplier_ids": [
+          "actor:supplier"
+        ],
+        "edge_ids": [
+          "edge:accounts_payable_pays_supplier"
+        ],
+        "relationship_types": [
+          "PAYS"
+        ],
+        "primary_affected_node_id": "platform:accounts_payable",
+        "symptom": "duplicate_payment",
+        "region": "CH",
+        "channel": "web",
+        "environment": "production",
+        "error_code": "PAY-208",
+        "release_id": null
+      },
+      "extraction": {
+        "confidence": 0.95,
+        "evidence": [
+          "Accounts Payable Platform",
+          "supplier payment",
+          "PAY-208"
+        ]
+      }
+    }
+  },
+  {
+    "email": {
+      "id": "EMAIL-0071",
+      "received_at": "2026-09-22T11:01:00+02:00",
+      "from": "accounts.payable3@example.test",
+      "subject": "Supplier payment report 71",
+      "body": "The CH Accounts Payable Platform failed a supplier payment; code PAY-503 in production. Reference CASE-0071."
+    },
+    "ticket": {
+      "id": "TCK-0071",
+      "email_id": "EMAIL-0071",
+      "received_at": "2026-09-22T11:01:00+02:00",
+      "raw_email": "The CH Accounts Payable Platform failed a supplier payment; code PAY-503 in production. Reference CASE-0071.",
+      "summary": "Accounts Payable reports a payment failure to a supplier.",
+      "ontology_values": {
+        "actor_ids": [],
+        "platform_ids": [
+          "platform:accounts_payable"
+        ],
+        "server_ids": [],
+        "supplier_ids": [
+          "actor:supplier"
+        ],
+        "edge_ids": [
+          "edge:accounts_payable_pays_supplier"
+        ],
+        "relationship_types": [
+          "PAYS"
+        ],
+        "primary_affected_node_id": "platform:accounts_payable",
+        "symptom": "payment_failure",
+        "region": "CH",
+        "channel": "web",
+        "environment": "production",
+        "error_code": "PAY-503",
+        "release_id": null
+      },
+      "extraction": {
+        "confidence": 0.95,
+        "evidence": [
+          "Accounts Payable Platform",
+          "supplier payment",
+          "PAY-503"
+        ]
+      }
+    }
+  },
+  {
+    "email": {
+      "id": "EMAIL-0072",
+      "received_at": "2026-09-22T11:04:00+02:00",
+      "from": "accounts.payable4@example.test",
+      "subject": "Supplier payment report 72",
+      "body": "The CH Accounts Payable Platform was submitted twice a supplier payment; code PAY-208 in production. Reference CASE-0072."
+    },
+    "ticket": {
+      "id": "TCK-0072",
+      "email_id": "EMAIL-0072",
+      "received_at": "2026-09-22T11:04:00+02:00",
+      "raw_email": "The CH Accounts Payable Platform was submitted twice a supplier payment; code PAY-208 in production. Reference CASE-0072.",
+      "summary": "Accounts Payable reports a duplicate payment to a supplier.",
+      "ontology_values": {
+        "actor_ids": [],
+        "platform_ids": [
+          "platform:accounts_payable"
+        ],
+        "server_ids": [],
+        "supplier_ids": [
+          "actor:supplier"
+        ],
+        "edge_ids": [
+          "edge:accounts_payable_pays_supplier"
+        ],
+        "relationship_types": [
+          "PAYS"
+        ],
+        "primary_affected_node_id": "platform:accounts_payable",
+        "symptom": "duplicate_payment",
+        "region": "CH",
+        "channel": "web",
+        "environment": "production",
+        "error_code": "PAY-208",
+        "release_id": null
+      },
+      "extraction": {
+        "confidence": 0.95,
+        "evidence": [
+          "Accounts Payable Platform",
+          "supplier payment",
+          "PAY-208"
+        ]
+      }
+    }
+  },
+  {
+    "email": {
+      "id": "EMAIL-0073",
+      "received_at": "2026-09-22T11:07:00+02:00",
+      "from": "accounts.payable5@example.test",
+      "subject": "Supplier payment report 73",
+      "body": "The CH Accounts Payable Platform failed a supplier payment; code PAY-503 in production. Reference CASE-0073."
+    },
+    "ticket": {
+      "id": "TCK-0073",
+      "email_id": "EMAIL-0073",
+      "received_at": "2026-09-22T11:07:00+02:00",
+      "raw_email": "The CH Accounts Payable Platform failed a supplier payment; code PAY-503 in production. Reference CASE-0073.",
+      "summary": "Accounts Payable reports a payment failure to a supplier.",
+      "ontology_values": {
+        "actor_ids": [],
+        "platform_ids": [
+          "platform:accounts_payable"
+        ],
+        "server_ids": [],
+        "supplier_ids": [
+          "actor:supplier"
+        ],
+        "edge_ids": [
+          "edge:accounts_payable_pays_supplier"
+        ],
+        "relationship_types": [
+          "PAYS"
+        ],
+        "primary_affected_node_id": "platform:accounts_payable",
+        "symptom": "payment_failure",
+        "region": "CH",
+        "channel": "web",
+        "environment": "production",
+        "error_code": "PAY-503",
+        "release_id": null
+      },
+      "extraction": {
+        "confidence": 0.95,
+        "evidence": [
+          "Accounts Payable Platform",
+          "supplier payment",
+          "PAY-503"
+        ]
+      }
+    }
+  },
+  {
+    "email": {
+      "id": "EMAIL-0074",
+      "received_at": "2026-09-22T11:10:00+02:00",
+      "from": "accounts.payable1@example.test",
+      "subject": "Supplier payment report 74",
+      "body": "The CH Accounts Payable Platform was submitted twice a supplier payment; code PAY-208 in production. Reference CASE-0074."
+    },
+    "ticket": {
+      "id": "TCK-0074",
+      "email_id": "EMAIL-0074",
+      "received_at": "2026-09-22T11:10:00+02:00",
+      "raw_email": "The CH Accounts Payable Platform was submitted twice a supplier payment; code PAY-208 in production. Reference CASE-0074.",
+      "summary": "Accounts Payable reports a duplicate payment to a supplier.",
+      "ontology_values": {
+        "actor_ids": [],
+        "platform_ids": [
+          "platform:accounts_payable"
+        ],
+        "server_ids": [],
+        "supplier_ids": [
+          "actor:supplier"
+        ],
+        "edge_ids": [
+          "edge:accounts_payable_pays_supplier"
+        ],
+        "relationship_types": [
+          "PAYS"
+        ],
+        "primary_affected_node_id": "platform:accounts_payable",
+        "symptom": "duplicate_payment",
+        "region": "CH",
+        "channel": "web",
+        "environment": "production",
+        "error_code": "PAY-208",
+        "release_id": null
+      },
+      "extraction": {
+        "confidence": 0.95,
+        "evidence": [
+          "Accounts Payable Platform",
+          "supplier payment",
+          "PAY-208"
+        ]
+      }
+    }
+  },
+  {
+    "email": {
+      "id": "EMAIL-0075",
+      "received_at": "2026-09-22T11:13:00+02:00",
+      "from": "accounts.payable2@example.test",
+      "subject": "Supplier payment report 75",
+      "body": "The CH Accounts Payable Platform failed a supplier payment; code PAY-503 in production. Reference CASE-0075."
+    },
+    "ticket": {
+      "id": "TCK-0075",
+      "email_id": "EMAIL-0075",
+      "received_at": "2026-09-22T11:13:00+02:00",
+      "raw_email": "The CH Accounts Payable Platform failed a supplier payment; code PAY-503 in production. Reference CASE-0075.",
+      "summary": "Accounts Payable reports a payment failure to a supplier.",
+      "ontology_values": {
+        "actor_ids": [],
+        "platform_ids": [
+          "platform:accounts_payable"
+        ],
+        "server_ids": [],
+        "supplier_ids": [
+          "actor:supplier"
+        ],
+        "edge_ids": [
+          "edge:accounts_payable_pays_supplier"
+        ],
+        "relationship_types": [
+          "PAYS"
+        ],
+        "primary_affected_node_id": "platform:accounts_payable",
+        "symptom": "payment_failure",
+        "region": "CH",
+        "channel": "web",
+        "environment": "production",
+        "error_code": "PAY-503",
+        "release_id": null
+      },
+      "extraction": {
+        "confidence": 0.95,
+        "evidence": [
+          "Accounts Payable Platform",
+          "supplier payment",
+          "PAY-503"
+        ]
+      }
+    }
+  },
+  {
+    "email": {
+      "id": "EMAIL-0076",
+      "received_at": "2026-09-22T11:16:00+02:00",
+      "from": "accounts.payable3@example.test",
+      "subject": "Supplier payment report 76",
+      "body": "The CH Accounts Payable Platform was submitted twice a supplier payment; code PAY-208 in production. Reference CASE-0076."
+    },
+    "ticket": {
+      "id": "TCK-0076",
+      "email_id": "EMAIL-0076",
+      "received_at": "2026-09-22T11:16:00+02:00",
+      "raw_email": "The CH Accounts Payable Platform was submitted twice a supplier payment; code PAY-208 in production. Reference CASE-0076.",
+      "summary": "Accounts Payable reports a duplicate payment to a supplier.",
+      "ontology_values": {
+        "actor_ids": [],
+        "platform_ids": [
+          "platform:accounts_payable"
+        ],
+        "server_ids": [],
+        "supplier_ids": [
+          "actor:supplier"
+        ],
+        "edge_ids": [
+          "edge:accounts_payable_pays_supplier"
+        ],
+        "relationship_types": [
+          "PAYS"
+        ],
+        "primary_affected_node_id": "platform:accounts_payable",
+        "symptom": "duplicate_payment",
+        "region": "CH",
+        "channel": "web",
+        "environment": "production",
+        "error_code": "PAY-208",
+        "release_id": null
+      },
+      "extraction": {
+        "confidence": 0.95,
+        "evidence": [
+          "Accounts Payable Platform",
+          "supplier payment",
+          "PAY-208"
+        ]
+      }
+    }
+  },
+  {
+    "email": {
+      "id": "EMAIL-0051",
+      "received_at": "2026-09-22T11:18:00+02:00",
+      "from": "employee51@example.test",
+      "subject": "HR portal access request 51",
+      "body": "An employee in EMEA cannot log into the HR portal on the web in production and sees HR-401. Reference CASE-0051."
+    },
+    "ticket": {
+      "id": "TCK-0051",
+      "email_id": "EMAIL-0051",
+      "received_at": "2026-09-22T11:18:00+02:00",
+      "raw_email": "An employee in EMEA cannot log into the HR portal on the web in production and sees HR-401. Reference CASE-0051.",
+      "summary": "Employee cannot log into the HR Platform.",
+      "ontology_values": {
+        "actor_ids": [
+          "actor:employee"
+        ],
+        "platform_ids": [
+          "platform:hr"
+        ],
+        "server_ids": [],
+        "supplier_ids": [],
+        "edge_ids": [
+          "edge:employee_login_hr"
+        ],
+        "relationship_types": [
+          "LOGS_INTO"
+        ],
+        "primary_affected_node_id": "platform:hr",
+        "symptom": "login_failure",
+        "region": "EMEA",
+        "channel": "web",
+        "environment": "production",
+        "error_code": "HR-401",
+        "release_id": null
+      },
+      "extraction": {
+        "confidence": 0.96,
+        "evidence": [
+          "employee",
+          "log into",
+          "HR portal",
+          "web",
+          "HR-401"
+        ]
+      }
+    }
+  },
+  {
+    "email": {
+      "id": "EMAIL-0077",
+      "received_at": "2026-09-22T11:19:00+02:00",
+      "from": "accounts.payable4@example.test",
+      "subject": "Supplier payment report 77",
+      "body": "The CH Accounts Payable Platform failed a supplier payment; code PAY-503 in production. Reference CASE-0077."
+    },
+    "ticket": {
+      "id": "TCK-0077",
+      "email_id": "EMAIL-0077",
+      "received_at": "2026-09-22T11:19:00+02:00",
+      "raw_email": "The CH Accounts Payable Platform failed a supplier payment; code PAY-503 in production. Reference CASE-0077.",
+      "summary": "Accounts Payable reports a payment failure to a supplier.",
+      "ontology_values": {
+        "actor_ids": [],
+        "platform_ids": [
+          "platform:accounts_payable"
+        ],
+        "server_ids": [],
+        "supplier_ids": [
+          "actor:supplier"
+        ],
+        "edge_ids": [
+          "edge:accounts_payable_pays_supplier"
+        ],
+        "relationship_types": [
+          "PAYS"
+        ],
+        "primary_affected_node_id": "platform:accounts_payable",
+        "symptom": "payment_failure",
+        "region": "CH",
+        "channel": "web",
+        "environment": "production",
+        "error_code": "PAY-503",
+        "release_id": null
+      },
+      "extraction": {
+        "confidence": 0.95,
+        "evidence": [
+          "Accounts Payable Platform",
+          "supplier payment",
+          "PAY-503"
+        ]
+      }
+    }
+  },
+  {
+    "email": {
+      "id": "EMAIL-0078",
+      "received_at": "2026-09-22T11:22:00+02:00",
+      "from": "accounts.payable5@example.test",
+      "subject": "Supplier payment report 78",
+      "body": "The CH Accounts Payable Platform was submitted twice a supplier payment; code PAY-208 in production. Reference CASE-0078."
+    },
+    "ticket": {
+      "id": "TCK-0078",
+      "email_id": "EMAIL-0078",
+      "received_at": "2026-09-22T11:22:00+02:00",
+      "raw_email": "The CH Accounts Payable Platform was submitted twice a supplier payment; code PAY-208 in production. Reference CASE-0078.",
+      "summary": "Accounts Payable reports a duplicate payment to a supplier.",
+      "ontology_values": {
+        "actor_ids": [],
+        "platform_ids": [
+          "platform:accounts_payable"
+        ],
+        "server_ids": [],
+        "supplier_ids": [
+          "actor:supplier"
+        ],
+        "edge_ids": [
+          "edge:accounts_payable_pays_supplier"
+        ],
+        "relationship_types": [
+          "PAYS"
+        ],
+        "primary_affected_node_id": "platform:accounts_payable",
+        "symptom": "duplicate_payment",
+        "region": "CH",
+        "channel": "web",
+        "environment": "production",
+        "error_code": "PAY-208",
+        "release_id": null
+      },
+      "extraction": {
+        "confidence": 0.95,
+        "evidence": [
+          "Accounts Payable Platform",
+          "supplier payment",
+          "PAY-208"
+        ]
+      }
+    }
+  },
+  {
+    "email": {
+      "id": "EMAIL-0052",
+      "received_at": "2026-09-22T11:42:00+02:00",
+      "from": "employee52@example.test",
+      "subject": "HR portal access request 52",
+      "body": "An employee in EMEA cannot log into the HR portal on the web in production and sees HR-401. Reference CASE-0052."
+    },
+    "ticket": {
+      "id": "TCK-0052",
+      "email_id": "EMAIL-0052",
+      "received_at": "2026-09-22T11:42:00+02:00",
+      "raw_email": "An employee in EMEA cannot log into the HR portal on the web in production and sees HR-401. Reference CASE-0052.",
+      "summary": "Employee cannot log into the HR Platform.",
+      "ontology_values": {
+        "actor_ids": [
+          "actor:employee"
+        ],
+        "platform_ids": [
+          "platform:hr"
+        ],
+        "server_ids": [],
+        "supplier_ids": [],
+        "edge_ids": [
+          "edge:employee_login_hr"
+        ],
+        "relationship_types": [
+          "LOGS_INTO"
+        ],
+        "primary_affected_node_id": "platform:hr",
+        "symptom": "login_failure",
+        "region": "EMEA",
+        "channel": "web",
+        "environment": "production",
+        "error_code": "HR-401",
+        "release_id": null
+      },
+      "extraction": {
+        "confidence": 0.96,
+        "evidence": [
+          "employee",
+          "log into",
+          "HR portal",
+          "web",
+          "HR-401"
+        ]
+      }
+    }
+  },
+  {
+    "email": {
+      "id": "EMAIL-0096",
+      "received_at": "2026-09-22T12:00:00+02:00",
+      "from": "general.inbox1@example.test",
+      "subject": "Insufficient information 96",
+      "body": "Please call me about the issue discussed yesterday; no system details were included. Reference CASE-0096."
+    },
+    "ticket": {
+      "id": "TCK-0096",
+      "email_id": "EMAIL-0096",
+      "received_at": "2026-09-22T12:00:00+02:00",
+      "raw_email": "Please call me about the issue discussed yesterday; no system details were included. Reference CASE-0096.",
+      "summary": "Insufficient information to classify the reported issue.",
+      "ontology_values": {
+        "actor_ids": [],
+        "platform_ids": [],
+        "server_ids": [],
+        "supplier_ids": [],
+        "edge_ids": [],
+        "relationship_types": [],
+        "primary_affected_node_id": null,
+        "symptom": "unknown",
+        "region": "unknown",
+        "channel": "unknown",
+        "environment": "unknown",
+        "error_code": null,
+        "release_id": null
+      },
+      "extraction": {
+        "confidence": 0.22,
+        "evidence": [
+          "Please call me about the issue discussed yesterday"
+        ]
+      }
+    }
+  },
+  {
+    "email": {
+      "id": "EMAIL-0097",
+      "received_at": "2026-09-22T12:05:00+02:00",
+      "from": "general.inbox2@example.test",
+      "subject": "Insufficient information 97",
+      "body": "The screen looks unusual this morning, but I do not know which application it is. Reference CASE-0097."
+    },
+    "ticket": {
+      "id": "TCK-0097",
+      "email_id": "EMAIL-0097",
+      "received_at": "2026-09-22T12:05:00+02:00",
+      "raw_email": "The screen looks unusual this morning, but I do not know which application it is. Reference CASE-0097.",
+      "summary": "Insufficient information to classify the reported issue.",
+      "ontology_values": {
+        "actor_ids": [],
+        "platform_ids": [],
+        "server_ids": [],
+        "supplier_ids": [],
+        "edge_ids": [],
+        "relationship_types": [],
+        "primary_affected_node_id": null,
+        "symptom": "unknown",
+        "region": "unknown",
+        "channel": "unknown",
+        "environment": "unknown",
+        "error_code": null,
+        "release_id": null
+      },
+      "extraction": {
+        "confidence": 0.22,
+        "evidence": [
+          "The screen looks unusual this morning, but I do not know which application it is."
+        ]
+      }
+    }
+  },
+  {
+    "email": {
+      "id": "EMAIL-0053",
+      "received_at": "2026-09-22T12:06:00+02:00",
+      "from": "employee53@example.test",
+      "subject": "HR portal access request 53",
+      "body": "An employee in EMEA cannot log into the HR portal on the web in production and sees HR-401. Reference CASE-0053."
+    },
+    "ticket": {
+      "id": "TCK-0053",
+      "email_id": "EMAIL-0053",
+      "received_at": "2026-09-22T12:06:00+02:00",
+      "raw_email": "An employee in EMEA cannot log into the HR portal on the web in production and sees HR-401. Reference CASE-0053.",
+      "summary": "Employee cannot log into the HR Platform.",
+      "ontology_values": {
+        "actor_ids": [
+          "actor:employee"
+        ],
+        "platform_ids": [
+          "platform:hr"
+        ],
+        "server_ids": [],
+        "supplier_ids": [],
+        "edge_ids": [
+          "edge:employee_login_hr"
+        ],
+        "relationship_types": [
+          "LOGS_INTO"
+        ],
+        "primary_affected_node_id": "platform:hr",
+        "symptom": "login_failure",
+        "region": "EMEA",
+        "channel": "web",
+        "environment": "production",
+        "error_code": "HR-401",
+        "release_id": null
+      },
+      "extraction": {
+        "confidence": 0.96,
+        "evidence": [
+          "employee",
+          "log into",
+          "HR portal",
+          "web",
+          "HR-401"
+        ]
+      }
+    }
+  },
+  {
+    "email": {
+      "id": "EMAIL-0098",
+      "received_at": "2026-09-22T12:10:00+02:00",
+      "from": "general.inbox1@example.test",
+      "subject": "Insufficient information 98",
+      "body": "Can someone investigate the intermittent problem reported by the team? Reference CASE-0098."
+    },
+    "ticket": {
+      "id": "TCK-0098",
+      "email_id": "EMAIL-0098",
+      "received_at": "2026-09-22T12:10:00+02:00",
+      "raw_email": "Can someone investigate the intermittent problem reported by the team? Reference CASE-0098.",
+      "summary": "Insufficient information to classify the reported issue.",
+      "ontology_values": {
+        "actor_ids": [],
+        "platform_ids": [],
+        "server_ids": [],
+        "supplier_ids": [],
+        "edge_ids": [],
+        "relationship_types": [],
+        "primary_affected_node_id": null,
+        "symptom": "unknown",
+        "region": "unknown",
+        "channel": "unknown",
+        "environment": "unknown",
+        "error_code": null,
+        "release_id": null
+      },
+      "extraction": {
+        "confidence": 0.22,
+        "evidence": [
+          "Can someone investigate the intermittent problem reported by the team?"
+        ]
+      }
+    }
+  },
+  {
+    "email": {
+      "id": "EMAIL-0099",
+      "received_at": "2026-09-22T12:15:00+02:00",
+      "from": "general.inbox2@example.test",
+      "subject": "Insufficient information 99",
+      "body": "A customer mentioned that something failed, without sharing the channel or service. Reference CASE-0099."
+    },
+    "ticket": {
+      "id": "TCK-0099",
+      "email_id": "EMAIL-0099",
+      "received_at": "2026-09-22T12:15:00+02:00",
+      "raw_email": "A customer mentioned that something failed, without sharing the channel or service. Reference CASE-0099.",
+      "summary": "Insufficient information to classify the reported issue.",
+      "ontology_values": {
+        "actor_ids": [],
+        "platform_ids": [],
+        "server_ids": [],
+        "supplier_ids": [],
+        "edge_ids": [],
+        "relationship_types": [],
+        "primary_affected_node_id": null,
+        "symptom": "unknown",
+        "region": "unknown",
+        "channel": "unknown",
+        "environment": "unknown",
+        "error_code": null,
+        "release_id": null
+      },
+      "extraction": {
+        "confidence": 0.22,
+        "evidence": [
+          "A customer mentioned that something failed, without sharing the channel or service."
+        ]
+      }
+    }
+  },
+  {
+    "email": {
+      "id": "EMAIL-0100",
+      "received_at": "2026-09-22T12:20:00+02:00",
+      "from": "general.inbox1@example.test",
+      "subject": "Insufficient information 100",
+      "body": "Following up on the earlier case; the original technical information is unavailable. Reference CASE-0100."
+    },
+    "ticket": {
+      "id": "TCK-0100",
+      "email_id": "EMAIL-0100",
+      "received_at": "2026-09-22T12:20:00+02:00",
+      "raw_email": "Following up on the earlier case; the original technical information is unavailable. Reference CASE-0100.",
+      "summary": "Insufficient information to classify the reported issue.",
+      "ontology_values": {
+        "actor_ids": [],
+        "platform_ids": [],
+        "server_ids": [],
+        "supplier_ids": [],
+        "edge_ids": [],
+        "relationship_types": [],
+        "primary_affected_node_id": null,
+        "symptom": "unknown",
+        "region": "unknown",
+        "channel": "unknown",
+        "environment": "unknown",
+        "error_code": null,
+        "release_id": null
+      },
+      "extraction": {
+        "confidence": 0.22,
+        "evidence": [
+          "Following up on the earlier case"
+        ]
+      }
+    }
+  }
+]

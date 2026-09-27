@@ -307,7 +307,7 @@ def main() -> None:
     failed = [result for result in results if not result["valid"]]
     report = {
         "schema_version": "1.0",
-        "source_contract": "ontology.md#6-model-pass-1-email-to-ticket-contract",
+        "source_contract": "docs/ontology.md#6-model-pass-1-email-to-ticket-contract",
         "pair_count": len(pairs),
         "valid_pair_count": len(pairs) - len(failed),
         "invalid_pair_count": len(failed),

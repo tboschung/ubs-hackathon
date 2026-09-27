@@ -19,9 +19,10 @@ init();
 
 async function init() {
   try {
-    const [or, tr] = await Promise.all([fetch('ontology.json', {cache: 'no-store'}), fetch('/api/simulation/tickets', {cache: 'no-store'})]);
+    const [or, tr] = await Promise.all([fetch('ontology.json', {cache: 'no-store'}), fetch('email_ticket_pairs.json', {cache: 'no-store'})]);
     if (!or.ok || !tr.ok) throw new Error('Could not load the demo data.');
-    ontology = await or.json(); tickets = (await tr.json()).tickets || [];
+    const ticketData = await tr.json();
+    ontology = await or.json(); tickets = Array.isArray(ticketData) ? ticketData.map((pair) => pair.ticket) : ticketData.tickets || [];
     cy = makeGraph(); populateJump();
     ui.entities.textContent = ontology.nodes.length; ui.relations.textContent = ontology.edges.length; ui.total.textContent = tickets.length;
     [ui.jump, ui.fit, ui.resetGraph, ui.next, ui.play, ui.reset].forEach((x) => x.disabled = false);
@@ -135,12 +136,14 @@ function renderCluster(c) {
   let title = `${humanize(v.symptom)} on ${nodeLabel(v.primary_affected_node_id)}`;
   let cause = `The shared ${humanize(v.channel)} channel and ${v.error_code||'symptom'} signature indicate one recurring operational fault.`;
   let fix = 'Assign the cluster to the platform owner, compare the first failure with recent changes, and validate recovery with a canary test.';
-  if (v.error_code === 'A17') { title = 'Mobile iOS login regression after release 6.4.0'; cause = 'A17 failures concentrate on iOS immediately after mobile-6.4.0, indicating incompatible authentication or session handling.'; fix = 'Pause the rollout, compare authentication requests with 6.3.0, then roll back affected iOS clients.'; }
+  if (v.error_code === 'A17') { title = 'iOS login failures spike after release 6.4.0'; cause = 'All 25 reports started after the iOS rollout and share error A17, while Android and web remain healthy. The release configuration likely contains the test authentication endpoint instead of the production endpoint—a common environment-copy mistake.'; fix = 'Pause the iOS rollout and publish a 6.4.1 hotfix with the production authentication endpoint. Verify login with a small canary group and resume only after the A17 rate returns to baseline.'; }
   if (v.error_code === 'INFRA-001') { title = 'Primary E-Banking server is unreachable'; cause = 'Repeated health-check timeouts point to srv-eb-01 or its supplier-provided connectivity—not isolated user error.'; fix = 'Isolate srv-eb-01, shift traffic to healthy capacity, and engage the infrastructure supplier.'; }
   const p = el('div','critical-panel');
   p.append(el('span','critical-badge','Critical cluster'), el('p','detail-kicker','AI risk insight'), el('h2','',title),
     el('p','cluster-metric',`${count} matching tickets in ${WINDOW_MINUTES} minutes · threshold ${CRITICAL}`),
-    insight('Identified issue', `${sample.summary} The pattern repeats across ${count} model-normalized tickets.`),
+    insight('Identified issue', v.error_code === 'A17'
+      ? `${count} customers cannot sign in to E-Banking on iOS after installing version 6.4.0. Every ticket contains error A17; no matching spike appears on Android or web.`
+      : `${sample.summary} The pattern repeats across ${count} model-normalized tickets.`),
     insight('Potential root cause',cause), insight('Suggested fix',fix));
   const button = el('button','fix-button','Apply suggested fix'); button.type = 'button';
   p.append(button, el('p','demo-note','Demo action only — no change will be made.')); ui.details.replaceChildren(p);
@@ -188,3 +191,4 @@ function el(tag,className='',text=''){const x=document.createElement(tag);x.clas
 ui.play.addEventListener('click',play); ui.next.addEventListener('click',()=>{pause();processNext();}); ui.reset.addEventListener('click',resetSimulation);
 ui.fit.addEventListener('click',fitGraph); ui.resetGraph.addEventListener('click',()=>{cy.nodes().forEach((n)=>n.position(POS[n.id()]));fitGraph();showOverview();});
 ui.jump.addEventListener('change',()=>ui.jump.value?selectElement(cy.getElementById(ui.jump.value)):showOverview());
+window.addEventListener('resize', () => requestAnimationFrame(fitGraph));

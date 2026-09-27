@@ -1,0 +1,8 @@
+{
+  "profile": "prototype",
+  "sourceRoots": ["app/static"],
+  "locale": "en",
+  "ownership": {
+    "Select/Listbox": "native"
+  }
+}

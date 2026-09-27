@@ -15,7 +15,6 @@
         <div>
           <p class="eyebrow">Risk intelligence</p>
           <h1>Operational ontology</h1>
-          <p class="lede">Explore the actors, platforms, and infrastructure behind operational issues.</p>
         </div>
       </div>
       <a class="header-link" href="/">
@@ -24,29 +23,24 @@
       </a>
     </header>
 
-    <section class="summary-strip" aria-label="Ontology summary">
-      <div>
-        <span class="summary-value" id="entity-count">—</span>
-        <span class="summary-label">Entities</span>
+    <section class="operations-bar" aria-label="Ontology summary and ticket simulation controls">
+      <div class="ontology-metrics" aria-label="Ontology size">
+        <span><strong id="entity-count">—</strong> Entities</span>
+        <span><strong id="relationship-count">—</strong> Relationships</span>
       </div>
-      <div>
-        <span class="summary-value" id="relationship-count">—</span>
-        <span class="summary-label">Relationships</span>
+      <div class="stream-progress">
+        <div class="stream-copy">
+          <span>Ticket stream</span>
+          <strong><span id="processed-count">0</span> / <span id="total-ticket-count">—</span></strong>
+        </div>
+        <div class="simulation-progress" aria-label="Ticket replay progress"><span id="progress-fill"></span></div>
       </div>
       <div class="summary-status">
         <span class="status-dot" aria-hidden="true"></span>
         <span><strong id="simulation-status">Simulation ready</strong><small id="simulation-clock">Waiting for first ticket</small></span>
       </div>
-    </section>
-
-    <section class="simulation-bar" aria-label="Ticket simulation controls">
-      <div class="simulation-copy">
-        <p class="eyebrow">Model 1 ticket stream</p>
-        <strong><span id="processed-count">0</span> / <span id="total-ticket-count">—</span> tickets processed</strong>
-      </div>
-      <div class="simulation-progress" aria-hidden="true"><span id="progress-fill"></span></div>
       <div class="simulation-actions">
-        <label for="speed-select">Speed</label>
+        <label class="sr-only" for="speed-select">Replay speed</label>
         <select id="speed-select">
           <option value="1">1×</option>
           <option value="4" selected>4×</option>
